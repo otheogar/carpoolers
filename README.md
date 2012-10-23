@@ -1,4 +1,0 @@
-carpoolers
-==========
-
-Carpoolers Ruby app
