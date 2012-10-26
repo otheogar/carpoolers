@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
  */
+
+
+#user_nav {
+    float: right;
+}
+.fb-login-button {
+    position: absolute;
+    top: 20px;
+    left: 1000px;
+}
