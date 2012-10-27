@@ -13,11 +13,6 @@
  */
 
 
-#user_nav {
+.fb-login-button{
     float: right;
-}
-.fb-login-button {
-    position: absolute;
-    top: 20px;
-    left: 1000px;
 }

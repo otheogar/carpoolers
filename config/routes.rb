@@ -1,7 +1,8 @@
 Carpoolers::Application.routes.draw do
-  resources :users
+  get "home/index", as: 'home'
 
   get "welcome/index"
+
 
   controller :sessions do
     get  'login' => :new
@@ -9,26 +10,25 @@ Carpoolers::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
-
-  get '/channel.html' => proc {
-    [
-        200,
-        {
-            'Pragma'        => 'public',
-            'Cache-Control' => "max-age=#{1.year.to_i}",
-            'Expires'       => 1.year.from_now.to_s(:rfc822),
-            'Content-Type'  => 'text/html'
-        },
-        ['<script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>']
-    ]
-  }
+  #
+  #get '/channel.html' => proc {
+  #  [
+  #      200,
+  #      {
+  #          'Pragma'        => 'public',
+  #          'Cache-Control' => "max-age=#{1.year.to_i}",
+  #          'Expires'       => 1.year.from_now.to_s(:rfc822),
+  #          'Content-Type'  => 'text/html'
+  #      },
+  #      ['<script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>']
+  #  ]
+  #}
 
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :users
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -78,7 +78,7 @@ Carpoolers::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'welcome#index', as: 'welcome'
+   root to: 'welcome#index', as: 'welcome'
 
 
 
