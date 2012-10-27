@@ -18037,3 +18037,1079 @@ Served asset /welcome.js - 304 Not Modified (5ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:27:59 -0700
 Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-27 14:35:42 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Compiled home.css  (8ms)  (pid 2865)
+Compiled scaffolds.css  (43ms)  (pid 2865)
+Compiled sessions.css  (4ms)  (pid 2865)
+Compiled users.css  (4ms)  (pid 2865)
+Compiled welcome.css  (23ms)  (pid 2865)
+Compiled application.css  (370ms)  (pid 2865)
+Completed 200 OK in 473ms (Views: 472.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /application.css - 200 OK (111ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /users.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /sessions.css - 304 Not Modified (36ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /home.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /welcome.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:35:44 -0700
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-10-27 14:37:39 -0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '1459003407' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (13.1ms)[0m  [1mINSERT INTO "users" ("created_at", "date_of_birth", "email", "gender", "id", "name", "oauth_expires_at", "oauth_token", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 27 Oct 2012 21:37:40 UTC +00:00], ["date_of_birth", nil], ["email", "ltheogar@ece.ucsb.edu"], ["gender", "male"], ["id", nil], ["name", "Luke Theogarajan"], ["oauth_expires_at", Sat, 27 Oct 2012 23:00:00 UTC +00:00], ["oauth_token", "AAAGzq6gpk0oBAAkmCVLDnzf6V8nM90LwU9ZBIrcOZBpc3n7ZA9NQ4MbkfPpqTzchrsKJxLcd8duhtUhUrZB9WpV71rTbiDiSzf7WCUkT5OC5Pyw0MQTp"], ["provider", "facebook"], ["uid", "1459003407"], ["updated_at", Sat, 27 Oct 2012 21:37:40 UTC +00:00]]
+  [1m[35m (110.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 306ms (ActiveRecord: 123.7ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2012-10-27 14:37:41 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "1459003407"]]
+Completed 200 OK in 63ms (Views: 60.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:37:41 -0700
+Served asset /application.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:37:41 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:37:41 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:37:41 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:37:41 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:37:42 -0700
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:37:42 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:37:42 -0700
+Served asset /jquery.js - 304 Not Modified (52ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:37:42 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:37:42 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:37:42 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:37:42 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:37:42 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:37:42 -0700
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-27 14:38:58 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "1459003407"]]
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /application.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /scaffolds.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /welcome.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /users.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:38:59 -0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-27 14:40:39 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "1459003407"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "1459003407"]]
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /application.css - 304 Not Modified (132ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /scaffolds.css - 304 Not Modified (34ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /users.css - 304 Not Modified (35ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /jquery.js - 304 Not Modified (69ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /home.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:40:40 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:40:41 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:40:41 -0700
+Served asset /application.js - 304 Not Modified (18ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-10-27 14:41:22 -0700
+Processing by SessionsController#destroy as HTML
+  Rendered sessions/destroy.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 51ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /scaffolds.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /sessions.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /facebook.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:23 -0700
+Served asset /application.js - 304 Not Modified (23ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-10-27 14:41:46 -0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '310589' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mUPDATE "users" SET "oauth_token" = 'AAAGzq6gpk0oBAJlC0fJwljq9zSrSs1SImvchIEX6luL4UzTxAj7lzGNWjr6qX9HiOhFtUA7qDqRExsH4Ee8BvDiHR7u3HX1MHdgw0wZDZD', "updated_at" = '2012-10-27 21:41:47.624281' WHERE "users"."uid" = '310589'[0m
+  [1m[35m (123.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 131ms (ActiveRecord: 125.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2012-10-27 14:41:47 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 200 OK in 63ms (Views: 61.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /scaffolds.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /users.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /welcome.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /jquery.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /facebook.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /home.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /users.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /application.js - 304 Not Modified (41ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:41:48 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-10-27 14:42:22 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (7.8ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+Completed 200 OK in 76ms (Views: 72.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /home.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /welcome.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /jquery.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /welcome.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:23 -0700
+Served asset /application.js - 304 Not Modified (13ms)
+
+
+Started DELETE "/users/1459003407" for 127.0.0.1 at 2012-10-27 14:42:38 -0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GRZ/Ue1MJX9rPfouAiX2RrJUOrSBtGIVniuI/B5MhEc=", "id"=>"1459003407"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "1459003407"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  DELETE FROM "users" WHERE "users"."uid" = ?  [["uid", "1459003407"]]
+  [1m[36m (104.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 112ms (ActiveRecord: 106.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /application.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /users.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /sessions.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /facebook.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /sessions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /users.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:42:39 -0700
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started DELETE "/users/310589" for 127.0.0.1 at 2012-10-27 14:42:54 -0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GRZ/Ue1MJX9rPfouAiX2RrJUOrSBtGIVniuI/B5MhEc=", "id"=>"310589"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.4ms)[0m  [1mDELETE FROM "users" WHERE "users"."uid" = ?[0m  [["uid", "310589"]]
+  [1m[35m (72.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 85ms (ActiveRecord: 75.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-10-27 14:42:54 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (0.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 500 Internal Server Error in 172ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with uid=310589):
+  app/controllers/application_controller.rb:6:in `current_user'
+  app/views/layouts/application.html.erb:65:in `_app_views_layouts_application_html_erb__882757430_87653170'
+  app/controllers/users_controller.rb:7:in `index'
+
+
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-27 14:43:00 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+Completed 500 Internal Server Error in 58ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with uid=310589):
+  app/controllers/application_controller.rb:6:in `current_user'
+  app/views/layouts/application.html.erb:65:in `_app_views_layouts_application_html_erb__882757430_87653170'
+
+
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.2ms)
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-27 14:43:06 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 500 Internal Server Error in 82ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with uid=310589):
+  app/controllers/application_controller.rb:6:in `current_user'
+  app/views/layouts/application.html.erb:65:in `_app_views_layouts_application_html_erb__882757430_87653170'
+
+
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.4ms)
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 45ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Served asset /welcome.css - 200 OK (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Served asset /sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Served asset /scaffolds.css - 200 OK (4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Served asset /jquery.js - 200 OK (56ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Served asset /jquery_ujs.js - 200 OK (16ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Served asset /home.js - 200 OK (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:44:10 -0700
+Served asset /facebook.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:44:11 -0700
+Served asset /users.js - 200 OK (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:44:11 -0700
+Served asset /sessions.js - 200 OK (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:44:11 -0700
+Served asset /welcome.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:44:11 -0700
+Served asset /application.js - 200 OK (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-27 14:45:15 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 54ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /application.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /sessions.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /home.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /welcome.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:45:16 -0700
+Served asset /application.js - 304 Not Modified (18ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-27 14:46:34 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 131ms (Views: 130.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:46:35 -0700
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:46:35 -0700
+Served asset /home.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:46:35 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:46:35 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:46:35 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:46:35 -0700
+Served asset /sessions.css - 304 Not Modified (41ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:46:35 -0700
+Served asset /facebook.js - 304 Not Modified (168ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:46:36 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:46:36 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:46:36 -0700
+Served asset /sessions.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:46:36 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:46:36 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:46:36 -0700
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:46:36 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-10-27 14:47:24 -0700
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?code=AQDN4IBLVSwzLebDwoB9eKseqXFpvZezZ1BWOaRbH0GZBHNOO_UqcWrGQ6tLPQDu8NkwU3WtTG6oErjVvr6BXA7uqDy3b8dDE-8pStiWwaF261dzgQWVUm4D-PMwZwygz78Jexa6BDN_7YaFlLzdCQa-TgqvHMiiIQwD5keK5b-qb4c3tljDBrY8SMv0eD02L2s" for 127.0.0.1 at 2012-10-27 14:47:25 -0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDN4IBLVSwzLebDwoB9eKseqXFpvZezZ1BWOaRbH0GZBHNOO_UqcWrGQ6tLPQDu8NkwU3WtTG6oErjVvr6BXA7uqDy3b8dDE-8pStiWwaF261dzgQWVUm4D-PMwZwygz78Jexa6BDN_7YaFlLzdCQa-TgqvHMiiIQwD5keK5b-qb4c3tljDBrY8SMv0eD02L2s", "provider"=>"facebook"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '310589' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "users" ("created_at", "date_of_birth", "email", "gender", "id", "name", "oauth_expires_at", "oauth_token", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 27 Oct 2012 21:47:26 UTC +00:00], ["date_of_birth", nil], ["email", "oanacatu@umail.ucsb.edu"], ["gender", "female"], ["id", nil], ["name", "Oana Theogarajan"], ["oauth_expires_at", Wed, 26 Dec 2012 05:35:34 UTC +00:00], ["oauth_token", "AAAGzq6gpk0oBAPBe1zRgnDx8g2ipTsxDXFtcNfimvwo2TN6PYFQa7nNAnXx6tC1bfNBEDVjHFgKL8pSkF8SnkZCCnMbAZD"], ["provider", "facebook"], ["uid", "310589"], ["updated_at", Sat, 27 Oct 2012 21:47:26 UTC +00:00]]
+  [1m[35m (102.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 117ms (ActiveRecord: 104.9ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2012-10-27 14:47:26 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 200 OK in 64ms (Views: 63.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /scaffolds.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /users.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /home.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /welcome.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:27 -0700
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Processing by SessionsController#destroy as HTML
+  Rendered sessions/destroy.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 43ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /scaffolds.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /jquery.js - 304 Not Modified (39ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /facebook.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:38 -0700
+Served asset /users.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:39 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:39 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:47:39 -0700
+Served asset /application.js - 304 Not Modified (21ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-10-27 14:48:07 -0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '310589' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (2.0ms)[0m  [1mUPDATE "users" SET "oauth_token" = 'AAAGzq6gpk0oBAHcrCB6AYdQ7x4FcxWUUIK2NBzh4zSr3zCQxIMbMtlRzvleRlte0O7Y6k8SM2zvgHOgAQQB4yOM5WAZBBjlfZAZAvh92AZDZD', "oauth_expires_at" = '2012-10-27 23:00:00.000000', "updated_at" = '2012-10-27 21:48:07.981851' WHERE "users"."uid" = '310589'[0m
+  [1m[35m (64.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 76ms (ActiveRecord: 66.4ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2012-10-27 14:48:08 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 200 OK in 155ms (Views: 154.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:08 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:08 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:08 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:08 -0700
+Served asset /scaffolds.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:08 -0700
+Served asset /home.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:08 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:08 -0700
+Served asset /jquery.js - 304 Not Modified (54ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:08 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:08 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:09 -0700
+Served asset /home.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:09 -0700
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:09 -0700
+Served asset /users.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:09 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:09 -0700
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Processing by SessionsController#destroy as HTML
+  Rendered sessions/destroy.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Served asset /application.css - 304 Not Modified (52ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Served asset /home.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Served asset /jquery.js - 304 Not Modified (39ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Served asset /users.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:17 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:18 -0700
+Served asset /sessions.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:18 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:18 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-27 14:48:18 -0700
+Served asset /application.js - 304 Not Modified (22ms)

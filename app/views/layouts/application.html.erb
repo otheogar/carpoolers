@@ -23,13 +23,11 @@
         function get_status(){
             if (document.getElementById("sign_out")) {return;}
             FB.getLoginStatus(function(response) {
-                console.log("determined status "  + response.status)   ;
                 if (response.status === 'connected') {
-                    // the user is logged in and has authenticated app - get info in session
+                    // the user is logged in and has authenticated app -
+                    // need to get his info in server session
                     //if no current_user (use the html elem sign_out
-
                     window.location = '/auth/facebook/callback';
-
                 }
             });
         };
@@ -37,18 +35,8 @@
 
 
     function login() {
-        console.log("in logni function");
-        console.log("already connected");
         window.location = '/auth/facebook/callback';
     }
-
-    function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-            console.log('Good to see you, ' + response.name + '  ' + response.gender + '  '+ response.birthday);
-        });
-    }
-
 
     // Load the SDK Asynchronously
     (function(d){
@@ -68,12 +56,13 @@
 <div id="user_nav">
   <% if current_user %>
       <br>
+      Signed in as <strong><%= current_user.name %></strong>!
+      <br>
       <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <% end %>
 </div>
 </div>
 
-<button onclick="testAPI()"></button>
 <%= yield %>
 
 </body>
