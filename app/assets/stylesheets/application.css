@@ -12,7 +12,15 @@
  *= require_tree .
  */
 
+#LoginDiv{
+    float: right;
+}
 
+/*
 .fb-login-button{
     float: right;
 }
+
+#user_nav{
+    float: right;
+}*/
