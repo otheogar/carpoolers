@@ -4,8 +4,8 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-
+<<<<<<< HEAD
 Carpool::Application.load_tasks
-
-
-
+=======
+Carpoolers::Application.load_tasks
+>>>>>>> oana

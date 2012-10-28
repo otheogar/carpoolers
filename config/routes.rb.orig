@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Carpool::Application.routes.draw do
   get "feed/index"
 
@@ -5,11 +6,13 @@ Carpool::Application.routes.draw do
 
    get "login/index"
   root :to => 'login#index', :as => 'login'
-  get "userhome/index", :as => 'home'
+  get "userhome/index"
   
   match '/search' => 'userhome#search', :as => 'search'
   
-
+=======
+Carpoolers::Application.routes.draw do
+  get "home/index", as: 'home'
 
   get "welcome/index"
 
@@ -19,6 +22,7 @@ Carpool::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :users
+>>>>>>> oana
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -68,9 +72,13 @@ Carpool::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+<<<<<<< HEAD
+  # root :to => 'welcome#index'
+=======
    root to: 'welcome#index', as: 'welcome'
 
 
+>>>>>>> oana
 
   # See how all your routes lay out with "rake routes"
 
