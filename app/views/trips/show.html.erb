@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>From string:</b>
+  <%= @trip.from_string %>
+</p>
+
+<p>
+  <b>To string:</b>
+  <%= @trip.to_string %>
+</p>
+
+<p>
+  <b>From longitude:</b>
+  <%= @trip.from_longitude %>
+</p>
+
+<p>
+  <b>From latitude:</b>
+  <%= @trip.from_latitude %>
+</p>
+
+<p>
+  <b>To longitude:</b>
+  <%= @trip.to_longitude %>
+</p>
+
+<p>
+  <b>To latitude:</b>
+  <%= @trip.to_latitude %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @trip.date %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @trip.time %>
+</p>
+
+<p>
+  <b>Flag:</b>
+  <%= @trip.flag %>
+</p>
+
+
+<%= link_to 'Edit', edit_trip_path(@trip) %> |
+<%= link_to 'Back', trips_path %>

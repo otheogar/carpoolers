@@ -1,0 +1,58 @@
+
+<script>
+$(function()
+{
+	$("#search_menu").hide();
+	var menu_open = 0;
+	$("#search_button").button().click(function(event) { 
+	if (menu_open == 0)
+	{
+	 $("#search_menu").fadeIn();
+	 menu_open = 1;
+	}else
+	{
+     $("#search_menu").fadeOut();
+	 menu_open = 0;
+	}
+	
+	});
+	$("#post_button").button();
+	$("#profile_button").button();
+    $("#pending_button").button();
+	$("#search_date").datepicker();
+	$("#role_div").buttonset();
+	$("#search_menu :submit").button();
+})
+</script>
+<div id="wrapper">
+<h1>Welcome to Your Homepage</h1>
+<p>Live Feeds for Carpooling!</p>
+<div id = "menu">
+<input type="checkbox" id="search_button"/><label for="search_button">Search for Rides</label>
+<button id="post_button">Post Ride</button>
+<button id="profile_button">Edit Profile</button>
+<button id="pending_button">Pending connect Requests</button>
+</div>
+<div id="search_menu" class = " ui-corner-all">
+<%= form_tag("/search", :method => "get", :remote=>true) do %>
+  <%= label_tag(:search_from, "From:") %>
+  <%= text_field_tag(:search_from) %>
+  <%= label_tag(:search_to, "To:") %>
+  <%= text_field_tag(:search_to) %>
+  <%= label_tag(:search_date, "Date:") %>
+  <%= text_field_tag(:search_date) %>
+  <%= label_tag(:search_time, "Time:") %>
+  <%= text_field_tag(:search_time) %>
+  <div id = "role_div">
+  <%= radio_button_tag(:role, "passenger") %>
+  <%= label_tag(:role_passenger, "Passenger") %>
+  <%= radio_button_tag(:role, "driver") %>
+  <%= label_tag(:role_driver, "Driver") %>
+  </div>
+  <%= submit_tag("Search") %>
+<% end %>
+</div>
+<%= render :partial => "/feed/index", :locals => { :trips_passengers => @trips_passengers, :trips_drivers => @trips_drivers } %>
+
+
+

@@ -1,0 +1,21 @@
+// Place all the styles related to the feed controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.feed
+{
+width:600px;
+height:400px;
+float:left;
+margin-right:20px;
+box-shadow: 0 0 1px rgba(26, 28, 30, 0.1),0 0 4px rgba(26, 28, 30, 0.3);
+}
+.text
+{
+text-align:center
+}
+.trip
+{
+margin-right:50px;
+margin-left:50px;
+}
