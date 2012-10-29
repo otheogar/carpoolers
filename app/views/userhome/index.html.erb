@@ -22,6 +22,9 @@ $(function()
 	$("#search_date").datepicker();
 	$("#role_div").buttonset();
 	$("#search_menu :submit").button();
+
+    $("#passengers_feed").scrollTop(0);
+    $("#drivers_feed").scrollTop(0);
 })
 </script>
 <div id="wrapper">
@@ -35,23 +38,43 @@ $(function()
 </div>
 <div id="search_menu" class = " ui-corner-all">
 <%= form_tag("/search", :method => "get", :remote=>true) do %>
+  <div id = "role_div">
+        I am a
+        <%= radio_button_tag(:role, "passenger") %>
+        <%= label_tag(:role_passenger, "Passenger") %>
+        <%= radio_button_tag(:role, "driver") %>
+        <%= label_tag(:role_driver, "Driver") %>
+  </div>
+  <div>Looking for a ride
   <%= label_tag(:search_from, "From:") %>
   <%= text_field_tag(:search_from) %>
   <%= label_tag(:search_to, "To:") %>
   <%= text_field_tag(:search_to) %>
-  <%= label_tag(:search_date, "Date:") %>
+  <%= label_tag(:search_date, "On:") %>
   <%= text_field_tag(:search_date) %>
-  <%= label_tag(:search_time, "Time:") %>
+  <%= label_tag(:search_time, "At:") %>
   <%= text_field_tag(:search_time) %>
-  <div id = "role_div">
-  <%= radio_button_tag(:role, "passenger") %>
-  <%= label_tag(:role_passenger, "Passenger") %>
-  <%= radio_button_tag(:role, "driver") %>
-  <%= label_tag(:role_driver, "Driver") %>
   </div>
   <%= submit_tag("Search") %>
 <% end %>
 </div>
-<%= render :partial => "/feed/index", :locals => { :trips_passengers => @trips_passengers, :trips_drivers => @trips_drivers } %>
-
+  <div id="feeds_wrapper">
+    <div id = "drivers_feed_wrapper" class= "feed ui-corner-all">
+      <h3 style = "text-align:center">Looking for Passengers!</h3>
+    <div id = "drivers_feed" style ="overflow:scroll;" class = "feed-inside">
+      <% for item in @trips_drivers %>
+          <div><%= render(item) %></div>
+      <% end %>
+    </div>
+    </div>
+    <div id = "passengers_feed_wrapper" class= "feed ui-corner-all">
+      <h3 style = "text-align:center">Looking for Drivers!</h3>
+    <div id = "passengers_feed" style ="overflow:scroll;"  class = "feed-inside">
+      <% for item in @trips_passengers %>
+          <div><%= render(item) %></div>
+      <% end %>
+    </div>
+      </div>
+  </div>
+    </div>
 

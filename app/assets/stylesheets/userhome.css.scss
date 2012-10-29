@@ -8,14 +8,49 @@ padding-bottom:2em;
 }
 #wrapper
 {
-display: block;
-margin-left: auto;
-margin-right: auto;
+  width:1050px;
+  height:850px;
+  margin:0px auto;
+  text-align:left;
+  padding:15px;
+  border:1px dashed #333;
+  background-color:#eee; text-align:center;
 }
 #search_menu
 {
 box-shadow: 0 0 1px rgba(26, 28, 30, 0.1),0 0 4px rgba(26, 28, 30, 0.3);
 padding: 1em 1em 1em 1em;
 margin-bottom:2em;
-width:1200px;
+width:1000px;
+}
+
+.feed
+  {
+  width:500px;
+  height:450px;
+  float:left;
+  margin-right:20px;
+  box-shadow: 0 0 1px rgba(26, 28, 30, 0.1),0 0 4px rgba(26, 28, 30, 0.3);
+}
+.feed-inside
+  {
+  width:500px;
+  height:400px;
+  box-shadow: 0 0 1px rgba(26, 28, 30, 0.1),0 0 4px rgba(26, 28, 30, 0.3);
+  float:left;
+}
+.text
+  {
+  text-align:center
+}
+
+.text_left
+  {
+  text-align:left
+}
+.trip
+  {
+  width: 400px;
+  margin-right:50px;
+  margin-left:50px;
 }
