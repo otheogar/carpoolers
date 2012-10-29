@@ -1,0 +1,5 @@
+<% if flash[:alert] %>
+    <p id="notice"><%= flash[:alert] %></p>
+<% end %>
+<h1>Welcome to Carpool</h1>
+<p><%= link_to 'Try Carpool!', :controller => "userhome" %></p>

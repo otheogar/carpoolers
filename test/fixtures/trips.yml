@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  from_string: MyString
+  to_string: MyString
+  from_longitude: 1.5
+  from_latitude: 1.5
+  to_longitude: 1.5
+  to_latitude: 1.5
+  date: 2012-10-25
+  time: 2012-10-25 15:58:58
+  flag: 1
+
+two:
+  from_string: MyString
+  to_string: MyString
+  from_longitude: 1.5
+  from_latitude: 1.5
+  to_longitude: 1.5
+  to_latitude: 1.5
+  date: 2012-10-25
+  time: 2012-10-25 15:58:58
+  flag: 0

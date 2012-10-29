@@ -1,0 +1,19 @@
+
+<script>
+$(function()
+{
+	$("#<%= trip.id %>").accordion(
+	{
+		collapsible: true
+		
+	});
+	$("#<%= trip.id %>").accordion("activate", -1)
+	
+})
+</script>
+<div id = "<%= trip.id %>" class = "text trip">
+<div>From: <%= trip.from_string %> to: <%= trip.to_string %></div>
+<div>
+<div>Depart on <%= trip.date.strftime("%m/%d/%y") %> at <%= trip.time.strftime("%I:%M %p") %></div>
+</div>
+</div>

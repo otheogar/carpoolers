@@ -1,0 +1,21 @@
+
+<script>
+$(function()
+{
+	
+})
+</script>
+
+<div id = "drivers_feed" class= "feed ui-corner-all">
+<h3 style = "text-align:center">Looking for Passengers!</h3>
+<% for item in @trips_drivers %>
+<div><%= render(item) %></div>
+<% end %>
+</div>
+
+<div id = "passengers_feed" class= "feed ui-corner-all">
+<h3 style = "text-align:center">Looking for Drivers!</h3>
+<% for item in @trips_passengers %>
+<div><%= render(item) %></div>
+<% end %>
+</div>
