@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-<<<<<<< HEAD
 //= require jquery-ui
-=======
->>>>>>> oana
+//= require_tree .
+

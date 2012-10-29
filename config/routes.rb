@@ -3,8 +3,6 @@ Carpool::Application.routes.draw do
 
   resources :trips
 
-   get "login/index"
-  root :to => 'login#index', :as => 'login'
   get "userhome/index", :as => 'home'
   
   match '/search' => 'userhome#search', :as => 'search'
