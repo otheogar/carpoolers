@@ -19208,3 +19208,1873 @@ ActionView::Template::Error (/home/oana/Software/carpoolers/app/assets/styleshee
   Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.0ms)
   Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
   Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (26.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-28 18:08:31 -0700
+Connecting to database specified by database.yml
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+Compiled feed.css  (143ms)  (pid 8419)
+Compiled jquery-ui-1.9.0.custom.css  (0ms)  (pid 8419)
+Compiled scaffolds.css  (28ms)  (pid 8419)
+Compiled sessions.css  (1ms)  (pid 8419)
+Compiled trips.css  (2ms)  (pid 8419)
+Compiled userhome.css  (32ms)  (pid 8419)
+Compiled users.css  (18ms)  (pid 8419)
+Compiled welcome.css  (2ms)  (pid 8419)
+Compiled application.css  (526ms)  (pid 8419)
+Compiled jquery.js  (10ms)  (pid 8419)
+Compiled jquery_ujs.js  (0ms)  (pid 8419)
+Compiled jquery-ui.js  (28ms)  (pid 8419)
+Compiled facebook.js  (955ms)  (pid 8419)
+Compiled feed.js  (723ms)  (pid 8419)
+Compiled sessions.js  (771ms)  (pid 8419)
+Compiled trips.js  (683ms)  (pid 8419)
+Compiled userhome.js  (1058ms)  (pid 8419)
+Compiled users.js  (822ms)  (pid 8419)
+Compiled welcome.js  (682ms)  (pid 8419)
+Compiled application.js  (6563ms)  (pid 8419)
+Completed 200 OK in 8310ms (Views: 8308.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /application.css - 304 Not Modified (154ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /feed.css - 200 OK (16ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /trips.css - 200 OK (52ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /sessions.css - 304 Not Modified (41ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 200 OK (14ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /scaffolds.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /userhome.css - 200 OK (27ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /users.css - 304 Not Modified (35ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /welcome.css - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /jquery.js - 304 Not Modified (51ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (47ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /facebook.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:42 -0700
+Served asset /jquery-ui.js - 200 OK (179ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:43 -0700
+Served asset /feed.js - 200 OK (13ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:43 -0700
+Served asset /sessions.js - 304 Not Modified (40ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:43 -0700
+Served asset /trips.js - 200 OK (22ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:43 -0700
+Served asset /userhome.js - 200 OK (7ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:43 -0700
+Served asset /users.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:43 -0700
+Served asset /welcome.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 18:08:43 -0700
+Served asset /application.js - 200 OK (88ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-10-28 18:09:35 -0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '310589' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (29.8ms)[0m  [1mINSERT INTO "users" ("created_at", "date_of_birth", "email", "gender", "id", "name", "oauth_expires_at", "oauth_token", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 01:09:37 UTC +00:00], ["date_of_birth", nil], ["email", "oanacatu@umail.ucsb.edu"], ["gender", "female"], ["id", nil], ["name", "Oana Theogarajan"], ["oauth_expires_at", Mon, 29 Oct 2012 03:00:00 UTC +00:00], ["oauth_token", "AAAGzq6gpk0oBACtx7fPJMx851yL7eH1PiZA1L76EAhfOOzR0qDvwUuTOIXadiAueVPFZAJNvQNRthWlzI3RkUD7JxqZBX6IwulN19aNjgZDZD"], ["provider", "facebook"], ["uid", "310589"], ["updated_at", Mon, 29 Oct 2012 01:09:37 UTC +00:00]]
+  [1m[35m (141.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/userhome/index
+Completed 302 Found in 621ms (ActiveRecord: 265.7ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 18:09:41 -0700
+Processing by UserhomeController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 0)[0m
+  [1m[35mTrip Load (0.2ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 1)
+  Rendered feed/_index.html.erb (13.6ms)
+  Rendered userhome/index.html.erb within layouts/application (70.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 200 OK in 171ms (Views: 165.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 18:09:42 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 18:09:42 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 18:09:42 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 18:09:42 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 18:09:42 -0700
+Served asset /scaffolds.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 18:09:42 -0700
+Served asset /sessions.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 18:09:42 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 18:09:42 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 18:09:42 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:42 -0700
+Served asset /jquery.js - 304 Not Modified (196ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:43 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:43 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:43 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:43 -0700
+Served asset /sessions.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:43 -0700
+Served asset /jquery-ui.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:43 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:43 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:43 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:43 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 18:09:43 -0700
+Served asset /application.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 18:09:47 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 404 Not Found (19ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.3ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 18:10:07 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 404 Not Found (11ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-28 18:14:03 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&search_from=&search_to=&search_date=&search_time=&commit=Search" for 127.0.0.1 at 2012-10-28 18:14:08 -0700
+Processing by UserhomeController#search as JS
+  Parameters: {"utf8"=>"✓", "search_from"=>"", "search_to"=>"", "search_date"=>"", "search_time"=>"", "commit"=>"Search"}
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (wrong number of arguments (0 for 6)):
+  app/controllers/userhome_controller.rb:7:in `search'
+
+
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.3ms)
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.0ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 18:29:22 -0700
+Processing by UserhomeController#index as HTML
+  [1m[36mTrip Load (0.8ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 0)[0m
+  [1m[35mTrip Load (0.2ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 1)
+  Rendered feed/_index.html.erb (5.8ms)
+  Rendered userhome/index.html.erb within layouts/application (7.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /application.css - 304 Not Modified (43ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /trips.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /userhome.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /welcome.css - 304 Not Modified (33ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /users.css - 304 Not Modified (63ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /jquery.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /facebook.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:23 -0700
+Served asset /jquery-ui.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:24 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:24 -0700
+Served asset /sessions.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:24 -0700
+Served asset /trips.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:24 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:24 -0700
+Served asset /users.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:24 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 18:29:24 -0700
+Served asset /application.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 18:29:26 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 18:29:54 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/oana/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 18:54:26 -0700
+Processing by UserhomeController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 0)[0m
+  [1m[35mTrip Load (0.3ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 1)
+  Rendered feed/_index.html.erb (6.9ms)
+  Rendered userhome/index.html.erb within layouts/application (10.8ms)
+Compiled application.css  (16ms)  (pid 8419)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 200 OK in 235ms (Views: 214.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /application.css - 304 Not Modified (86ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /sessions.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /trips.css - 304 Not Modified (42ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /userhome.css - 304 Not Modified (41ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /users.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /welcome.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /jquery-ui.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /facebook.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /sessions.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:28 -0700
+Served asset /userhome.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:29 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:29 -0700
+Served asset /welcome.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:29 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 18:54:29 -0700
+Served asset /application.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 18:54:31 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 200 OK (31ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 18:54:38 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 200 OK (26ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-28 18:54:46 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 200 OK (32ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (60.8ms)[0m  DELETE FROM "trips"
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.3ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 02:19:16 UTC +00:00], ["date", Tue, 30 Oct 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Santa Barbara"], ["time", 2000-01-01 16:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Los Angeles"], ["updated_at", Mon, 29 Oct 2012 02:19:16 UTC +00:00]]
+  [1m[36m (23.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 02:19:16 UTC +00:00], ["date", Wed, 31 Oct 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Santa Barbara"], ["time", 2000-01-01 10:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Luis Obispo"], ["updated_at", Mon, 29 Oct 2012 02:19:16 UTC +00:00]]
+  [1m[35m (20.8ms)[0m  commit transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (46.9ms)[0m  DELETE FROM "trips"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (15.8ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 02:22:13 UTC +00:00], ["date", Tue, 30 Oct 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Santa Barbara"], ["time", 2000-01-01 16:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Los Angeles"], ["updated_at", Mon, 29 Oct 2012 02:22:13 UTC +00:00]]
+  [1m[36m (14.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 02:22:13 UTC +00:00], ["date", Wed, 31 Oct 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Santa Barbara"], ["time", 2000-01-01 10:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Luis Obispo"], ["updated_at", Mon, 29 Oct 2012 02:22:13 UTC +00:00]]
+  [1m[35m (31.1ms)[0m  commit transaction
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 19:22:34 -0700
+Connecting to database specified by database.yml
+Processing by UserhomeController#index as HTML
+  [1m[36mTrip Load (0.7ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 0)[0m
+  Rendered trips/_trip.html.erb (0.3ms)
+  [1m[35mTrip Load (0.1ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 1)
+  Rendered trips/_trip.html.erb (0.9ms)
+  Rendered feed/_index.html.erb (62.5ms)
+  Rendered userhome/index.html.erb within layouts/application (119.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 200 OK in 788ms (Views: 563.4ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 19:22:36 -0700
+Served asset /application.css - 304 Not Modified (209ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 19:22:36 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (40ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /feed.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /scaffolds.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /sessions.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /userhome.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /trips.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /users.css - 304 Not Modified (38ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /welcome.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /jquery.js - 304 Not Modified (80ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /jquery-ui.js - 304 Not Modified (62ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /facebook.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /feed.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /sessions.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /trips.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /userhome.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /users.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /welcome.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 19:22:37 -0700
+Served asset /application.js - 304 Not Modified (104ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 19:22:39 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 304 Not Modified (130ms)
+
+
+Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-28 19:22:40 -0700
+Served asset /images/ui-icons_ffffff_256x240.png - 200 OK (51ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 19:22:40 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 304 Not Modified (4ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" for 127.0.0.1 at 2012-10-28 19:22:40 -0700
+Served asset /images/ui-bg_highlight-hard_100_f5f3e5_1x100.png - 200 OK (56ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-28 19:22:40 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 304 Not Modified (46ms)
+
+
+Started GET "/assets/images/ui-icons_8DC262_256x240.png" for 127.0.0.1 at 2012-10-28 19:22:40 -0700
+Served asset /images/ui-icons_8DC262_256x240.png - 200 OK (45ms)
+
+
+Started GET "/assets/images/ui-icons_eeeeee_256x240.png" for 127.0.0.1 at 2012-10-28 19:22:40 -0700
+Served asset /images/ui-icons_eeeeee_256x240.png - 200 OK (66ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 19:41:50 -0700
+Processing by UserhomeController#index as HTML
+  [1m[36mTrip Load (0.9ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 0)[0m
+  Rendered trips/_trip.html.erb (0.0ms)
+  [1m[35mTrip Load (0.3ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 1)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered feed/_index.html.erb (26.3ms)
+  Rendered userhome/index.html.erb within layouts/application (28.8ms)
+Compiled feed.css  (99ms)  (pid 8830)
+Compiled application.css  (68ms)  (pid 8830)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 200 OK in 401ms (Views: 399.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /application.css - 304 Not Modified (97ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /feed.css - 200 OK (10ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /users.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /welcome.css - 304 Not Modified (24ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:51 -0700
+Served asset /jquery-ui.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:52 -0700
+Served asset /facebook.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:52 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:52 -0700
+Served asset /sessions.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:52 -0700
+Served asset /trips.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:52 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:52 -0700
+Served asset /users.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:52 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 19:41:52 -0700
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 19:41:54 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" for 127.0.0.1 at 2012-10-28 19:41:54 -0700
+Served asset /images/ui-bg_highlight-hard_100_f5f3e5_1x100.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-28 19:41:54 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 304 Not Modified (6ms)
+
+
+Started GET "/assets/images/ui-icons_8DC262_256x240.png" for 127.0.0.1 at 2012-10-28 19:41:54 -0700
+Served asset /images/ui-icons_8DC262_256x240.png - 304 Not Modified (6ms)
+
+
+Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-28 19:41:55 -0700
+Served asset /images/ui-icons_ffffff_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 19:41:55 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 304 Not Modified (4ms)
+
+
+Started GET "/assets/images/ui-icons_eeeeee_256x240.png" for 127.0.0.1 at 2012-10-28 19:41:55 -0700
+Served asset /images/ui-icons_eeeeee_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 19:42:50 -0700
+Processing by UserhomeController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 0)[0m
+  Rendered trips/_trip.html.erb (161.5ms)
+  Rendered feed/_index.html.erb (185.0ms)
+  Rendered userhome/index.html.erb within layouts/application (187.3ms)
+Completed 500 Internal Server Error in 190ms
+
+ActionView::Template::Error (private method `format' called for Tue, 30 Oct 2012:Date):
+    14: <div id = "<%= trip.id %>" class = "text trip">
+    15: <div>From: <%= trip.from_string %> to: <%= trip.to_string %></div>
+    16: <div>
+    17: <div><%= trip.date.format("%m/%d/%y") %></div>
+    18: <div><%= trip.time %></div>
+    19: <div><%= trip.flag %></div>
+    20: </div>
+  app/views/trips/_trip.html.erb:17:in `_app_views_trips__trip_html_erb__392142012_83830320'
+  app/views/feed/_index.html.erb:12:in `block in _app_views_feed__index_html_erb__375139919_76486710'
+  app/views/feed/_index.html.erb:11:in `_app_views_feed__index_html_erb__375139919_76486710'
+  app/views/userhome/index.html.erb:55:in `_app_views_userhome_index_html_erb__511354452_75347810'
+
+
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (26.2ms)
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/oana/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (86.1ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Processing by UserhomeController#index as HTML
+  [1m[35mTrip Load (0.4ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 0)
+  Rendered trips/_trip.html.erb (1.9ms)
+  [1m[36mTrip Load (0.4ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 1)[0m
+  Rendered trips/_trip.html.erb (0.1ms)
+  Rendered feed/_index.html.erb (30.2ms)
+  Rendered userhome/index.html.erb within layouts/application (64.9ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+Completed 200 OK in 146ms (Views: 144.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /application.css - 304 Not Modified (55ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /feed.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /trips.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /userhome.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /jquery.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:38 -0700
+Served asset /jquery-ui.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:39 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:39 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:39 -0700
+Served asset /feed.js - 304 Not Modified (33ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:39 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:39 -0700
+Served asset /trips.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:39 -0700
+Served asset /userhome.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:39 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:39 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 19:43:39 -0700
+Served asset /application.js - 304 Not Modified (45ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 19:43:41 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" for 127.0.0.1 at 2012-10-28 19:43:41 -0700
+Served asset /images/ui-bg_highlight-hard_100_f5f3e5_1x100.png - 304 Not Modified (10ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-28 19:43:41 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 304 Not Modified (13ms)
+
+
+Started GET "/assets/images/ui-icons_8DC262_256x240.png" for 127.0.0.1 at 2012-10-28 19:43:41 -0700
+Served asset /images/ui-icons_8DC262_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-28 19:43:41 -0700
+Served asset /images/ui-icons_ffffff_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 19:43:41 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-icons_eeeeee_256x240.png" for 127.0.0.1 at 2012-10-28 19:43:41 -0700
+Served asset /images/ui-icons_eeeeee_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 19:47:57 -0700
+Processing by UserhomeController#index as HTML
+  [1m[35mTrip Load (0.6ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 0)
+  Rendered trips/_trip.html.erb (1.4ms)
+  [1m[36mTrip Load (0.6ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 1)[0m
+  Rendered trips/_trip.html.erb (0.1ms)
+  Rendered feed/_index.html.erb (13.4ms)
+  Rendered userhome/index.html.erb within layouts/application (17.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+Completed 200 OK in 77ms (Views: 75.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /userhome.css - 304 Not Modified (37ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /jquery.js - 304 Not Modified (58ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /jquery-ui.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /facebook.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /users.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 19:47:58 -0700
+Served asset /application.js - 304 Not Modified (36ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 19:48:01 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 304 Not Modified (5ms)
+
+
+Started GET "/assets/images/ui-icons_8DC262_256x240.png" for 127.0.0.1 at 2012-10-28 19:48:01 -0700
+Served asset /images/ui-icons_8DC262_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" for 127.0.0.1 at 2012-10-28 19:48:01 -0700
+Served asset /images/ui-bg_highlight-hard_100_f5f3e5_1x100.png - 304 Not Modified (8ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-28 19:48:01 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 304 Not Modified (10ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 19:48:01 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-28 19:48:01 -0700
+Served asset /images/ui-icons_ffffff_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-icons_eeeeee_256x240.png" for 127.0.0.1 at 2012-10-28 19:48:01 -0700
+Served asset /images/ui-icons_eeeeee_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 19:48:34 -0700
+Processing by UserhomeController#index as HTML
+  [1m[35mTrip Load (0.4ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 0)
+  Rendered trips/_trip.html.erb (1.1ms)
+  [1m[36mTrip Load (0.8ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 1)[0m
+  Rendered trips/_trip.html.erb (0.6ms)
+  Rendered feed/_index.html.erb (37.0ms)
+  Rendered userhome/index.html.erb within layouts/application (53.4ms)
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+Completed 200 OK in 133ms (Views: 128.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:35 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:35 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:35 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:35 -0700
+Served asset /scaffolds.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:35 -0700
+Served asset /trips.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:35 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:35 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:35 -0700
+Served asset /users.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:35 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:35 -0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:36 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:36 -0700
+Served asset /jquery-ui.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:36 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:36 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:36 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:36 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:36 -0700
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:36 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:36 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:36 -0700
+Served asset /application.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 19:48:38 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 304 Not Modified (27ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" for 127.0.0.1 at 2012-10-28 19:48:38 -0700
+Served asset /images/ui-bg_highlight-hard_100_f5f3e5_1x100.png - 304 Not Modified (4ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-28 19:48:38 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/images/ui-icons_8DC262_256x240.png" for 127.0.0.1 at 2012-10-28 19:48:38 -0700
+Served asset /images/ui-icons_8DC262_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 19:48:39 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-28 19:48:39 -0700
+Served asset /images/ui-icons_ffffff_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-icons_eeeeee_256x240.png" for 127.0.0.1 at 2012-10-28 19:48:39 -0700
+Served asset /images/ui-icons_eeeeee_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-10-28 19:48:52 -0700
+Processing by SessionsController#destroy as HTML
+  Rendered sessions/destroy.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:53 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:53 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:53 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:53 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:53 -0700
+Served asset /sessions.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:53 -0700
+Served asset /feed.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /jquery.js - 304 Not Modified (38ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /welcome.css - 304 Not Modified (70ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /users.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /jquery-ui.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /feed.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /sessions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /trips.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /users.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 19:48:54 -0700
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 19:49:07 -0700
+Processing by UserhomeController#index as HTML
+  [1m[35mTrip Load (0.5ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 0)
+  Rendered trips/_trip.html.erb (0.6ms)
+  [1m[36mTrip Load (0.3ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 1)[0m
+  Rendered trips/_trip.html.erb (0.5ms)
+  Rendered feed/_index.html.erb (32.8ms)
+  Rendered userhome/index.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 219ms (Views: 216.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (43ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /feed.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /scaffolds.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /trips.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /userhome.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /jquery-ui.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /feed.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /userhome.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /users.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 19:49:08 -0700
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 19:49:12 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-icons_8DC262_256x240.png" for 127.0.0.1 at 2012-10-28 19:49:12 -0700
+Served asset /images/ui-icons_8DC262_256x240.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" for 127.0.0.1 at 2012-10-28 19:49:12 -0700
+Served asset /images/ui-bg_highlight-hard_100_f5f3e5_1x100.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-28 19:49:12 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 19:49:12 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 304 Not Modified (10ms)
+
+
+Started GET "/assets/images/ui-icons_eeeeee_256x240.png" for 127.0.0.1 at 2012-10-28 19:49:12 -0700
+Served asset /images/ui-icons_eeeeee_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-28 19:49:12 -0700
+Served asset /images/ui-icons_ffffff_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-28 19:52:10 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 107ms (Views: 106.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /application.css - 304 Not Modified (49ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /scaffolds.css - 304 Not Modified (29ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /welcome.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /users.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /jquery-ui.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /trips.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /users.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:11 -0700
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 19:52:17 -0700
+Processing by UserhomeController#index as HTML
+  [1m[35mTrip Load (0.5ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 0)
+  Rendered trips/_trip.html.erb (0.2ms)
+  [1m[36mTrip Load (0.4ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 1)[0m
+  Rendered trips/_trip.html.erb (1.7ms)
+  Rendered feed/_index.html.erb (27.3ms)
+  Rendered userhome/index.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 110ms (Views: 100.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /application.css - 304 Not Modified (70ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /trips.css - 304 Not Modified (42ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /jquery-ui.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /feed.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /users.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 19:52:18 -0700
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 19:52:22 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" for 127.0.0.1 at 2012-10-28 19:52:22 -0700
+Served asset /images/ui-bg_highlight-hard_100_f5f3e5_1x100.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-28 19:52:22 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/images/ui-icons_8DC262_256x240.png" for 127.0.0.1 at 2012-10-28 19:52:22 -0700
+Served asset /images/ui-icons_8DC262_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 19:52:22 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 304 Not Modified (7ms)
+
+
+Started GET "/assets/images/ui-icons_eeeeee_256x240.png" for 127.0.0.1 at 2012-10-28 19:52:22 -0700
+Served asset /images/ui-icons_eeeeee_256x240.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-28 19:52:22 -0700
+Served asset /images/ui-icons_ffffff_256x240.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (60.4ms)[0m  DELETE FROM "trips"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (22.5ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Fri, 02 Nov 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Los Angeles"], ["time", 2000-01-01 17:15:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Santa Barbara"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[36m (34.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Wed, 31 Oct 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Luis Obispo"], ["time", 2000-01-01 18:30:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Santa Barbara"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[35m (16.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.1ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Wed, 31 Oct 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Thousand Oaks"], ["time", 2000-01-01 21:30:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Santa Barbara"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[36m (21.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Fri, 02 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Francisco"], ["time", 2000-01-01 23:15:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Santa Barbara"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[35m (15.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Diego"], ["time", 2000-01-01 15:45:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Santa Barbara"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[36m (25.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.5ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Santa Barbara"], ["time", 2000-01-01 09:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Los Angeles"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[35m (19.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Luis Obispo"], ["time", 2000-01-01 13:45:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Los Angeles"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[36m (17.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Thousand Oaks"], ["time", 2000-01-01 22:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Los Angeles"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[35m (15.6ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Fri, 02 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Francisco"], ["time", 2000-01-01 16:15:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Los Angeles"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[36m (40.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.1ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Wed, 31 Oct 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Diego"], ["time", 2000-01-01 09:45:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Los Angeles"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[35m (15.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Wed, 31 Oct 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Santa Barbara"], ["time", 2000-01-01 17:15:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Luis Obispo"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[36m (15.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Los Angeles"], ["time", 2000-01-01 16:30:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Luis Obispo"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[35m (20.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Thousand Oaks"], ["time", 2000-01-01 18:45:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Luis Obispo"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[36m (46.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Fri, 02 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Francisco"], ["time", 2000-01-01 22:45:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Luis Obispo"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[35m (18.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Tue, 30 Oct 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Diego"], ["time", 2000-01-01 23:30:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Luis Obispo"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[36m (24.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Fri, 02 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Santa Barbara"], ["time", 2000-01-01 12:45:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Thousand Oaks"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[35m (36.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.9ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Wed, 31 Oct 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Los Angeles"], ["time", 2000-01-01 18:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Thousand Oaks"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[36m (17.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00], ["date", Tue, 30 Oct 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Luis Obispo"], ["time", 2000-01-01 12:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Thousand Oaks"], ["updated_at", Mon, 29 Oct 2012 03:30:07 UTC +00:00]]
+  [1m[35m (44.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Francisco"], ["time", 2000-01-01 23:45:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Thousand Oaks"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[36m (31.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Tue, 30 Oct 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Diego"], ["time", 2000-01-01 13:45:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "Thousand Oaks"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[35m (15.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (7.5ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Fri, 02 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Santa Barbara"], ["time", 2000-01-01 17:15:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Francisco"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[36m (25.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Los Angeles"], ["time", 2000-01-01 10:15:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Francisco"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[35m (21.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Luis Obispo"], ["time", 2000-01-01 22:30:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Francisco"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[36m (18.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Fri, 02 Nov 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Thousand Oaks"], ["time", 2000-01-01 08:15:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Francisco"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[35m (28.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Diego"], ["time", 2000-01-01 17:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Francisco"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[36m (32.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Tue, 30 Oct 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Santa Barbara"], ["time", 2000-01-01 06:15:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Diego"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[35m (26.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.1ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Tue, 30 Oct 2012], ["flag", 1], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Los Angeles"], ["time", 2000-01-01 14:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Diego"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[36m (25.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Luis Obispo"], ["time", 2000-01-01 10:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Diego"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[35m (33.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.2ms)[0m  INSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Thu, 01 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "Thousand Oaks"], ["time", 2000-01-01 19:00:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Diego"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[36m (32.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "trips" ("created_at", "date", "flag", "from_latitude", "from_longitude", "from_string", "time", "to_latitude", "to_longitude", "to_string", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00], ["date", Fri, 02 Nov 2012], ["flag", 0], ["from_latitude", nil], ["from_longitude", nil], ["from_string", "San Francisco"], ["time", 2000-01-01 21:45:00 UTC], ["to_latitude", nil], ["to_longitude", nil], ["to_string", "San Diego"], ["updated_at", Mon, 29 Oct 2012 03:30:08 UTC +00:00]]
+  [1m[35m (32.0ms)[0m  commit transaction
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-28 20:30:30 -0700
+Connecting to database specified by database.yml
+Processing by UserhomeController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 0)[0m
+  Rendered trips/_trip.html.erb (9.9ms)
+  Rendered trips/_trip.html.erb (3.0ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (4.9ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.5ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.6ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (7.2ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  [1m[35mTrip Load (0.8ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 1)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.6ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (6.8ms)
+  Rendered trips/_trip.html.erb (0.0ms)
+  Rendered feed/_index.html.erb (168.2ms)
+  Rendered userhome/index.html.erb within layouts/application (219.4ms)
+Completed 200 OK in 818ms (Views: 624.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /application.css - 304 Not Modified (192ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /sessions.css - 304 Not Modified (36ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /feed.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /trips.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /userhome.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /users.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /welcome.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /jquery.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /jquery-ui.js - 304 Not Modified (51ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /facebook.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /feed.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:33 -0700
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:34 -0700
+Served asset /trips.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:34 -0700
+Served asset /userhome.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:34 -0700
+Served asset /users.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:34 -0700
+Served asset /welcome.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 20:30:34 -0700
+Served asset /application.js - 304 Not Modified (88ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-28 20:30:38 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 304 Not Modified (20ms)
+
+
+Started GET "/assets/images/ui-icons_8DC262_256x240.png" for 127.0.0.1 at 2012-10-28 20:30:38 -0700
+Served asset /images/ui-icons_8DC262_256x240.png - 304 Not Modified (188ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" for 127.0.0.1 at 2012-10-28 20:30:38 -0700
+Served asset /images/ui-bg_highlight-hard_100_f5f3e5_1x100.png - 304 Not Modified (22ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-28 20:30:38 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-28 20:30:38 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 304 Not Modified (17ms)
+
+
+Started GET "/assets/images/ui-icons_eeeeee_256x240.png" for 127.0.0.1 at 2012-10-28 20:30:38 -0700
+Served asset /images/ui-icons_eeeeee_256x240.png - 304 Not Modified (10ms)
+
+
+Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-28 20:30:38 -0700
+Served asset /images/ui-icons_ffffff_256x240.png - 304 Not Modified (19ms)
+
+
+Started GET "/assets/images/ui-bg_gloss-wave_100_ece8da_500x100.png" for 127.0.0.1 at 2012-10-28 20:31:11 -0700
+Served asset /images/ui-bg_gloss-wave_100_ece8da_500x100.png - 200 OK (49ms)
+
+
+Started GET "/assets/images/ui-bg_glass_55_fcf0ba_1x400.png" for 127.0.0.1 at 2012-10-28 20:31:11 -0700
+Served asset /images/ui-bg_glass_55_fcf0ba_1x400.png - 200 OK (42ms)
+
+
+Started GET "/assets/images/ui-icons_847e71_256x240.png" for 127.0.0.1 at 2012-10-28 20:31:11 -0700
+Served asset /images/ui-icons_847e71_256x240.png - 200 OK (49ms)

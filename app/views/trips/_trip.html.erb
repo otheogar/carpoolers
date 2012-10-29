@@ -14,10 +14,6 @@ $(function()
 <div id = "<%= trip.id %>" class = "text trip">
 <div>From: <%= trip.from_string %> to: <%= trip.to_string %></div>
 <div>
-<div><%= trip.from_string %></div>
-<div><%= trip.to_string %></div>
-<div><%= trip.date %></div>
-<div><%= trip.time %></div>
-<div><%= trip.flag %></div>
+<div>Depart on <%= trip.date.strftime("%m/%d/%y") %> at <%= trip.time.strftime("%I:%M %p") %></div>
 </div>
 </div>
