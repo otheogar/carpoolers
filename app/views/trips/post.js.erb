@@ -1,0 +1,12 @@
+
+<%if (new_trip.flag == 0) %>
+$("#passengers_feed").append('<%=j render(new_trip) %>');
+$("#<%=new_trip.id%>").hide();
+$("#<%=new_trip.id%>").fadeIn(2000);
+$("#passengers_feed").scrollTop(0);
+<%else%>
+$("drivers_feed").append('<%=j render(new_trip) %>');
+$("#<%=new_trip.id%>").hide();
+$("#<%=new_trip.id%>").fadeIn(2000);
+$("#drivers_feed").scrollTop(0);
+<%end%>

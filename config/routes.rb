@@ -6,6 +6,7 @@ Carpool::Application.routes.draw do
   get "userhome/index", :as => 'userhome'
   
   match '/search' => 'userhome#search', :as => 'search'
+  match '/trippost' => 'trips#create', :as => 'trippost'
   
 
 

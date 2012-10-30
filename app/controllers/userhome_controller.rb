@@ -6,6 +6,7 @@ class UserhomeController < ApplicationController
   end
   def search
     trips_passengers_result = Array.new;
+    trips_drivers_result = Array.new;
    search_date_formatted = Date.parse(params[:search_date])
    # render :text => search_date_formatted
     if (params[:role] == "driver")
@@ -14,7 +15,7 @@ class UserhomeController < ApplicationController
       trips_drivers_result = Trip.where("from_string = ? AND to_string = ? AND flag  = ?", params[:search_from], params[:search_to],0)
 
     end
-    feed = ((params[:role] == "driver") ? 0:1 )
+    feed = ((params[:role] == "driver") ? 0:1)
     respond_to do |format|
       format.html { redirect_to(userhome_url) }
       format.js do

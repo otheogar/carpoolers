@@ -1,3 +1,60 @@
+<script>
+$(function()
+{
+	$("#search_menu").hide();
+	var menu_open = 0;
+	$("#search_button").button().click(function(event) { 
+	if (menu_open == 0)
+	{
+	 $("#post_menu").fadeOut();
+	 $("#search_menu").fadeIn();
+	 menu_open = 1;
+	}else
+	{
+     $("#search_menu").fadeOut();
+	 menu_open = 0;
+	}
+	
+	});
+	
+	$("#post_menu").hide();
+	$("#post_button").button().click(function(event)
+	{
+	if (menu_open == 0)
+	{
+	 $("#search_menu").fadeOut();
+	 $("#post_menu").fadeIn();
+	 menu_open = 1;
+	}else
+	{
+     $("#post_menu").fadeOut();
+	 menu_open = 0;
+	}
+	
+	});
+	
+	$("#profile_button").button();
+    $("#pending_button").button();
+	$("#search_date").datepicker();
+	$("#role_div").buttonset();
+	$("#search_menu :submit").button();
+	$("#post_menu :submit").button();
+	$("#post_date").datepicker();
+	
+})
+</script>
+<div id="wrapper">
+<h1>Welcome to Your Homepage</h1>
+<p>Live Feeds for Carpooling!</p>
+<div id = "menu">
+<input type="checkbox" id="search_button"/><label for="search_button">Search for Rides</label>
+<button id="post_button">Post Ride</button>
+<button id="profile_button">Edit Profile</button>
+<button id="pending_button">Pending connect Requests</button>
+</div>
+
+
+
 <%= form_for(@trip) do |f| %>
   <% if @trip.errors.any? %>
     <div id="error_explanation">
@@ -11,30 +68,57 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :from_string %><br />
+<div id="search_menu" class = " ui-corner-all">
+<%= form_tag("/search", :method => "get", :remote=>true) do %>  
+	<div class="field">
+    <%= f.label :from %><br />
     <%= f.text_field :from_string %>
   </div>
   <div class="field">
-    <%= f.label :to_string %><br />
+    <%= f.label :to %><br />
     <%= f.text_field :to_string %>
   </div>
+
   <div class="field">
-    <%= f.label :from_longitude %><br />
-    <%= f.text_field :from_longitude %>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :from_latitude %><br />
-    <%= f.text_field :from_latitude %>
+    <%= f.label :time %><br />
+    <%= f.time_select :time %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %> 
+</div>
+ <% end %> 
+  <%= form_for(@trip) do |f| %>
+  <% if @trip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+
+      <ul>
+      <% @trip.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<div id="post_menu" class = " ui-corner-all">
+<%= form_tag("/post", :method => "post", :remote=>true) do %>
+  
+  <div class="field">
+    <%= f.label :from %><br />
+    <%= f.text_field :from_string %>
   </div>
   <div class="field">
-    <%= f.label :to_longitude %><br />
-    <%= f.text_field :to_longitude %>
+    <%= f.label :to %><br />
+    <%= f.text_field :to_string %>
   </div>
-  <div class="field">
-    <%= f.label :to_latitude %><br />
-    <%= f.text_field :to_latitude %>
-  </div>
+
   <div class="field">
     <%= f.label :date %><br />
     <%= f.date_select :date %>
@@ -50,4 +134,9 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+ <% end %> 
+</div>
+
 <% end %>
+<%= render :partial => "/feed/index", :locals => { :trips_passengers => @trips_passengers, :trips_drivers => @trips_drivers } %>
+
