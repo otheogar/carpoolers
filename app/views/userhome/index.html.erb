@@ -4,9 +4,11 @@ $(function()
 {
 	$("#search_menu").hide();
 	var menu_open = 0;
-	$("#search_button").button().click(function(event) { 
+	$("#search_button").button().click(function(event) {
 	if (menu_open == 0)
 	{
+        $("#post_menu").fadeOut();
+        post_menu_open = 0;
 	 $("#search_menu").fadeIn();
 	 menu_open = 1;
 	}else
@@ -14,9 +16,24 @@ $(function()
      $("#search_menu").fadeOut();
 	 menu_open = 0;
 	}
-	
 	});
 	$("#post_button").button();
+    $("#post_menu").hide();
+    var post_menu_open = 0;
+    $("#post_button").button().click(function(event) {
+        if (post_menu_open == 0)
+        {
+            $("#search_menu").fadeOut();
+            menu_open = 0;
+            $("#post_menu").fadeIn();
+            post_menu_open = 1;
+        }else
+        {
+            $("#post_menu").fadeOut();
+            post_menu_open = 0;
+        }
+    });
+
 	$("#profile_button").button();
     $("#pending_button").button();
 	$("#search_date").datepicker();
@@ -45,7 +62,7 @@ $(function()
         <%= radio_button_tag(:role, "driver") %>
         <%= label_tag(:role_driver, "Driver") %>
   </div>
-  <div>Looking for a ride
+  <div>
   <%= label_tag(:search_from, "From:") %>
   <%= text_field_tag(:search_from) %>
   <%= label_tag(:search_to, "To:") %>
@@ -58,9 +75,28 @@ $(function()
   <%= submit_tag("Search") %>
 <% end %>
 </div>
+  <div id="post_menu" class = " ui-corner-all">
+    <%= form_tag("/trippost", :method => "post", :remote=>true) do %>
+        <%= label_tag(:post_from, "From:") %>
+        <%= text_field_tag(:post_from) %>
+        <%= label_tag(:post_to, "To:") %>
+        <%= text_field_tag(:post_to) %>
+        <%= label_tag(:post_date, "Date:") %>
+        <%= text_field_tag(:post_date) %>
+        <%= label_tag(:post_time, "Time:") %>
+        <%= text_field_tag(:post_time) %>
+        <div id = "role_div">
+          <%= radio_button_tag(:role, "passenger") %>
+          <%= label_tag(:role_passenger, "Passenger") %>
+          <%= radio_button_tag(:role, "driver") %>
+          <%= label_tag(:role_driver, "Driver") %>
+        </div>
+        <%= submit_tag("Post") %>
+    <% end %>
+  </div>
   <div id="feeds_wrapper">
     <div id = "drivers_feed_wrapper" class= "feed ui-corner-all">
-      <h3 style = "text-align:center">Looking for Passengers!</h3>
+      <h3 style = "text-align:center">Drivers</h3>
     <div id = "drivers_feed" style ="overflow:scroll;" class = "feed-inside">
       <% for item in @trips_drivers %>
           <div><%= render(item) %></div>
@@ -68,7 +104,7 @@ $(function()
     </div>
     </div>
     <div id = "passengers_feed_wrapper" class= "feed ui-corner-all">
-      <h3 style = "text-align:center">Looking for Drivers!</h3>
+      <h3 style = "text-align:center">Passengers</h3>
     <div id = "passengers_feed" style ="overflow:scroll;"  class = "feed-inside">
       <% for item in @trips_passengers %>
           <div><%= render(item) %></div>

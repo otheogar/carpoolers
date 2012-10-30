@@ -3,9 +3,10 @@ Carpool::Application.routes.draw do
 
   resources :trips
 
-  get "userhome/index", :as => 'home'
+  get "userhome/index", :as => 'userhome'
   
   match '/search' => 'userhome#search', :as => 'search'
+  match '/trippost' => 'trips#create', :as => 'trippost'
   
 
 
