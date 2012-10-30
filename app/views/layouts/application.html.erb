@@ -21,16 +21,21 @@
         });
 
         function get_status(){
-            if (document.getElementById("sign_out")) {return;}
+            console.log("in status");
+            <% if !current_user%>
+            //only need to redirect if there is no current_user info
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
-                    // the user is logged in and has authenticated app -
-                    // need to get his info in server session
-                    //if no current_user (use the html elem sign_out
-                    window.location = '/auth/facebook/callback';
+                        // the user is logged in and has authenticated app -
+                        // need to get his info in server session
+                        //if no current_user
+                        window.location = '/auth/facebook/callback';
                 }
             });
+            <%end%>
         };
+
+        get_status();
     };
 
 

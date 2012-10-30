@@ -30048,3 +30048,1621 @@ Served asset /images/ui-icons_eeeeee_256x240.png - 304 Not Modified (0ms)
 
 Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-29 17:50:01 -0700
 Served asset /images/ui-icons_ffffff_256x240.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 21:34:28 -0700
+Connecting to database specified by database.yml
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 1086ms (Views: 1085.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /application.css - 200 OK (121ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /trips.css - 200 OK (6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /scaffolds.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 200 OK (18ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /feed.css - 200 OK (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /sessions.css - 200 OK (2ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /userhome.css - 200 OK (22ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /welcome.css - 200 OK (6ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /users.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /jquery.js - 200 OK (62ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /jquery_ujs.js - 200 OK (19ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /jquery-ui.js - 200 OK (66ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /facebook.js - 200 OK (10ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /feed.js - 200 OK (9ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /sessions.js - 200 OK (38ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:31 -0700
+Served asset /trips.js - 200 OK (1ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:32 -0700
+Served asset /userhome.js - 200 OK (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:32 -0700
+Served asset /users.js - 200 OK (10ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:32 -0700
+Served asset /welcome.js - 200 OK (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 21:34:32 -0700
+Served asset /application.js - 200 OK (111ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-29 21:36:53 -0700
+Processing by UserhomeController#index as HTML
+  [1m[36mTrip Load (0.6ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 0)[0m
+  Rendered trips/_trip.html.erb (3.5ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.0ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.5ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  [1m[35mTrip Load (0.5ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 1)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (3.8ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered userhome/index.html.erb within layouts/application (133.2ms)
+Completed 200 OK in 348ms (Views: 149.4ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 21:36:53 -0700
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /userhome.css - 304 Not Modified (42ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /welcome.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /jquery.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /jquery-ui.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /users.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 21:36:54 -0700
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-29 21:36:55 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 200 OK (59ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" for 127.0.0.1 at 2012-10-29 21:36:55 -0700
+Served asset /images/ui-bg_highlight-hard_100_f5f3e5_1x100.png - 200 OK (45ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-29 21:36:55 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 200 OK (50ms)
+
+
+Started GET "/assets/images/ui-icons_8DC262_256x240.png" for 127.0.0.1 at 2012-10-29 21:36:55 -0700
+Served asset /images/ui-icons_8DC262_256x240.png - 200 OK (34ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-29 21:36:55 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 200 OK (19ms)
+
+
+Started GET "/assets/images/ui-icons_eeeeee_256x240.png" for 127.0.0.1 at 2012-10-29 21:36:55 -0700
+Served asset /images/ui-icons_eeeeee_256x240.png - 200 OK (25ms)
+
+
+Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-29 21:36:55 -0700
+Served asset /images/ui-icons_ffffff_256x240.png - 200 OK (35ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:14:47 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:14:47 -0700
+Served asset /application.css - 304 Not Modified (50ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /trips.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /feed.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /jquery-ui.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /feed.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /trips.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /userhome.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:14:48 -0700
+Served asset /application.js - 304 Not Modified (22ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Served asset /userhome.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Served asset /welcome.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:01 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:02 -0700
+Served asset /jquery-ui.js - 304 Not Modified (42ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:02 -0700
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:02 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:02 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:02 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:02 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:02 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:02 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:02 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:02 -0700
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /scaffolds.css - 304 Not Modified (33ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /sessions.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /users.css - 304 Not Modified (50ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /jquery.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /jquery-ui.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /facebook.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:14 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:15 -0700
+Served asset /sessions.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:15 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:15 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:15 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:15 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:15 -0700
+Served asset /application.js - 304 Not Modified (40ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 85ms (Views: 85.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /sessions.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /scaffolds.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /userhome.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /welcome.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /jquery.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:18:59 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:19:00 -0700
+Served asset /facebook.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:19:00 -0700
+Served asset /jquery-ui.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:19:00 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:19:00 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:19:00 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:19:00 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:19:00 -0700
+Served asset /users.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:19:00 -0700
+Served asset /welcome.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:19:00 -0700
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:20:10 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 48ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:10 -0700
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:10 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:10 -0700
+Served asset /sessions.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /userhome.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /users.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /jquery.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /jquery-ui.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /facebook.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /userhome.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:11 -0700
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-10-29 22:20:14 -0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '310589' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (17.0ms)[0m  [1mINSERT INTO "users" ("created_at", "date_of_birth", "email", "gender", "id", "name", "oauth_expires_at", "oauth_token", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 30 Oct 2012 05:20:16 UTC +00:00], ["date_of_birth", nil], ["email", "oanacatu@umail.ucsb.edu"], ["gender", "female"], ["id", nil], ["name", "Oana Theogarajan"], ["oauth_expires_at", Tue, 30 Oct 2012 06:59:57 UTC +00:00], ["oauth_token", "AAAGzq6gpk0oBAJpVefwanf7c2bAaRrL61opYOyW3ErQcKTdIcmEEsbRsvb4pT7ZAzE1JycBUfNn7PHVdSWqZAxrkoxvkRDHU02YFmtKgZDZD"], ["provider", "facebook"], ["uid", "310589"], ["updated_at", Tue, 30 Oct 2012 05:20:16 UTC +00:00]]
+  [1m[35m (36.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/userhome/index
+Completed 302 Found in 184ms (ActiveRecord: 56.4ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-29 22:20:16 -0700
+Processing by UserhomeController#index as HTML
+  [1m[36mTrip Load (1.3ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 0)[0m
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.8ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.6ms)
+  Rendered trips/_trip.html.erb (5.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  [1m[35mTrip Load (0.4ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 1)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (1.0ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (1.6ms)
+  Rendered trips/_trip.html.erb (0.9ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered userhome/index.html.erb within layouts/application (94.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+Completed 200 OK in 139ms (Views: 136.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:16 -0700
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:16 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:16 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:16 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:16 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:16 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /welcome.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /jquery-ui.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /feed.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:20:17 -0700
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:27:42 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 127ms (Views: 126.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /feed.css - 200 OK (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 200 OK (7ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /userhome.css - 200 OK (4ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /trips.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /jquery.js - 200 OK (26ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /welcome.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /jquery_ujs.js - 200 OK (5ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /jquery-ui.js - 200 OK (2ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /facebook.js - 200 OK (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /trips.js - 200 OK (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /sessions.js - 200 OK (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /feed.js - 200 OK (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /userhome.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /welcome.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:27:43 -0700
+Served asset /application.js - 200 OK (30ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:29:04 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 83ms (Views: 82.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /feed.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /welcome.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /users.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /jquery-ui.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /trips.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /userhome.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:29:05 -0700
+Served asset /application.js - 304 Not Modified (29ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:34:41 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 59ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /feed.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /trips.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /sessions.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /users.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /jquery.js - 304 Not Modified (35ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /jquery-ui.js - 304 Not Modified (58ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:42 -0700
+Served asset /application.js - 304 Not Modified (165ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:43 -0700
+Served asset /welcome.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:34:43 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:36:55 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 68ms (Views: 67.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:36:55 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:36:55 -0700
+Served asset /scaffolds.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:36:55 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:36:55 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /trips.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /jquery-ui.js - 304 Not Modified (59ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /feed.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /sessions.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /userhome.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:36:56 -0700
+Served asset /application.js - 304 Not Modified (23ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-10-29 22:37:00 -0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '310589' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  UPDATE "users" SET "oauth_expires_at" = '2012-10-30 06:59:58.000000', "updated_at" = '2012-10-30 05:37:01.389997' WHERE "users"."uid" = '310589'
+  [1m[36m (51.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/userhome/index
+Completed 302 Found in 64ms (ActiveRecord: 54.1ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-29 22:37:01 -0700
+Processing by UserhomeController#index as HTML
+  [1m[35mTrip Load (0.7ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 0)
+  Rendered trips/_trip.html.erb (3.6ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.7ms)
+  Rendered trips/_trip.html.erb (0.5ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (2.2ms)
+  [1m[36mTrip Load (0.6ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 1)[0m
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (3.5ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.1ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.5ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered userhome/index.html.erb within layouts/application (131.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+Completed 200 OK in 180ms (Views: 177.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /application.css - 304 Not Modified (157ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /feed.css - 304 Not Modified (44ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /trips.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /jquery.js - 304 Not Modified (62ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /jquery-ui.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /trips.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:02 -0700
+Served asset /application.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_15_459e00_1x100.png" for 127.0.0.1 at 2012-10-29 22:37:06 -0700
+Served asset /images/ui-bg_highlight-hard_15_459e00_1x100.png - 200 OK (2ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-soft_25_67b021_1x100.png" for 127.0.0.1 at 2012-10-29 22:37:06 -0700
+Served asset /images/ui-bg_highlight-soft_25_67b021_1x100.png - 200 OK (25ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_fafaf4_1x100.png" for 127.0.0.1 at 2012-10-29 22:37:07 -0700
+Served asset /images/ui-bg_highlight-hard_100_fafaf4_1x100.png - 200 OK (0ms)
+
+
+Started GET "/assets/images/ui-bg_highlight-hard_100_f5f3e5_1x100.png" for 127.0.0.1 at 2012-10-29 22:37:07 -0700
+Served asset /images/ui-bg_highlight-hard_100_f5f3e5_1x100.png - 200 OK (0ms)
+
+
+Started GET "/assets/images/ui-icons_8DC262_256x240.png" for 127.0.0.1 at 2012-10-29 22:37:07 -0700
+Served asset /images/ui-icons_8DC262_256x240.png - 200 OK (0ms)
+
+
+Started GET "/assets/images/ui-icons_ffffff_256x240.png" for 127.0.0.1 at 2012-10-29 22:37:07 -0700
+Served asset /images/ui-icons_ffffff_256x240.png - 200 OK (0ms)
+
+
+Started GET "/assets/images/ui-icons_eeeeee_256x240.png" for 127.0.0.1 at 2012-10-29 22:37:07 -0700
+Served asset /images/ui-icons_eeeeee_256x240.png - 200 OK (0ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-10-29 22:37:21 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:37:21 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 65ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /feed.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /scaffolds.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /welcome.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /jquery-ui.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:37:22 -0700
+Served asset /application.js - 304 Not Modified (40ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-10-29 22:38:00 -0700
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '310589' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (9.4ms)[0m  [1mUPDATE "users" SET "oauth_token" = 'AAAGzq6gpk0oBAMlZBucIdqryo7skeX8O3ZBqKUNCsZBBSevnbtZAwDUUtGtaSl2zEkT0PShZBsYJg7e90Xe1b5KWgbVF4EQdbVrNs48DZCUgZDZD', "oauth_expires_at" = '2012-10-30 06:59:57.000000', "updated_at" = '2012-10-30 05:38:01.971633' WHERE "users"."uid" = '310589'[0m
+  [1m[35m (138.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/userhome/index
+Completed 302 Found in 158ms (ActiveRecord: 148.4ms)
+
+
+Started GET "/userhome/index" for 127.0.0.1 at 2012-10-29 22:38:02 -0700
+Processing by UserhomeController#index as HTML
+  [1m[36mTrip Load (0.7ms)[0m  [1mSELECT "trips".* FROM "trips" WHERE (flag = 0)[0m
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.0ms)
+  Rendered trips/_trip.html.erb (0.8ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.2ms)
+  [1m[35mTrip Load (0.2ms)[0m  SELECT "trips".* FROM "trips" WHERE (flag = 1)
+  Rendered trips/_trip.html.erb (0.2ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (5.6ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.5ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered trips/_trip.html.erb (0.3ms)
+  Rendered trips/_trip.html.erb (0.9ms)
+  Rendered trips/_trip.html.erb (0.4ms)
+  Rendered userhome/index.html.erb within layouts/application (160.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "310589"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "310589"]]
+Completed 200 OK in 206ms (Views: 197.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:02 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:02 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:02 -0700
+Served asset /trips.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:02 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:02 -0700
+Served asset /feed.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:02 -0700
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:02 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:02 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /welcome.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /jquery.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /jquery-ui.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /feed.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /sessions.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:03 -0700
+Served asset /application.js - 304 Not Modified (27ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2012-10-29 22:38:15 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-29 22:38:15 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:15 -0700
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/jquery-ui-1.9.0.custom.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:15 -0700
+Served asset /jquery-ui-1.9.0.custom.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/feed.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /feed.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /trips.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /userhome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /welcome.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /users.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/feed.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /feed.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /jquery-ui.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trips.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /trips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userhome.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /userhome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-29 22:38:16 -0700
+Served asset /application.js - 304 Not Modified (11ms)
