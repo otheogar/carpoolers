@@ -1,25 +1,14 @@
-
-<%if (updated_feed == 1) %>
 $("#passengers_feed").html("");
-<% if (trip_passengers_list.length == 0) %>
-$("#passengers_feed").html("No results found");
-<%end%>
 <% for item in trip_passengers_list %>
 $("#passengers_feed").append('<%=j render(item) %>');
 $("#<%=item.id%>").hide();
-$("#<%=item.id%>").fadeIn(2000);
+$("#<%=item.id%>").fadeIn(500);
 <% end %>
 $("#passengers_feed").scrollTop(0);
-<%else%>
 $("#drivers_feed").html("");
-
-<% if (trip_drivers_list.length == 0) %>
-$("#drivers_feed").html("No results found");
-<%end%>
 <% for item in trip_drivers_list %>
 $("#drivers_feed").append('<%=j render(item) %>');
 $("#<%=item.id%>").hide();
-$("#<%=item.id%>").fadeIn(2000);
+$("#<%=item.id%>").fadeIn(500);
 <% end %>
 $("#drivers_feed").scrollTop(0);
-<%end%>

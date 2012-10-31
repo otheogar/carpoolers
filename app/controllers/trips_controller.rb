@@ -43,7 +43,7 @@ class TripsController < ApplicationController
   # POST /trips
   # POST /trips.json
   def create
-    @trip = Trip.new(from_string: params[:post_from],to_string: params[:post_to],date: Date.parse(params[:post_date]),flag: params[:role]='driver'?1:0,time: Time.parse(params[:post_time]))
+    @trip = Trip.new(from_string: params[:post_from],to_string: params[:post_to],date: Date.parse(params[:post_date]),flag: params[:rolepost]=='driver'?0:1,time: Time.parse(params[:post_time]))
 
     respond_to do |format|
       if @trip.save
@@ -54,9 +54,6 @@ class TripsController < ApplicationController
         end
       else
         format.html { render action: "new" }
-        format.js do
-          render "post", :locals => {:new_trip => @trip}
-          end
         format.json { render json: @trip.errors, status: :unprocessable_entity }
       end
     end

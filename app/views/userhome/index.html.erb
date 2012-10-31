@@ -7,7 +7,7 @@ $(function()
 	$("#search_button").button().click(function(event) {
 	if (menu_open == 0)
 	{
-        $("#post_menu").fadeOut();
+        $("#post_menu").hide();
         post_menu_open = 0;
 	 $("#search_menu").fadeIn();
 	 menu_open = 1;
@@ -23,28 +23,46 @@ $(function()
     $("#post_button").button().click(function(event) {
         if (post_menu_open == 0)
         {
-            $("#search_menu").fadeOut();
+            $("#search_menu").hide();
+            $("#search_button").removeAttr('checked');
             menu_open = 0;
             $("#post_menu").fadeIn();
             post_menu_open = 1;
+            $.ajax(
+            {
+                url:"/reload_feed"
+            }).done(function() {
+            });
         }else
         {
             $("#post_menu").fadeOut();
             post_menu_open = 0;
         }
     });
+    setInterval(function()
+    {
+        var data_url = "passenger_update=" +  $("#passenger_last_update").html() + "&driver_update=" +   $("#driver_last_update").html();
+        $.ajax(  {
+                url: "/fetch_new",
+                data: data_url
+        } );
 
+    },10000);
 	$("#profile_button").button();
     $("#pending_button").button();
 	$("#search_date").datepicker();
 	$("#role_div").buttonset();
+    $("#role_div_post").buttonset();
 	$("#search_menu :submit").button();
+    $("#post_menu :submit").button();
 
     $("#passengers_feed").scrollTop(0);
     $("#drivers_feed").scrollTop(0);
 })
 </script>
 <div id="wrapper">
+<div hidden="true" id="passenger_last_update"><%= @passenger_last_update %></div>
+<div hidden="true" id="driver_last_update"><%= @driver_last_update %></div>
 <h1>Welcome to Your Homepage</h1>
 <p>Live Feeds for Carpooling!</p>
 <div id = "menu">
@@ -56,7 +74,7 @@ $(function()
 <div id="search_menu" class = " ui-corner-all">
 <%= form_tag("/search", :method => "get", :remote=>true) do %>
   <div id = "role_div">
-        I am a
+        Searching for a
         <%= radio_button_tag(:role, "passenger") %>
         <%= label_tag(:role_passenger, "Passenger") %>
         <%= radio_button_tag(:role, "driver") %>
@@ -85,11 +103,11 @@ $(function()
         <%= text_field_tag(:post_date) %>
         <%= label_tag(:post_time, "Time:") %>
         <%= text_field_tag(:post_time) %>
-        <div id = "role_div">
-          <%= radio_button_tag(:role, "passenger") %>
-          <%= label_tag(:role_passenger, "Passenger") %>
-          <%= radio_button_tag(:role, "driver") %>
-          <%= label_tag(:role_driver, "Driver") %>
+        <div id = "role_div_post">
+          <%= radio_button_tag(:rolepost, "passenger") %>
+          <%= label_tag(:rolepost_passenger, "Passenger") %>
+          <%= radio_button_tag(:rolepost, "driver") %>
+          <%= label_tag(:rolepost_driver, "Driver") %>
         </div>
         <%= submit_tag("Post") %>
     <% end %>
