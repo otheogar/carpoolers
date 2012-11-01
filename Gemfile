@@ -25,7 +25,7 @@ gem 'jquery-ui-rails'
 
 
 gem 'omniauth-facebook', '1.4.0'
-
+gem 'devise', '2.1.2'
 
 
 # To use ActiveModel has_secure_password

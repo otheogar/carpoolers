@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+	session[:user_id] = nil
+	sleep 3
     redirect_to welcome_url
   end
 end

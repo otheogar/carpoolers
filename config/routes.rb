@@ -1,4 +1,6 @@
 Carpool::Application.routes.draw do
+  devise_for :user_logins
+
   get "feed/index"
 
   resources :trips
@@ -17,6 +19,8 @@ Carpool::Application.routes.draw do
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
+  
+  
   resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
