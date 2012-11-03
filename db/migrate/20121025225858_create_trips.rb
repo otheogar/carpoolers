@@ -10,8 +10,10 @@ class CreateTrips < ActiveRecord::Migration
       t.date :date
       t.time :time
       t.integer :flag
-
+	  
       t.timestamps
     end
   end
+  
+  
 end

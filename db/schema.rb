@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101064308) do
+ActiveRecord::Schema.define(:version => 20121103071416) do
+
+  create_table "trip_requests", :force => true do |t|
+    t.integer  "req_id"
+    t.integer  "trip_id"
+    t.integer  "accepted_flag"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "trips", :force => true do |t|
     t.string   "from_string"
@@ -23,8 +31,9 @@ ActiveRecord::Schema.define(:version => 20121101064308) do
     t.date     "date"
     t.time     "time"
     t.integer  "flag"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "availabilty",    :default => 1
   end
 
   create_table "user_logins", :force => true do |t|
@@ -40,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20121101064308) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "userid"
   end
 
   add_index "user_logins", ["email"], :name => "index_user_logins_on_email", :unique => true

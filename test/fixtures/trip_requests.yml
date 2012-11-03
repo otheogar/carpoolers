@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  req_id: 1
+  trip_id: 1
+  accepted_flag: 1
+
+two:
+  req_id: 1
+  trip_id: 1
+  accepted_flag: 1

@@ -1,7 +1,8 @@
 class UserhomeController < ApplicationController
+  before_filter :authenticate_user_login!
   def index
-  @trips_passengers = Trip.where("flag = ?", 1).order("updated_at desc")
-  @trips_drivers = Trip.where("flag = ?", 0).order("updated_at desc")
+  @trips_passengers = Trip.where("flag = ? and availabilty > 0", 1).order("updated_at desc")
+  @trips_drivers = Trip.where("flag = ? and availabilty > 0", 0).order("updated_at desc")
   @passenger_last_update = @trips_passengers.at(0).updated_at;
   @driver_last_update = @trips_drivers.at(0).updated_at;
   end
@@ -35,10 +36,27 @@ class UserhomeController < ApplicationController
       end
    end
   end
+  
+  def connect
+	
+	@trips_connect = Trip.find(params[:trip_id])
+	availabilty = @trips_connect.availabilty
+	if(availabilty > 0)
+	availabilty=availabilty - 1;
+	@trips_connect.update_attribute(:availabilty, availabilty )
+	  respond_to do |format|
+	format.html { redirect_to(userhome_url) }
+	format.json { head :no_content }
+	end
+	end
+  end
+	
+	
+	
 
   def fetch_new
-     passenger_new_updates = Trip.where("updated_at > ? AND flag = ?",Time.parse(params[:passenger_update])+2 ,1).order("updated_at desc")
-     drivers_new_updates = Trip.where("updated_at > ? AND flag = ?",Time.parse(params[:driver_update])+2,0).order("updated_at desc")
+     passenger_new_updates = Trip.where("updated_at > ? AND flag = ? and availabilty > 0",Time.parse(params[:passenger_update])+2 ,1).order("updated_at desc")
+     drivers_new_updates = Trip.where("updated_at > ? AND flag = ? and availabilty > 0",Time.parse(params[:driver_update])+2,0).order("updated_at desc")
 
      #render :text => passenger_new_updates.at(0).updated_at
      respond_to do |format|
