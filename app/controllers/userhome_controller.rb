@@ -39,8 +39,8 @@ class UserhomeController < ApplicationController
   end
 
   def fetch_new
-     passenger_new_updates = Trip.where("updated_at > ? AND flag = ?",Time.parse(params[:passenger_update])+2 ,1).order("updated_at desc")
-     drivers_new_updates = Trip.where("updated_at > ? AND flag = ?",Time.parse(params[:driver_update])+2,0).order("updated_at desc")
+     passenger_new_updates = Trip.where("updated_at > ? AND flag = ?",Time.parse(params[:passenger_update])+2 ,1).order("updated_at asc")
+     drivers_new_updates = Trip.where("updated_at > ? AND flag = ?",Time.parse(params[:driver_update])+2,0).order("updated_at asc")
 
      #render :text => passenger_new_updates.at(0).updated_at
      respond_to do |format|
