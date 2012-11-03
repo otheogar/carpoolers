@@ -1,10 +1,10 @@
 Carpool::Application.routes.draw do
-  resources :user_profiles
+  resources :trip_requests
+resources :user_profiles
 
   devise_for :user_logins
 
   get "feed/index"
-
 
   resources :trips
 
@@ -12,14 +12,12 @@ Carpool::Application.routes.draw do
   
   match '/search' => 'userhome#search', :as => 'search'
   match '/trippost' => 'trips#create', :as => 'trippost'
-  #match '/profilepost' => 'user_profiles#update', :as => 'profilepost'
-  match '/fetch_new' => 'userhome#fetch_new', :as =>'fetch_new'
-
-
+  match '/connect' => 'userhome#connect', :as => 'connect'
+  
 
   get "welcome/index"
 
-
+  match '/fetch_new' => 'userhome#fetch_new', :as => 'fetch_new'
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'

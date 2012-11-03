@@ -4,7 +4,7 @@ class DeviseCreateUserLogins < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
-
+	  t.string :userid
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
@@ -37,8 +37,10 @@ class DeviseCreateUserLogins < ActiveRecord::Migration
       t.timestamps
     end
 
+	#execute "CREATE SEQUENCE user_logins_userid_seq START 1001"
     add_index :user_logins, :email,                :unique => true
     add_index :user_logins, :reset_password_token, :unique => true
+	add_index :user_logins, :userid, :unique => true
     # add_index :user_logins, :confirmation_token,   :unique => true
     # add_index :user_logins, :unlock_token,         :unique => true
     # add_index :user_logins, :authentication_token, :unique => true

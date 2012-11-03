@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(:version => 20121103061404) do
     t.date     "date"
     t.time     "time"
     t.integer  "flag"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "availabilty",    :default => 1
   end
 
   create_table "user_logins", :force => true do |t|
@@ -47,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20121103061404) do
   add_index "user_logins", ["reset_password_token"], :name => "index_user_logins_on_reset_password_token", :unique => true
   add_index "user_logins", ["uid"], :name => "index_user_logins_on_uid", :unique => true
 
-  create_table "user_profiles", :force => true do |t|
+ create_table "user_profiles", :force => true do |t|
     t.string   "user_uid"
     t.string   "name"
     t.string   "email"
@@ -61,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20121103061404) do
 
   add_index "user_profiles", ["user_uid"], :name => "index_user_profiles_on_user_uid", :unique => true
 
-  create_table "users", :id => false, :force => true do |t|
+ create_table "users", :id => false, :force => true do |t|
     t.string   "uid"
     t.string   "provider"
     t.string   "oauth_token"
@@ -71,5 +72,6 @@ ActiveRecord::Schema.define(:version => 20121103061404) do
   end
 
   add_index "users", ["uid"], :name => "index_users_on_uid", :unique => true
+
 
 end

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Req:</b>
+  <%= @trip_request.req_id %>
+</p>
+
+<p>
+  <b>Trip:</b>
+  <%= @trip_request.trip_id %>
+</p>
+
+<p>
+  <b>Accepted flag:</b>
+  <%= @trip_request.accepted_flag %>
+</p>
+
+
+<%= link_to 'Edit', edit_trip_request_path(@trip_request) %> |
+<%= link_to 'Back', trip_requests_path %>
