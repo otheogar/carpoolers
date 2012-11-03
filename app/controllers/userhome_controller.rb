@@ -1,4 +1,6 @@
 class UserhomeController < ApplicationController
+  before_filter :authorize
+
   def index
   @trips_passengers = Trip.where("flag = ?", 1).order("updated_at desc")
   @trips_drivers = Trip.where("flag = ?", 0).order("updated_at desc")

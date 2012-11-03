@@ -1,7 +1,10 @@
 Carpool::Application.routes.draw do
+  resources :user_profiles
+
   devise_for :user_logins
 
   get "feed/index"
+
 
   resources :trips
 
@@ -9,7 +12,9 @@ Carpool::Application.routes.draw do
   
   match '/search' => 'userhome#search', :as => 'search'
   match '/trippost' => 'trips#create', :as => 'trippost'
-  
+  #match '/profilepost' => 'user_profiles#update', :as => 'profilepost'
+  match '/fetch_new' => 'userhome#fetch_new', :as =>'fetch_new'
+
 
 
   get "welcome/index"
@@ -18,8 +23,7 @@ Carpool::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
-
-  
+   match 'edit_profile', to: 'user_profiles#get_by_email', as: 'edit_profile'
   
   resources :users
   # The priority is based upon order of creation:

@@ -48,7 +48,9 @@ $(function()
         } );
 
     },10000);
-	$("#profile_button").button();
+	$("#profile_button").button().click(function(event){
+        window.location = '/edit_profile'
+    })
     $("#pending_button").button();
 	$("#search_date").datepicker();
 	$("#role_div").buttonset();
@@ -63,7 +65,7 @@ $(function()
 <div id="wrapper">
 <div hidden="true" id="passenger_last_update"><%= @passenger_last_update %></div>
 <div hidden="true" id="driver_last_update"><%= @driver_last_update %></div>
-<h1>Welcome to Your Homepage</h1>
+ <h1>Welcome to Your Homepage</h1>
 <p>Live Feeds for Carpooling!</p>
 <div id = "menu">
 <input type="checkbox" id="search_button"/><label for="search_button">Search for Rides</label>

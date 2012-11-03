@@ -1,6 +1,6 @@
 class CreateUsers < ActiveRecord::Migration
   def change
-    create_table :users do |t|
+    create_table :users, :id => false do |t|
       t.string :uid
       t.string :name
       t.string :email
@@ -12,5 +12,9 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :users, :uid, :unique => true
   end
+
+
 end
