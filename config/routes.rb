@@ -1,5 +1,6 @@
 Carpool::Application.routes.draw do
   resources :trip_requests
+resources :user_profiles
 
   devise_for :user_logins
 
@@ -20,8 +21,7 @@ Carpool::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
-
-  
+   match 'edit_profile', to: 'user_profiles#get_by_email', as: 'edit_profile'
   
   resources :users
   # The priority is based upon order of creation:

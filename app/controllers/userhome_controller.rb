@@ -1,5 +1,6 @@
 class UserhomeController < ApplicationController
-  before_filter :authenticate_user_login!
+  before_filter :authorize
+
   def index
   @trips_passengers = Trip.where("flag = ? and availabilty > 0", 1).order("updated_at desc")
   @trips_drivers = Trip.where("flag = ? and availabilty > 0", 0).order("updated_at desc")

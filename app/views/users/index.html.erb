@@ -3,11 +3,7 @@
 <table>
   <tr>
     <th>Uid</th>
-    <th>Name</th>
-    <th>Email</th>
     <th>Provider</th>
-    <th>Gender</th>
-    <th>Date of birth</th>
     <th>Oauth token</th>
     <th>Oauth expires at</th>
     <th></th>
@@ -18,11 +14,7 @@
 <% @users.each do |user| %>
   <tr>
     <td><%= user.uid %></td>
-    <td><%= user.name %></td>
-    <td><%= user.email %></td>
     <td><%= user.provider %></td>
-    <td><%= user.gender %></td>
-    <td><%= user.date_of_birth %></td>
     <td><%= user.oauth_token %></td>
     <td><%= user.oauth_expires_at %></td>
     <td><%= link_to 'Show', user %></td>

@@ -11,15 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103071416) do
-
-  create_table "trip_requests", :force => true do |t|
-    t.integer  "req_id"
-    t.integer  "trip_id"
-    t.integer  "accepted_flag"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
+ActiveRecord::Schema.define(:version => 20121103061404) do
 
   create_table "trips", :force => true do |t|
     t.string   "from_string"
@@ -49,23 +41,37 @@ ActiveRecord::Schema.define(:version => 20121103071416) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "userid"
+    t.string   "uid"
   end
 
   add_index "user_logins", ["email"], :name => "index_user_logins_on_email", :unique => true
   add_index "user_logins", ["reset_password_token"], :name => "index_user_logins_on_reset_password_token", :unique => true
+  add_index "user_logins", ["uid"], :name => "index_user_logins_on_uid", :unique => true
 
-  create_table "users", :force => true do |t|
-    t.string   "uid"
+ create_table "user_profiles", :force => true do |t|
+    t.string   "user_uid"
     t.string   "name"
     t.string   "email"
-    t.string   "provider"
     t.string   "gender"
-    t.datetime "date_of_birth"
+    t.integer  "age"
+    t.string   "picture_url"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "user_profiles", ["user_uid"], :name => "index_user_profiles_on_user_uid", :unique => true
+
+ create_table "users", :id => false, :force => true do |t|
+    t.string   "uid"
+    t.string   "provider"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
+
+  add_index "users", ["uid"], :name => "index_users_on_uid", :unique => true
+
 
 end
