@@ -5,9 +5,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.from_omniauth(env["omniauth.auth"])
+    auth= env["omniauth.auth"]
+    user = User.from_omniauth(auth)
     session[:user_id] = user.uid
-    session[:email]=user.email
+    session[:email]= auth.info.email
     redirect_to userhome_url
   end
 

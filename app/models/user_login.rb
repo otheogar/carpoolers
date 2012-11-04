@@ -9,14 +9,20 @@ class UserLogin < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :uid
   # attr_accessible :title, :body
 
+  validates :uid, :email, :uniqueness => true
   has_one :user_profile, :foreign_key => :user_uid,  :primary_key => :uid, :inverse_of => :user_login, :dependent => :destroy
 
 
   def self.at_signup(email)
 
     this_user = where(:email => email).first
+    this_user.uid = email;
+    this_user.save!
 
-    this_user.create_user_profile(:user_uid => email, :email => email)
+    if this_user.user_profile.nil?
+      this_user.create_user_profile(:user_uid => email, :email => email)
+    end
+
 
   end
 
