@@ -21,7 +21,6 @@ class UserhomeController < ApplicationController
     end
     feed = ((params[:role] == "driver") ? 0:1)
     respond_to do |format|
-      format.html { redirect_to(userhome_url) }
       format.js do
         render "search_d", :locals => {:trip_passengers_list => trips_passengers_result, :trip_drivers_list => trips_drivers_result, :updated_feed => feed}
       end
