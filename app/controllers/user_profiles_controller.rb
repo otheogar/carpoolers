@@ -91,4 +91,13 @@ class UserProfilesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def owner
+    @user_profile = UserProfile.find_by_user_uid(params[:user_uid])
+    respond_to do |format|
+      format.html { render "owner"  }
+   end
+  end
+
 end

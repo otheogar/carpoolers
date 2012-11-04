@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div id="profile_menu" class = " ui-corner-all">
 <p>
   <b>User_uid:</b>
   <%= @user_profile.user_uid %>
@@ -34,7 +34,7 @@
   <b>Description:</b>
   <%= @user_profile.description %>
 </p>
-
+</div>
 
 <%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
 <%= link_to 'Back', user_profiles_path %>

@@ -44,7 +44,7 @@ class TripsController < ApplicationController
   # POST /trips
   # POST /trips.json
   def create
-    @trip = Trip.new(from_string: params[:post_from],to_string: params[:post_to],date: Date.parse(params[:post_date]),flag: params[:rolepost]=='driver'?0:1,time: Time.parse(params[:post_time]))
+    @trip = Trip.new(from_string: params[:post_from],to_string: params[:post_to],date: Date.strptime(params[:post_date], '%m/%d/%Y'),flag: params[:rolepost]=='driver'?0:1,time: Time.parse(params[:post_time]), owner_id: params[:owner_id])
 
     respond_to do |format|
       if @trip.save

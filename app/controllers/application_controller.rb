@@ -21,10 +21,21 @@ class ApplicationController < ActionController::Base
     end
 
     end
-
-
   end
   helper_method :user_email
+
+
+  def user_id
+    @user_id = nil
+    if user_login_signed_in?
+      @user_id = current_user_login.email
+    else if session[:uid]
+           @user_id = session[:uid]
+    end
+
+    end
+  end
+  helper_method :user_id
 
 
   private

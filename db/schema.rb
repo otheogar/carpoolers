@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103061404) do
+ActiveRecord::Schema.define(:version => 20121104015108) do
 
   create_table "trips", :force => true do |t|
     t.string   "from_string"
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(:version => 20121103061404) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.integer  "availabilty",    :default => 1
+    t.string   "owner_id"
   end
+
+  add_index "trips", ["owner_id"], :name => "index_trips_on_owner_id"
 
   create_table "user_logins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20121103061404) do
   add_index "user_logins", ["reset_password_token"], :name => "index_user_logins_on_reset_password_token", :unique => true
   add_index "user_logins", ["uid"], :name => "index_user_logins_on_uid", :unique => true
 
- create_table "user_profiles", :force => true do |t|
+  create_table "user_profiles", :force => true do |t|
     t.string   "user_uid"
     t.string   "name"
     t.string   "email"
@@ -62,7 +65,7 @@ ActiveRecord::Schema.define(:version => 20121103061404) do
 
   add_index "user_profiles", ["user_uid"], :name => "index_user_profiles_on_user_uid", :unique => true
 
- create_table "users", :id => false, :force => true do |t|
+  create_table "users", :id => false, :force => true do |t|
     t.string   "uid"
     t.string   "provider"
     t.string   "oauth_token"
@@ -72,6 +75,5 @@ ActiveRecord::Schema.define(:version => 20121103061404) do
   end
 
   add_index "users", ["uid"], :name => "index_users_on_uid", :unique => true
-
 
 end

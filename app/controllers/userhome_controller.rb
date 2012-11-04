@@ -11,7 +11,7 @@ class UserhomeController < ApplicationController
   def search
     trips_passengers_result = Array.new;
     trips_drivers_result = Array.new;
-   search_date_formatted = Date.parse(params[:search_date])
+    search_date_formatted = Date.strptime(params[:search_date], '%m/%d/%Y')
    # render :text => search_date_formatted
     if (params[:role] == "passenger")
       trips_passengers_result = Trip.where("from_string = ? AND to_string = ? AND flag =? AND date >= ?", params[:search_from], params[:search_to], 1, search_date_formatted)

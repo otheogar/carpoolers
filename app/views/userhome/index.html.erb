@@ -53,6 +53,7 @@ $(function()
     })
     $("#pending_button").button();
 	$("#search_date").datepicker();
+    $("#post_date").datepicker();
 	$("#role_div").buttonset();
     $("#role_div_post").buttonset();
 	$("#search_menu :submit").button();
@@ -110,7 +111,8 @@ $(function()
           <%= label_tag(:rolepost_passenger, "Passenger") %>
           <%= radio_button_tag(:rolepost, "driver") %>
           <%= label_tag(:rolepost_driver, "Driver") %>
-        </div>
+          <%= hidden_field_tag(:owner_id, user_id) %>
+              </div>
         <%= submit_tag("Post") %>
     <% end %>
   </div>
