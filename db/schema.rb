@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(:version => 20121104015108) do
   end
 
   add_index "trips", ["owner_id"], :name => "index_trips_on_owner_id"
+  add_index "trips", ["from_latitude"], :name => "index_trips_on_from_latitude"
+  add_index "trips", ["from_longitude"], :name => "index_trips_on_from_longitude"
+  add_index "trips", ["to_latitude"], :name => "index_trips_on_to_latitude"
+  add_index "trips", ["to_longitude"], :name => "index_trips_on_to_longitude"
+
 
   create_table "user_logins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

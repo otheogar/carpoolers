@@ -8,6 +8,8 @@ $(function()
 	if (menu_open == 0)
 	{
         $("#post_menu").hide();
+        $("#post_button").removeAttr('checked');
+        $("#post_button").button("refresh");
         post_menu_open = 0;
 	 $("#search_menu").fadeIn();
 	 menu_open = 1;
@@ -17,7 +19,6 @@ $(function()
 	 menu_open = 0;
 	}
 	});
-	$("#post_button").button();
     $("#post_menu").hide();
     var post_menu_open = 0;
     $("#post_button").button().click(function(event) {
@@ -25,14 +26,15 @@ $(function()
         {
             $("#search_menu").hide();
             $("#search_button").removeAttr('checked');
+            $("#search_button").button("refresh");
             menu_open = 0;
             $("#post_menu").fadeIn();
             post_menu_open = 1;
-            $.ajax(
+            /*$.ajax(
             {
                 url:"/reload_feed"
             }).done(function() {
-            });
+            });          */
         }else
         {
             $("#post_menu").fadeOut();
@@ -69,6 +71,11 @@ $(function()
 		  data : data_url
 		}
 		);
+        $("#post_menu").fadeOut();
+        $("#post_button").removeAttr('checked');
+        $("#post_button").button("refresh");
+        $("#passengers_feed").scrollTop(0);
+        $("#drivers_feed").scrollTop(0);
 	});
 	
 	$("#search_submit").button().click(function()
@@ -92,6 +99,11 @@ $(function()
 		  data : data_url
 		}
 		);
+        $("#search_menu").fadeOut();
+        $("#search_button").removeAttr('checked');
+        $("#search_button").button("refresh");
+        $("#passengers_feed").scrollTop(0);
+        $("#drivers_feed").scrollTop(0);
 	});
 
 
@@ -165,7 +177,7 @@ $(function()
 <p>Live Feeds for Carpooling!</p>
 <div id = "menu">
 <input type="checkbox" id="search_button"/><label for="search_button">Search for Rides</label>
-<button id="post_button">Post Ride</button>
+<input type="checkbox" id="post_button"/><label for="post_button">Post Ride</label>
 <button id="profile_button">Edit Profile</button>
 <button id="pending_button">Pending connect Requests</button>
 </div>

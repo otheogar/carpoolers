@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     if user_login_signed_in?
       @user_id = current_user_login.email
     else if session[:uid]
-           @user_id = session[:uid]
+      @user_id = session[:uid]
     end
 
     end
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   helper_method :user_id
 
 
-  private
+
   def current_user
     @current_user ||= User.find_by_uid(session[:user_id]) if session[:user_id]
   end
