@@ -1,5 +1,11 @@
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+
 <% if flash[:alert] %>
     <p id="notice"><%= flash[:alert] %></p>
 <% end %>
+
+
+
 <h1>Welcome to Carpool</h1>
 <p><%= link_to 'Try Carpool!', :controller => "userhome" %></p>
+<div id="map_canvas"></div>

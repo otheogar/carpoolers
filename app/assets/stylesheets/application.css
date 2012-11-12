@@ -11,8 +11,23 @@
  *= require_self
  *= require_tree .
  */
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+}
 
 #LoginDiv{
     float: right;
 }
-
