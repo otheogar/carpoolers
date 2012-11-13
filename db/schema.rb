@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(:version => 20121104015108) do
     t.string   "email"
     t.string   "gender"
     t.integer  "age"
+    t.string   "home_string"
+    t.float    "home_longitude"
+    t.float    "home_latitude"
     t.string   "picture_url"
     t.text     "description"
     t.datetime "created_at",  :null => false

@@ -3,8 +3,15 @@ class UserhomeController < ApplicationController
 
 
   def index
-  @trips_passengers = Trip.where("flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc")
-  @trips_drivers = Trip.where("flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc")
+  @homebase=UserProfile.find_by_email(user_email)
+  @str=@homebase.home_string
+  cond=""
+   if !@homebase.home_latitude.nil?
+     cond="from_latitude < (#{@homebase.home_latitude}+0.1) and from_latitude>(#{@homebase.home_latitude}-0.1) and from_longitude < (#{@homebase.home_longitude}+0.5) and from_longitude>(#{@homebase.home_longitude}-0.5) and "
+   end
+
+  @trips_passengers = Trip.where(cond+"flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc")
+  @trips_drivers = Trip.where(cond+"flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc")
   @passenger_last_update = @trips_passengers.at(0).updated_at;
   @driver_last_update = @trips_drivers.at(0).updated_at;
   end
@@ -24,6 +31,8 @@ class UserhomeController < ApplicationController
     end
     condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
 
+    #hack to work in SQLITE
+    condition="SELECT * FROM trips HAVING date='#{search_date_formatted}' AND from_string='Chicago, IL' AND flag=#{flag} ORDER BY time LIMIT 20"
     if (params[:role] == "passenger")
       trips_passengers_result = Trip.find_by_sql([condition])
     else

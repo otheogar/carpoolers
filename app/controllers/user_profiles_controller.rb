@@ -1,6 +1,7 @@
 class UserProfilesController < ApplicationController
   before_filter :authorize
 
+
  def get_by_email
    @user_profile = UserProfile.find_by_email(user_email)
    respond_to do |format|
@@ -74,7 +75,7 @@ class UserProfilesController < ApplicationController
         format.html { redirect_to @user_profile, notice: 'User profile was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "get_by_email" }
         format.json { render json: @user_profile.errors, status: :unprocessable_entity }
       end
     end

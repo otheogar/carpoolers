@@ -6,231 +6,255 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-pass_len = 6
+
 
 UserLogin.delete_all
 
-pwd='simple'
 
 UserLogin.create(uid: 'AmbiguousGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'AmbiguousGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'SpikyGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'SpikyGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'FabulousGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'FabulousGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'FlakyGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'FlakyGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'ShrillGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'ShrillGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'ScaredGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'ScaredGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'AlcoholicGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'AlcoholicGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'SmilingGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'SmilingGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'AnnoyingGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'AnnoyingGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'UttermostGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'UttermostGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'GlamorousGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'GlamorousGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'DirtyGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'DirtyGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'DangerousGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'DangerousGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'ReconditeGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'ReconditeGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'AttractiveGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'AttractiveGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'DynamicGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'DynamicGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'FaintGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'FaintGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'EndurableGeek@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'EndurableGeek@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'CrazyDancer@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'CrazyDancer@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'FamousDancer@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'FamousDancer@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'BeautifulDancer@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'BeautifulDancer@mail.com')
 
-pwd='simple'
-
 UserLogin.create(uid: 'HappyDancer@mail.com',
-    password: pwd,
+    password: 'simple',
     email: 'HappyDancer@mail.com')
 
 UserProfile.delete_all
 
 UserProfile.create(user_uid: 'AmbiguousGeek@mail.com',
     name: 'Avis Cubbage',
-    email: 'AmbiguousGeek@mail.com')
+    email: 'AmbiguousGeek@mail.com',
+    home_string: 'Amherst, MA',
+    home_latitude: 42.370772,
+    home_longitude: -72.533204)
 
 UserProfile.create(user_uid: 'SpikyGeek@mail.com',
     name: 'Noreen Fertig',
-    email: 'SpikyGeek@mail.com')
+    email: 'SpikyGeek@mail.com',
+    home_string: 'Rochester, NY',
+    home_latitude: 43.1555,
+    home_longitude: -77.616033)
 
 UserProfile.create(user_uid: 'FabulousGeek@mail.com',
     name: 'Neil Walser',
-    email: 'FabulousGeek@mail.com')
+    email: 'FabulousGeek@mail.com',
+    home_string: 'Stamford, CT',
+    home_latitude: 41.05182,
+    home_longitude: -73.542234)
 
 UserProfile.create(user_uid: 'FlakyGeek@mail.com',
     name: 'Nelson Hilts',
-    email: 'FlakyGeek@mail.com')
+    email: 'FlakyGeek@mail.com',
+    home_string: 'Santa Monica, CA',
+    home_latitude: 34.011565,
+    home_longitude: -118.492289)
 
 UserProfile.create(user_uid: 'ShrillGeek@mail.com',
     name: 'Kurt Beauvais',
-    email: 'ShrillGeek@mail.com')
+    email: 'ShrillGeek@mail.com',
+    home_string: 'Lexington, MA',
+    home_latitude: 42.446319,
+    home_longitude: -71.223751)
 
 UserProfile.create(user_uid: 'ScaredGeek@mail.com',
     name: 'Chandra Taubman',
-    email: 'ScaredGeek@mail.com')
+    email: 'ScaredGeek@mail.com',
+    home_string: 'Denver, CO',
+    home_latitude: 39.74001,
+    home_longitude: -104.992259)
 
 UserProfile.create(user_uid: 'AlcoholicGeek@mail.com',
     name: 'Clayton Schnur',
-    email: 'AlcoholicGeek@mail.com')
+    email: 'AlcoholicGeek@mail.com',
+    home_string: 'Thousand Oaks, CA',
+    home_latitude: 34.185,
+    home_longitude: -118.894254)
 
 UserProfile.create(user_uid: 'SmilingGeek@mail.com',
     name: 'Dona Westley',
-    email: 'SmilingGeek@mail.com')
+    email: 'SmilingGeek@mail.com',
+    home_string: 'Annapolis, VA',
+    home_latitude: 38.9767,
+    home_longitude: -76.489929)
 
 UserProfile.create(user_uid: 'AnnoyingGeek@mail.com',
     name: 'Amie Quint',
-    email: 'AnnoyingGeek@mail.com')
+    email: 'AnnoyingGeek@mail.com',
+    home_string: 'Cambridge, MA',
+    home_latitude: 42.36679,
+    home_longitude: -71.106019)
 
 UserProfile.create(user_uid: 'UttermostGeek@mail.com',
     name: 'Hillary Murtagh',
-    email: 'UttermostGeek@mail.com')
+    email: 'UttermostGeek@mail.com',
+    home_string: 'Norwalk, CT',
+    home_latitude: 41.11366,
+    home_longitude: -73.407654)
 
 UserProfile.create(user_uid: 'GlamorousGeek@mail.com',
     name: 'Clare Racicot',
-    email: 'GlamorousGeek@mail.com')
+    email: 'GlamorousGeek@mail.com',
+    home_string: 'Richmond, VA',
+    home_latitude: 37.5407,
+    home_longitude: -77.433654)
 
 UserProfile.create(user_uid: 'DirtyGeek@mail.com',
     name: 'Clayton Heldt',
-    email: 'DirtyGeek@mail.com')
+    email: 'DirtyGeek@mail.com',
+    home_string: 'Norwalk, CT',
+    home_latitude: 41.11366,
+    home_longitude: -73.407654)
 
 UserProfile.create(user_uid: 'DangerousGeek@mail.com',
     name: 'Alana Carolina',
-    email: 'DangerousGeek@mail.com')
+    email: 'DangerousGeek@mail.com',
+    home_string: 'Newport Beach, CA',
+    home_latitude: 33.616835,
+    home_longitude: -117.930343)
 
 UserProfile.create(user_uid: 'ReconditeGeek@mail.com',
     name: 'Clayton Autin',
-    email: 'ReconditeGeek@mail.com')
+    email: 'ReconditeGeek@mail.com',
+    home_string: 'Newport Beach, CA',
+    home_latitude: 33.616835,
+    home_longitude: -117.930343)
 
 UserProfile.create(user_uid: 'AttractiveGeek@mail.com',
     name: 'Tameka Segars',
-    email: 'AttractiveGeek@mail.com')
+    email: 'AttractiveGeek@mail.com',
+    home_string: 'Springfield, MA',
+    home_latitude: 42.10125,
+    home_longitude: -72.589294)
 
 UserProfile.create(user_uid: 'DynamicGeek@mail.com',
     name: 'Hugh Loss',
-    email: 'DynamicGeek@mail.com')
+    email: 'DynamicGeek@mail.com',
+    home_string: 'Detroit, MI',
+    home_latitude: 42.331685,
+    home_longitude: -83.047924)
 
 UserProfile.create(user_uid: 'FaintGeek@mail.com',
     name: 'Javier Meisel',
-    email: 'FaintGeek@mail.com')
+    email: 'FaintGeek@mail.com',
+    home_string: 'Hanover, NH',
+    home_latitude: 43.700465,
+    home_longitude: -72.289499)
 
 UserProfile.create(user_uid: 'EndurableGeek@mail.com',
     name: 'Althea Gerace',
-    email: 'EndurableGeek@mail.com')
+    email: 'EndurableGeek@mail.com',
+    home_string: 'White Plains, NY',
+    home_latitude: 41.03354,
+    home_longitude: -73.764154)
 
 UserProfile.create(user_uid: 'CrazyDancer@mail.com',
     name: 'Karina Priolo',
-    email: 'CrazyDancer@mail.com')
+    email: 'CrazyDancer@mail.com',
+    home_string: 'Norwalk, CT',
+    home_latitude: 41.11366,
+    home_longitude: -73.407654)
 
 UserProfile.create(user_uid: 'FamousDancer@mail.com',
     name: 'Tameka Duell',
-    email: 'FamousDancer@mail.com')
+    email: 'FamousDancer@mail.com',
+    home_string: 'Norfolk, VA',
+    home_latitude: 36.846825,
+    home_longitude: -76.285069)
 
 UserProfile.create(user_uid: 'BeautifulDancer@mail.com',
     name: 'Pearlie Ellard',
-    email: 'BeautifulDancer@mail.com')
+    email: 'BeautifulDancer@mail.com',
+    home_string: 'Newark, NJ',
+    home_latitude: 40.73197,
+    home_longitude: -74.174184)
 
 UserProfile.create(user_uid: 'HappyDancer@mail.com',
     name: 'Darren Demuth',
-    email: 'HappyDancer@mail.com')
+    email: 'HappyDancer@mail.com',
+    home_string: 'Phoenix, AZ',
+    home_latitude: 33.44826,
+    home_longitude: -112.075774)
+
 
 Trip.delete_all
 

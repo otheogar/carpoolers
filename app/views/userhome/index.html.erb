@@ -2,6 +2,7 @@
 <script>
 $(function()
 {
+    $("#search_wrapper").hide();
     $("#search_button").removeAttr('checked');
     $("#search_button").button("refresh");
     $("#post_button").removeAttr('checked');
@@ -271,23 +272,32 @@ $(function()
 		<button id="post_submit">Post</button>
     </div>
 
-	<div id="feeds_wrapper">
+  <div id="feeds_wrapper">
     <div id = "drivers_feed_wrapper" class= "feed ui-corner-all">
       <h3 style = "text-align:center">Drivers</h3>
-    <div id = "drivers_feed" style ="overflow:scroll;" class = "feed-inside">
-      <% for item in @trips_drivers %>
-          <div><%= render(item) %></div>
-      <% end %>
-    </div>
+      <div id = "drivers_feed" style ="overflow:scroll;" class = "feed-inside">
+        <% for item in @trips_drivers %>
+            <div><%= render(item) %></div>
+        <% end %>
+      </div>
     </div>
     <div id = "passengers_feed_wrapper" class= "feed ui-corner-all">
       <h3 style = "text-align:center">Passengers</h3>
-    <div id = "passengers_feed" style ="overflow:scroll;"  class = "feed-inside">
-      <% for item in @trips_passengers %>
-          <div><%= render(item) %></div>
-      <% end %>
-    </div>
+      <div id = "passengers_feed" style ="overflow:scroll;"  class = "feed-inside">
+        <% for item in @trips_passengers %>
+            <div><%= render(item) %></div>
+        <% end %>
       </div>
-  </div>
     </div>
+  </div>
+
+  <div id="search_wrapper">
+    <div id = "search_feed_wrapper" class= "feed ui-corner-all">
+      <h3 style = "text-align:center">Search results:</h3>
+      <div id = "search_feed" style ="overflow:scroll;" class = "feed-inside">
+        <%= render text: "trial #{@str}" %>
+      </div>
+    </div>
+  </div>
+</div>
 
