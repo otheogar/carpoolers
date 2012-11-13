@@ -125,50 +125,50 @@ $(function()
 </script>
 
 <script src="/assets/jquery.geocomplete.js"></script>
-    
-    <script>
-      $(function(){
+
+<script>
+    $(function(){
         $("#geocomplete1").geocomplete({
-          map: ".map_canvas1",
-          details: "#post_from",
-          types: ["geocode", "establishment"]
+            map: ".map_canvas1",
+            details: "#post_from",
+            types: ["geocode", "establishment"]
         });
-		        $("#find1").click(function(){
-          $("#geocomplete1").trigger("geocode");
+        $("#find1").click(function(){
+            $("#geocomplete1").trigger("geocode");
         });
-		 $("#geocomplete2").geocomplete({
-          map: ".map_canvas2",
-          details: "#post_to",
-          types: ["geocode", "establishment"]
+        $("#geocomplete2").geocomplete({
+            map: ".map_canvas2",
+            details: "#post_to",
+            types: ["geocode", "establishment"]
         });
-        
-		$("#find2").click(function(){
-          $("#geocomplete2").trigger("geocode");
+
+        $("#find2").click(function(){
+            $("#geocomplete2").trigger("geocode");
         });
-		
-		
-		
-		$("#geocomplete3").geocomplete({
-          map: ".map_canvas3",
-          details: "#search_from",
-          types: ["geocode", "establishment"]
+
+
+
+        $("#geocomplete3").geocomplete({
+            map: ".map_canvas3",
+            details: "#search_from",
+            types: ["geocode", "establishment"]
         });
-		        $("#find3").click(function(){
-          $("#geocomplete3").trigger("geocode");
+        $("#find3").click(function(){
+            $("#geocomplete3").trigger("geocode");
         });
-		 $("#geocomplete4").geocomplete({
-          map: ".map_canvas4",
-          details: "#search_to",
-          types: ["geocode", "establishment"]
+        $("#geocomplete4").geocomplete({
+            map: ".map_canvas4",
+            details: "#search_to",
+            types: ["geocode", "establishment"]
         });
-		$("#find4").click(function(){
-          $("#geocomplete4").trigger("geocode");
-        });		
-		
-		
-		
-      });
-    </script>		
+        $("#find4").click(function(){
+            $("#geocomplete4").trigger("geocode");
+        });
+
+
+
+    });
+</script>
 
 <div id="wrapper">
 <div hidden="true" id="passenger_last_update"><%= @passenger_last_update %></div>
