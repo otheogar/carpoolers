@@ -1,4 +1,4 @@
-
+$(window).scrollTop(0);
 <%if (new_trip.flag == 1) %>
 $("#passengers_feed").prepend('<%=j render(new_trip) %>');
 $("#<%=new_trip.id%>").hide();

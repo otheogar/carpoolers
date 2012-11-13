@@ -2,6 +2,18 @@
 <script>
 $(function()
 {
+    $("#search_button").removeAttr('checked');
+    $("#search_button").button("refresh");
+    $("#post_button").removeAttr('checked');
+    $("#post_button").button("refresh");
+    $('#rolepost_driver').removeAttr("checked");
+    $('#rolepost_driver').button("refresh");
+    $('#rolepost_passenger').removeAttr("checked");
+    $('#rolepost_passenger').button("refresh");
+    $('#role_driver').removeAttr("checked");
+    $('#role_driver').button("refresh");
+    $('#role_passenger').removeAttr("checked");
+    $('#role_passenger').button("refresh");
 	$("#search_menu").hide();
 	var menu_open = 0;
 	$("#search_button").button().click(function(event) {
@@ -30,11 +42,7 @@ $(function()
             menu_open = 0;
             $("#post_menu").fadeIn();
             post_menu_open = 1;
-            /*$.ajax(
-            {
-                url:"/reload_feed"
-            }).done(function() {
-            });          */
+
         }else
         {
             $("#post_menu").fadeOut();
@@ -64,13 +72,19 @@ $(function()
 		if($('#rolepost_driver').is(':checked')) { var rolepost ="driver"; }
 		
 		var data_url = "post_from="+ from_string + "&post_to=" + to_string + "&post_date=" +date + "&post_time="+ time  + "&rolepost=" + rolepost + "&from_long=" + from_long + "&from_lat=" + from_lat + "&to_long=" + to_long + "&to_lat=" + to_lat;
-		$.ajax(
-		{
-		  url: "/trippost",
-		  method: "POST",
-		  data : data_url
-		}
-		);
+        $.ajax(
+                {
+                    url: "/trippost",
+                    method: "POST",
+                    data : data_url
+                }
+        );
+        post_menu_open=0;
+        /*$.ajax(
+         {
+         url:"/reload_feed"
+         }).done(function() {
+         });          */
         $("#post_menu").fadeOut();
         $("#post_button").removeAttr('checked');
         $("#post_button").button("refresh");
@@ -91,7 +105,7 @@ $(function()
 		var time = $("#search_time").val();
 		if($('#role_driver').is(':checked')) { rolepost ="driver"; }
 		
-		var data_url = "search_from="+ from_string + "&search_to=" + to_string + "&search_date=" +date + "&role="+ rolepost ;
+		var data_url = "search_from="+ from_string + "&search_to=" + to_string + "&search_date=" +date + "&role="+ rolepost +"&from_lat="+ from_lat + "&from_long=" + from_long + "&to_lat="+ to_lat + "&to_long=" + to_long;
 		$.ajax(
 		{
 		  url: "/search",
@@ -99,6 +113,7 @@ $(function()
 		  data : data_url
 		}
 		);
+        menu_open=0;
         $("#search_menu").fadeOut();
         $("#search_button").removeAttr('checked');
         $("#search_button").button("refresh");
@@ -121,7 +136,9 @@ $(function()
 
     $("#passengers_feed").scrollTop(0);
     $("#drivers_feed").scrollTop(0);
+
 })
+
 </script>
 
 <script src="/assets/jquery.geocomplete.js"></script>
@@ -193,7 +210,7 @@ $(function()
   </div>
   <div class="map_canvas3"></div>
   <form id="search_from">
-      <input id="geocomplete3" type="text" placeholder="Type in an address" value="Empire State Bldg" />
+      <input id="geocomplete3" type="text" placeholder="Type in an address" />
       <input id="find3" type="button" value="find" />
       <fieldset>  
         <input id = "sfrom_lat" name="lat" type="text" value="" hidden="true">
@@ -203,7 +220,7 @@ $(function()
   
   <div class="map_canvas4"></div>
   <form id="search_to">
-      <input id="geocomplete4" type="text" placeholder="Type in an address" value="Empire State Bldg" />
+      <input id="geocomplete4" type="text" placeholder="Type in an address"/>
       <input id="find4" type="button" value="find" />
       <fieldset>
         <input id = "sto_lat" name="lat" type="text" value="" hidden="true">
