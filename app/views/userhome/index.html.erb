@@ -120,6 +120,9 @@
             $("#search_button").button("refresh");
             $("#passengers_feed").scrollTop(0);
             $("#drivers_feed").scrollTop(0);
+            $("#passengers_feed_wrapper").fadeOut();
+            $("#drivers_feed_wrapper").fadeOut();
+            $("#search_wrapper").fadeIn();
         });
 
 
@@ -194,6 +197,12 @@
             google.maps.event.trigger($("#geocomplete1").geocomplete("map"), 'resize');
             $("#geocomplete1").geocomplete("map").setZoom( $("#geocomplete1").geocomplete("map").getZoom() );
         });
+        $("#geocomplete1").focusout(function()
+                {
+                    google.maps.event.trigger($("#geocomplete1").geocomplete("map"), 'resize');
+                    $("#geocomplete1").geocomplete("map").setZoom( $("#geocomplete1").geocomplete("map").getZoom() );
+                }
+        )
         $("#geocomplete2").geocomplete({
             map: "#map_canvas2",
             details: "#post_to",
@@ -203,10 +212,17 @@
             types: ["geocode", "establishment"]
         });
 
+        $("#geocomplete2").focusout(function()
+                {
+                    google.maps.event.trigger($("#geocomplete2").geocomplete("map"), 'resize');
+                    $("#geocomplete2").geocomplete("map").setZoom( $("#geocomplete2").geocomplete("map").getZoom() );
+                }
+        )
         $("#find2").click(function(){
             $("#geocomplete2").trigger("geocode");
             google.maps.event.trigger($("#geocomplete2").geocomplete("map"), 'resize');
             $("#geocomplete2").geocomplete("map").setZoom( $("#geocomplete2").geocomplete("map").getZoom() );
+
         });
 
 
@@ -219,10 +235,17 @@
             },
             types: ["geocode", "establishment"]
         });
+        $("#geocomplete3").focusout(function()
+                {
+                    google.maps.event.trigger($("#geocomplete3").geocomplete("map"), 'resize');
+                    $("#geocomplete3").geocomplete("map").setZoom( $("#geocomplete3").geocomplete("map").getZoom() );
+                }
+        )
         $("#find3").click(function(){
             $("#geocomplete3").trigger("geocode");
             google.maps.event.trigger($("#geocomplete3").geocomplete("map"), 'resize');
             $("#geocomplete3").geocomplete("map").setZoom( $("#geocomplete3").geocomplete("map").getZoom() );
+
         });
         $("#geocomplete4").geocomplete({
             map: "#map_canvas4",
@@ -232,10 +255,17 @@
             },
             types: ["geocode", "establishment"]
         });
+        $("#geocomplete4").focusout(function()
+                {
+                    google.maps.event.trigger($("#geocomplete4").geocomplete("map"), 'resize');
+                    $("#geocomplete4").geocomplete("map").setZoom( $("#geocomplete4 ").geocomplete("map").getZoom() );
+                }
+        )
         $("#find4").click(function(){
             google.maps.event.trigger($("#geocomplete4").geocomplete("map"), 'resize');
             $("#geocomplete4").geocomplete("map").setZoom( $("#geocomplete4").geocomplete("map").getZoom() );
             $("#geocomplete4").trigger("geocode");
+
         });
 
     });
@@ -361,6 +391,18 @@
   </div>
 
   <div id="feeds_wrapper">
+    <div id="search_wrapper">
+      <div id = "search_feed_wrapper" class= "feed ui-corner-all">
+        <h3 style = "text-align:center">Search results:</h3>
+        <div id = "search_feed" style ="overflow-y: scroll;
+                overflow-x: hidden;" class = "feed-inside">
+        </div>
+      </div>
+      <div id="trip_map" class = "feed ui-corner-all">
+
+      </div>
+    </div>
+
     <div id = "drivers_feed_wrapper" class= "feed ui-corner-all">
       <h3 style = "text-align:center">Drivers</h3>
 
@@ -381,15 +423,9 @@
       </div>
     </div>
   </div>
+
 </div>
 
-<div id="search_wrapper">
-  <div id = "search_feed_wrapper" class= "feed ui-corner-all">
-    <h3 style = "text-align:center">Search results:</h3>
-    <div id = "search_feed" style ="overflow:scroll;" class = "feed-inside">
-      <%= render text: "trial #{@str}" %>
-    </div>
-  </div>
-</div>
+
 </div>
 

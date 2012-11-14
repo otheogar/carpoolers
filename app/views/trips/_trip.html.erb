@@ -19,9 +19,18 @@ $(function()
 		data: send_data
 		}).done(function(event)
 		{
-		 alert('You have been successfully added to the trip')
-		 $("#connect_button_<%= trip.id %>:submit").attr("disabled","disabled")
-		 $("#connect_button_<%= trip.id %>:submit").css("background","grey")
+            if (event == 1)
+            {
+                alert('You have been successfully added to the trip')
+                $("#connect_button_<%= trip.id %>:submit").attr("disabled","disabled")
+                $("#connect_button_<%= trip.id %>:submit").css("background","grey")
+            }
+            else
+            {
+                alert('The trip is no longer available. Sorry.');
+                $("#<%= trip.id %>").fadeOut();
+            }
+
 		})
 	})
 	;
