@@ -1,9 +1,21 @@
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script src="/assets/jquery.geocomplete.js"></script>
+
 <script>
     $(function()
     {
         $("#profile_menu :submit").button();
+        $("#user_profile_home_string").geocomplete()
+                .bind("geocode:result", function(event, result){
+                    $(user_profile_home_latitude).val(result.geometry.location.lat());
+                    $(user_profile_home_longitude).val(result.geometry.location.lng());
+                })
+        $("#find").click(function(){
+            $("#user_profile_home_string").trigger("geocode");
+        });
     } )
 </script>
+
 
 <div id="profile_menu" class = " ui-corner-all">
   <%= form_for(@user_profile, :method => :put) do |f| %>
@@ -20,6 +32,8 @@
       <% end %>
 
       <%=f.hidden_field :user_uid %>
+      <%=f.hidden_field :home_latitude %>
+      <%=f.hidden_field :home_longitude %>
       <div class="field">
         <%= f.label :name %><br />
         <%= f.text_field :name %>
@@ -31,6 +45,7 @@
       <div class="field">
         <%= f.label :home %><br />
         <%= f.text_field :home_string %>
+        <input id="find" type="button" value="find" />
       </div>
       <div class="field">
         <%= f.label :gender %><br />

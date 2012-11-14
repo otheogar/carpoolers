@@ -3,15 +3,24 @@ class UserhomeController < ApplicationController
 
 
   def index
-  @homebase=UserProfile.find_by_email(user_email)
-  @str=@homebase.home_string
+    if session[:homestr].nil?
+      @homebase=UserProfile.find_by_email(user_email);
+      @str=@homebase.home_string;
+      session[:homestr]=@str;
+      session[:homelat]=@homebase.home_latitude
+      session[:homelong]=@homebase.home_longitude
+    end
+
+   lat=session[:homelat]
+  lng= session[:homelong]
   cond=""
-   if !@homebase.home_latitude.nil?
-     cond="from_latitude < (#{@homebase.home_latitude}+0.1) and from_latitude>(#{@homebase.home_latitude}-0.1) and from_longitude < (#{@homebase.home_longitude}+0.5) and from_longitude>(#{@homebase.home_longitude}-0.5) and "
+   if !lat.nil? && !lng.nil?
+     cond="from_latitude < (#{lat}+0.1) and from_latitude>(#{lat}-0.1) and from_longitude < (#{lng}+0.5) and from_longitude>(#{lng}-0.5) and "
    end
 
   @trips_passengers = Trip.where(cond+"flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc")
   @trips_drivers = Trip.where(cond+"flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc")
+
   @passenger_last_update = @trips_passengers.at(0).updated_at;
   @driver_last_update = @trips_drivers.at(0).updated_at;
   end
@@ -74,8 +83,14 @@ class UserhomeController < ApplicationController
 
 
   def fetch_new
-     passenger_new_updates = Trip.where("updated_at > ? AND flag = ? and availabilty > 0",Time.parse(params[:passenger_update])+2 ,1).limit(20).order("updated_at desc")
-     drivers_new_updates = Trip.where("updated_at > ? AND flag = ? and availabilty > 0",Time.parse(params[:driver_update])+2,0).limit(20).order("updated_at desc")
+    lat=session[:homelat]
+    lng= session[:homelong]
+    cond=""
+    if !lat.nil? && !lng.nil?
+      cond="from_latitude < (#{lat}+0.1) and from_latitude>(#{lat}-0.1) and from_longitude < (#{lng}+0.5) and from_longitude>(#{lng}-0.5) and "
+    end
+     passenger_new_updates = Trip.where(cond+"updated_at > ? AND flag = ? and availabilty > 0",Time.parse(params[:passenger_update])+2 ,1).limit(20).order("updated_at desc")
+     drivers_new_updates = Trip.where(cond+"updated_at > ? AND flag = ? and availabilty > 0",Time.parse(params[:driver_update])+2,0).limit(20).order("updated_at desc")
 
      #render :text => passenger_new_updates.at(0).updated_at
      respond_to do |format|

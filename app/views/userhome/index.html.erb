@@ -2,6 +2,7 @@
 <script>
 $(function()
 {
+
     $("#search_wrapper").hide();
     $("#search_button").removeAttr('checked');
     $("#search_button").button("refresh");
@@ -240,7 +241,7 @@ $(function()
 <div id="post_menu" class = " ui-corner-all">
   <div class="map_canvas1"></div>
   <form id="post_from">
-      <input id="geocomplete1" type="text" placeholder="Type in an address" value="Empire State Bldg" />
+      <input id="geocomplete1" type="text" placeholder="Type in an address"/>
       <input id="find1" type="button" value="find" />
       <fieldset>  
         <input id = "from_lat" name="lat" type="text" value="" hidden="true">
@@ -250,7 +251,7 @@ $(function()
   
   <div class="map_canvas2"></div>
   <form id="post_to">
-      <input id="geocomplete2" type="text" placeholder="Type in an address" value="Empire State Bldg" />
+      <input id="geocomplete2" type="text" placeholder="Type in an address"/>
       <input id="find2" type="button" value="find" />
       <fieldset>
         <input id = "to_lat" name="lat" type="text" value="" hidden="true">
