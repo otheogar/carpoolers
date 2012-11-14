@@ -1,6 +1,6 @@
 Carpool::Application.routes.draw do
   resources :trip_requests
-
+  resources :users
 
   devise_for :user_logins
 

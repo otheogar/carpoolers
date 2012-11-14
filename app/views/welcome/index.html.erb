@@ -14,7 +14,24 @@
     <p id="notice"><%= flash[:alert] %></p>
 <% end %>
 
+<div id="user_nav">
+<% if current_user || user_login_signed_in? %>
+    Signed in as      <%= user_email %>
+    <% if user_login_signed_in? %>
+        <div class="sign_outs" style="float: right;" ><%= link_to "Sign out", destroy_user_login_session_path %> </div>
+    <% else %>
+        <div class="sign_outs" style="float: right;" ><%= link_to "Sign out with Facebook", signout_path, id: "sign_out" %> </div>
+    <% end %>
+    <br>      <br>
+    <div id="home" style="float: right;" > <%= link_to "Home", userhome_path  %></div>
+<% else %>
+    <%= link_to "Sign up", new_user_login_registration_path %> or
+    <%= link_to "Sign in", new_user_login_session_path %> or
+    <%= link_to "sign in with Facebook", "/auth/facebook", id: "sign_in" %>
 
+<% end %>
+
+</div>
 
 <h1>Welcome to Carpool</h1>
 <p><%= link_to 'Try Carpool!', :controller => "userhome" %></p>

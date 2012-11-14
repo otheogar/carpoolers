@@ -100,4 +100,24 @@ class UserhomeController < ApplicationController
   def radius_to(center_lat, center_long)
     dist(center_lat,center_long,'to_latitude','to_longitude')+ " AS distanceto"
   end
+  def get_drivers
+    drivers_new_updates = Trip.where("updated_at < ? AND flag = ? and availabilty > 0",Time.parse(params[:date])+2,0).order("updated_at desc").first(10)
+
+    #render :text => passenger_new_updates.at(0).updated_at
+    respond_to do |format|
+      format.js do
+        render "get_drivers", :locals => {:new_passengers => passenger_new_updates, :new_drivers => drivers_new_updates}
+      end
+    end
+  end
+  def get_passengers
+    passenger_new_updates = Trip.where("updated_at < ? AND flag = ? and availabilty > 0",Time.parse(params[:date])+2 ,1).order("updated_at desc").first(10)
+
+    #render :text => passenger_new_updates.at(0).updated_at
+    respond_to do |format|
+      format.js do
+        render "get_drivers", :locals => {:new_passengers => passenger_new_updates, :new_drivers => drivers_new_updates}
+      end
+    end
+  end
 end

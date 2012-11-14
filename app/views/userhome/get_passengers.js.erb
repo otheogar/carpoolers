@@ -1,0 +1,7 @@
+<% if (new_passengers.length != 0) %>
+<% for item in new_passengers %>
+$("#passengers_feed").append('<%=j render(item) %>');
+$("#<%=item.id%>").hide();
+$("#<%=item.id%>").fadeIn(500);
+<% end %>
+<%end %>
