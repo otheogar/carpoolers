@@ -32,7 +32,7 @@ class UserhomeController < ApplicationController
     condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
 
     #hack to work in SQLITE
-    condition="SELECT * FROM trips HAVING date='#{search_date_formatted}' AND from_string='Chicago, IL' AND flag=#{flag} ORDER BY time LIMIT 20"
+    #condition="SELECT * FROM trips HAVING date='#{search_date_formatted}' AND from_string='Chicago, IL' AND flag=#{flag} ORDER BY time LIMIT 20"
     if (params[:role] == "passenger")
       trips_passengers_result = Trip.find_by_sql([condition])
     else
