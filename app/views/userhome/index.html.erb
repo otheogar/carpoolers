@@ -17,22 +17,6 @@ $(function()
     $('#role_passenger').removeAttr("checked");
     $('#role_passenger').button("refresh");
 	$("#search_menu").hide();
-	var menu_open = 0;
-	$("#search_button").button().click(function(event) {
-	if (menu_open == 0)
-	{
-        $("#post_menu").hide();
-        $("#post_button").removeAttr('checked');
-        $("#post_button").button("refresh");
-        $('#rolepost_driver').removeAttr("checked");
-        $('#rolepost_driver').button("refresh");
-        $('#rolepost_passenger').removeAttr("checked");
-        $('#rolepost_passenger').button("refresh");
-        $('#role_driver').removeAttr("checked");
-        $('#role_driver').button("refresh");
-        $('#role_passenger').removeAttr("checked");
-        $('#role_passenger').button("refresh");
-        $("#search_menu").hide();
         var menu_open = 0;
         $("#search_button").button().click(function(event) {
             if (menu_open == 0)
@@ -158,7 +142,7 @@ $(function()
                         }
                 );
             }
-        })
+        });
         $("#passengers_feed").scroll(function(){
             var elem = $(this);
             if (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()+1)
@@ -172,7 +156,7 @@ $(function()
                         }
                 );
             }
-        })
+        });
 
 
 
@@ -290,23 +274,7 @@ $(function()
 </script>
 
 <div id="wrapper">
-  <div id="user_nav">
-    <% if current_user || user_login_signed_in? %>
-        Signed in as      <%= user_email %>
-        <% if user_login_signed_in? %>
-            <div class="sign_outs" style="float: right;" ><%= link_to "Sign out", destroy_user_login_session_path %> </div>
-        <% else %>
-            <div class="sign_outs" style="float: right;" ><%= link_to "Sign out with Facebook", signout_path, id: "sign_out" %> </div>
-        <% end %>
-        <br>      <br>
-        <div id="home" style="float: right;" > <%= link_to "Home", userhome_path  %></div>
-    <% else %>
-        <%= link_to "Sign up", new_user_login_registration_path %> or
-        <%= link_to "Sign in", new_user_login_session_path %> or
-        <%= link_to "sign in with Facebook", "/auth/facebook", id: "sign_in" %>
 
-    <% end %>
-  </div>
   <div hidden="true" id="passenger_last_update"><%= @passenger_last_update %></div>
   <div hidden="true" id="driver_last_update"><%= @driver_last_update %></div>
   <h1>Carpoolers, a new way to share rides!</h1>
