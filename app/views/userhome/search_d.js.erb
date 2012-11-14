@@ -1,25 +1,43 @@
 $(window).scrollTop(0);
 <%if (updated_feed == 1) %>
-$("#passengers_feed").html("");
+$("#search_feed").html("");
 <% if (trip_passengers_list.length == 0) %>
-$("#passengers_feed").html("No results found");
+$("#search_feed").html("No results found");
 <%end%>
 <% for item in trip_passengers_list %>
-$("#passengers_feed").append('<%=j render(item) %>');
+$("#search_feed").append('<%=j render(item) %>');
 $("#<%=item.id%>").hide();
 $("#<%=item.id%>").fadeIn(2000);
+$("#<%=item.id%>").bind( "accordionchange", function(event, ui)
+{
+    var index = $("#<%=item.id%>").accordion( "option", "active");
+    if( index  == 0){
+        alert(index)
+    function initialize(){
+
+        mapOptions =  {
+            center: new google.maps.LatLng(34.419255,-119.698869),
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map (document.getElementById('trip_map'), mapOptions);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    }
+});
+
 <% end %>
-$("#passengers_feed").scrollTop(0);
+$("#search_feed").scrollTop(0);
 <%else%>
-$("#drivers_feed").html("");
+$("#search_feed").html("");
 
 <% if (trip_drivers_list.length == 0) %>
-$("#drivers_feed").html("No results found");
+$("#search_feed").html("No results found");
 <%end%>
 <% for item in trip_drivers_list %>
-$("#drivers_feed").append('<%=j render(item) %>');
+$("#search_feed").append('<%=j render(item) %>');
 $("#<%=item.id%>").hide();
 $("#<%=item.id%>").fadeIn(2000);
 <% end %>
-$("#drivers_feed").scrollTop(0);
+$("#search_feed").scrollTop(0);
 <%end%>
