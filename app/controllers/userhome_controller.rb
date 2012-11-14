@@ -5,6 +5,14 @@ class UserhomeController < ApplicationController
   def index
     if session[:homestr].nil?
       @homebase=UserProfile.find_by_email(user_email);
+
+       logger.info "useremail: #{user_email}"
+      logger.info "userlat #{session[:homelat]}"
+      logger.info "userlong #{session[:homelong]}"
+      logger.info "userlat #{session[:homelat].nil?}"
+      logger.info "userlong #{session[:homelong].nil?}"
+      logger.info "userhomebase #{@homebase}"
+
       @str=@homebase.home_string;
       session[:homestr]=@str;
       session[:homelat]=@homebase.home_latitude

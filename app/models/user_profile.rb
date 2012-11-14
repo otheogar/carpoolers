@@ -2,7 +2,7 @@ class UserProfile < ActiveRecord::Base
 
   attr_accessible :age, :description, :email, :gender, :name, :picture_url, :user_uid, :home_string, :home_latitude,:home_longitude
   validates :user_uid, :email, :uniqueness => true
-  validates :age, numericality: {greater_than_or_equal_to: 0.1, message: 'has to be expressed as a number'}
+ validates :age, allow_blank: true, format: {with: %r{\A[0-9]+\z}i, message: 'has to be expressed as a number'}
   validates :picture_url, allow_blank: true, format: {
       with: %r{\.(gif|jpg|png)\Z}i,
       message: 'must be a URL for GIF, JPG or PNG image.'
