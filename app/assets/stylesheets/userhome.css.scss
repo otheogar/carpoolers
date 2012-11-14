@@ -1,6 +1,7 @@
 // Place all the styles related to the userhome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 #menu
 {
 padding-top:2em;
@@ -9,27 +10,54 @@ padding-bottom:2em;
 #wrapper
 {
   width:1050px;
-  height:850px;
   margin:0px auto;
   text-align:left;
   padding:15px;
-  border:1px dashed #333;
-  background-color:#eee; text-align:center;
+  border:1px;
+  background-color:rgba(255,255,255,0.5); text-align:center;
+  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 1.0);
+  -moz-box-shadow: 0 0 1em hsla(0, 0%, 0%, 1.0);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 1.0);
+}
+#feeds_wrapper
+{
+  height:450px;
+}
+#search_wrapper
+  {
+  height:450px;
 }
 #search_menu
 {
+  margin:0px auto;
 box-shadow: 0 0 1px rgba(26, 28, 30, 0.1),0 0 4px rgba(26, 28, 30, 0.3);
 padding: 1em 1em 1em 1em;
 margin-bottom:2em;
 width:1000px;
+height:430px;
 }
+#post_menu
+  {
+  margin:0px auto;
+  box-shadow: 0 0 1px rgba(26, 28, 30, 0.1),0 0 4px rgba(26, 28, 30, 0.3);
+  padding: 1em 1em 1em 1em;
+  margin-bottom:2em;
+  width:1000px;
+  height:430px;
+}
+.location_select
+  {
+ float:left;
+  width:500px;
 
+}
 .feed
   {
   width:500px;
   height:450px;
   float:left;
   margin-right:20px;
+
   box-shadow: 0 0 1px rgba(26, 28, 30, 0.1),0 0 4px rgba(26, 28, 30, 0.3);
 }
 .feed-inside
@@ -56,31 +84,17 @@ width:1000px;
 }
 #geocomplete { width: 200px}
 
-.map_canvas1 { 
-  width: 200px; 
-  height: 200px; 
-  margin: 10px 20px 10px 0;
+.map_wrapper
+  {
+ overflow:hidden;z-index:-999;
 }
-
-.map_canvas2 { 
-  width: 200px; 
-  height: 200px; 
-  margin: 10px 20px 10px 0;
+.map_wrapper_visible
+  {
+  overflow:hidden;z-index:-999;
 }
-
-.map_canvas3 { 
-  width: 200px; 
-  height: 200px; 
+.map_canvas {
+  width: 450px;
+  height: 300px;
   margin: 10px 20px 10px 0;
-}
 
-.map_canvas4 { 
-  width: 200px; 
-  height: 200px; 
-  margin: 10px 20px 10px 0;
-}
-
-#multiple li { 
-  cursor: pointer; 
-  text-decoration: underline; 
 }
