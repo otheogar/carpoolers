@@ -42,6 +42,7 @@ class UserhomeController < ApplicationController
 
     #hack to work in SQLITE
     #condition="SELECT * FROM trips HAVING date='#{search_date_formatted}' AND from_string='Chicago, IL' AND flag=#{flag} ORDER BY time LIMIT 20"
+    #condition="SELECT * FROM trips WHERE from_string='Waltham, MA' AND flag=#{flag} ORDER BY time LIMIT 20"
     if (params[:role] == "passenger")
       trips_passengers_result = Trip.find_by_sql([condition])
     else
