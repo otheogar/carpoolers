@@ -1,28 +1,46 @@
 $(window).scrollTop(0);
+$("#passengers_feed").empty();
+$("#drivers_feed").empty();
 <%if (updated_feed == 1) %>
 $("#search_feed").html("");
 <% if (trip_passengers_list.length == 0) %>
 $("#search_feed").html("No results found");
 <%end%>
 <% for item in trip_passengers_list %>
-$("#search_feed").append('<%=j render(item) %>');
-$("#<%=item.id%>").hide();
-$("#<%=item.id%>").fadeIn(2000);
-$("#<%=item.id%>").bind( "accordionchange", function(event, ui)
+$("#search_feed").append('<%=j render :partial =>'trips/strip', :locals =>{:trip => item} %>');
+$("#a<%=item.id%>").hide();
+$("#a<%=item.id%>").fadeIn(2000);
+$("#a<%=item.id%>").bind( "accordionchange", function(event, ui)
 {
-    var index = $("#<%=item.id%>").accordion( "option", "active");
-    if( index  == 0){
-        alert(index)
+    var index = $("#a<%=item.id%>").accordion( "option", "active");
+
+    if( index  === 0){
     function initialize(){
 
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+        var directionsService = new google.maps.DirectionsService();
+        var from = new google.maps.LatLng(<%=item.from_latitude%>, <%=item.from_longitude%>);
+        var to = new google.maps.LatLng(<%=item.to_latitude%>,<%= item.to_longitude%>);
+
         mapOptions =  {
-            center: new google.maps.LatLng(34.419255,-119.698869),
+            center: from,
             zoom: 8,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
+        var request = {
+            origin: from,
+            destination: to,
+            travelMode: google.maps.TravelMode["DRIVING"]
+        };
         map = new google.maps.Map (document.getElementById('trip_map'), mapOptions);
+        directionsDisplay.setMap(map);
+        directionsService.route(request, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+            }
+        });
     }
-    google.maps.event.addDomListener(window, 'load', initialize);
+    initialize();
     }
 });
 
@@ -35,9 +53,42 @@ $("#search_feed").html("");
 $("#search_feed").html("No results found");
 <%end%>
 <% for item in trip_drivers_list %>
-$("#search_feed").append('<%=j render(item) %>');
-$("#<%=item.id%>").hide();
-$("#<%=item.id%>").fadeIn(2000);
+$("#search_feed").append('<%=j render :partial =>'trips/strip', :locals =>{:trip => item} %>');
+$("#a<%=item.id%>").hide();
+$("#a<%=item.id%>").fadeIn(2000);
+$("#a<%=item.id%>").bind( "accordionchange", function(event, ui)
+{
+    var index = $("#a<%=item.id%>").accordion( "option", "active");
+
+    if( index  === 0){
+        function initialize(){
+
+            var directionsDisplay = new google.maps.DirectionsRenderer();
+            var directionsService = new google.maps.DirectionsService();
+            var from = new google.maps.LatLng(<%=item.from_latitude%>, <%=item.from_longitude%>);
+            var to = new google.maps.LatLng(<%=item.to_latitude%>,<%= item.to_longitude%>);
+
+            mapOptions =  {
+                center: from,
+                zoom: 8,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var request = {
+                origin: from,
+                destination: to,
+                travelMode: google.maps.TravelMode["DRIVING"]
+            };
+            map = new google.maps.Map (document.getElementById('trip_map'), mapOptions);
+            directionsDisplay.setMap(map);
+            directionsService.route(request, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                }
+            });
+        }
+        initialize();
+    }
+});
 <% end %>
 $("#search_feed").scrollTop(0);
 <%end%>

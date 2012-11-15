@@ -1,9 +1,11 @@
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"
+        xmlns="http://www.w3.org/1999/html"></script>
 <script>
 $(function()
 {
-
+    var fetching = true;
     $("#search_wrapper").hide();
+    $("#search_results_menu").hide();
     $("#search_button").removeAttr('checked');
     $("#search_button").button("refresh");
     $("#post_button").removeAttr('checked');
@@ -53,12 +55,16 @@ $(function()
         });
         setInterval(function()
         {
+            if (fetching)
+            {
+
+
             var data_url = "passenger_update=" +  $("#passenger_last_update").html() + "&driver_update=" +   $("#driver_last_update").html();
             $.ajax(  {
                 url: "/fetch_new",
                 data: data_url
             } );
-
+            }
         },10000);
 
         $("#post_submit").button().click(function()
@@ -96,6 +102,7 @@ $(function()
 
         $("#search_submit").button().click(function()
         {
+            fetching = false;
             var rolepost ="passenger";
             var from_string = $("#geocomplete3").val();
             var to_string = $("#geocomplete4").val();
@@ -116,6 +123,12 @@ $(function()
                     }
             );
             menu_open=0;
+            $("#sfrom_result").val(from_string);
+            $("#sto_result").val(to_string);
+            $("#sdate_result").val(date);
+            $("#stime_result").val(time);
+
+            $("#search_results_menu").fadeIn();
             $("#search_menu").fadeOut();
             $("#search_button").removeAttr('checked');
             $("#search_button").button("refresh");
@@ -170,7 +183,10 @@ $(function()
         $("#role_div_post").buttonset();
         $("#search_menu :submit").button();
         $("#post_menu :submit").button();
-
+        $("#dashboard").button().click(function()
+        {
+            window.location = 'index'
+        });
         $("#find1").button();
         $("#find2").button();
         $("#find3").button();
@@ -286,7 +302,18 @@ $(function()
     <button id="pending_button">Pending connect Requests</button>
   </div>
 
-
+  <div id="search_results_menu" class = " ui-corner-all" style = "margin-bottom: 20px;">
+    <div>
+    <h2>Showing Search Results For</h2>
+      <br></br>
+    From: <input id="sfrom_result"></input>
+    To: <input id="sto_result"></input>
+    Date: <input id="sdate_result"></input>
+    Time: <input id="stime_result"></input>
+      <br> </br>
+    Please Click when you are done(Boo!)<button id="dashboard">Reload Dashboard</button>
+      </div>
+  </div>
   <div id="search_menu" class = " ui-corner-all">
     <div id = "role_div">
       Searching for a
