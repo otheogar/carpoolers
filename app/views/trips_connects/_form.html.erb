@@ -1,0 +1,25 @@
+<%= form_for(@trips_connect) do |f| %>
+  <% if @trips_connect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trips_connect.errors.count, "error") %> prohibited this trips_connect from being saved:</h2>
+
+      <ul>
+      <% @trips_connect.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :trip_id %><br />
+    <%= f.number_field :trip_id %>
+  </div>
+  <div class="field">
+    <%= f.label :other_id %><br />
+    <%= f.number_field :other_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

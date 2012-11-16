@@ -11,8 +11,33 @@ $(function()
 		
 	});
 	
+	$('.rating_star').click(function() {
+		var star = $(this);
+		var trip_id = $(this).attr('data-trip-id');
+		var stars = $(this).attr('data-stars');
+		var myDate = new Date();
+		
+		
+		for(i=1;i<=5;i++){
+			if(i<=stars){
+			$('#' + trip_id + '_' +i).addClass('on');
+		} else {
+			$('#' + trip_id + '_' +i).removeClass('on');
+		}
+	}
+	
+	
+	var data_url = "trip_id="+ $(this).attr('data-trip-id') + "&ratings="+ $(this).attr('data-stars') ;
+		$.ajax(
+		{
+			method: "POST",
+			url: "/rating",
+			data: data_url
+		});
+	});
+	
 	$("#connect_button_<%= trip.id %>:submit").button().click(function(){
-	var send_data = "trip_id="+'<%= trip.id %>';
+	var send_data = "trip_id="+'<%= trip.id %>'
 	$.ajax
 	({
 		url:'/connect',
@@ -23,8 +48,7 @@ $(function()
 		 $("#connect_button_<%= trip.id %>:submit").attr("disabled","disabled")
 		 $("#connect_button_<%= trip.id %>:submit").css("background","grey")
 		})
-	})
-	;
+	});
 		
 		
 	 
@@ -42,6 +66,11 @@ $(function()
 <div>
 <div>Depart on <%= trip.date.strftime("%m/%d/%y") %> at <%= trip.time.strftime("%I:%M %p") %> <br\>
   <div>  <%= link_to "Poster", trip_owner_url(:user_uid => trip.owner_id) %></div>
+  <div class="rating" id="rating1result0_<%= trip.id %>">
+	<% (1..5) .each do |i| %>
+	<li class= "rating_star" data-stars= "<%= i %>" data-trip-id= "<%= trip.id %>" id="<%= "#{trip.id}_#{i}" %>"</li>
+  <% end %>
+ </div>
 <button id="connect_button_<%= trip.id %>" class = "ui-button-text ui-widget ui-state-default ui-corner-all ui-button-text-only" > Connect </button>
 </div>
 </div>

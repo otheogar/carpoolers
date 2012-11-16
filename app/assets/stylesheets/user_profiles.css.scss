@@ -8,3 +8,20 @@
   margin-bottom:2em;
   width:1000px;
 }
+
+.rating {
+	margin: auto 0;
+}
+
+.rating_star {
+	background: url('ratings.png') 0 0;
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: left;
+}
+
+.on {
+	background-position: 0 16px;
+	
+}

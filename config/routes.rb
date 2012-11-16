@@ -1,4 +1,6 @@
 Carpool::Application.routes.draw do
+  resources :trips_connects
+
   resources :trip_requests
 
 
@@ -15,7 +17,7 @@ Carpool::Application.routes.draw do
   match '/trippost' => 'trips#create', :as => 'trippost'
   match '/connect' => 'userhome#connect', :as => 'connect'
    match '/trip_owner' => 'user_profiles#owner', :as => 'trip_owner'
-
+   match '/rating' => 'userhome#rating', :as=> 'rating'
   resources :user_profiles
   get "welcome/index"
 
@@ -26,6 +28,7 @@ Carpool::Application.routes.draw do
    match 'edit_profile', to: 'user_profiles#get_by_email', as: 'edit_profile'
   
   resources :users
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

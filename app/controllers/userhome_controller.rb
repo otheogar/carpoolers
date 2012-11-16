@@ -59,10 +59,19 @@ class UserhomeController < ApplicationController
   def connect
 
     @trips_connect = Trip.find(params[:trip_id])
+	
+	#if user_login_signed_in?
+     # @user_id1 = current_user_login.email
+    #else if session[:uid]
+     # @user_id1 = session[:uid]
+    #end
+	#end
     availabilty = @trips_connect.availabilty
     if(availabilty > 0)
       availabilty=availabilty - 1;
       @trips_connect.update_attribute(:availabilty, availabilty )
+	  @trips_connects = TripsConnect.new(trip_id: params[:trip_id], other_id: user_id)
+	  @trips_connects.save
       respond_to do |format|
         format.html { redirect_to(userhome_url) }
         format.json { head :no_content }
@@ -97,7 +106,34 @@ class UserhomeController < ApplicationController
     dist(center_lat,center_long,'from_latitude','from_longitude') +" AS distancefrom"
   end
 
-  def radius_to(center_lat, center_long)
+  de+f radius_to(center_lat, center_long)
     dist(center_lat,center_long,'to_latitude','to_longitude')+ " AS distanceto"
   end
+  
+  def rating
+	 
+	 @trip = Trip.find(params[:trip_id])
+	 owner_ids = @trip.owner_id
+	 @trip.update_attribute(:ratings, params[:ratings])
+	 @owner_trip = UserProfile.find_by_user_uid(owner_ids)
+	 #current_rating = params[:ratings]
+	 prev_rating= @owner_trip.ratings
+	 prev_no_rating = @owner_trip.no_ratings
+	 if prev_rating == 0
+		new_rating =  params[:ratings]
+	 else
+		new_rating = ((prev_rating * prev_no_rating) + params[:ratings].to_f)/(prev_no_rating + 1)
+	 end
+	 new_no_rating = 1
+	#@trip=Trip.new(rating: params[:rating])
+     respond_to do |format|
+     if @owner_trip.update_attributes(:ratings => new_rating, :no_ratings => new_no_rating)
+        format.html { redirect_to @owner_trip, notice: 'Trip was successfully updated.' }
+        format.json { head :no_content }
+     else
+        format.html { render action: "edit" }
+        format.json { render json: @owner_trip.errors, status: :unprocessable_entity }
+     end
+    end
+end
 end

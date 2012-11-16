@@ -2,7 +2,8 @@
 <script>
 $(function()
 {
-    $("#search_wrapper").hide();
+    
+	$("#search_wrapper").hide();
     $("#search_button").removeAttr('checked');
     $("#search_button").button("refresh");
     $("#post_button").removeAttr('checked');
@@ -17,7 +18,9 @@ $(function()
     $('#role_passenger').button("refresh");
 	$("#search_menu").hide();
 	var menu_open = 0;
+	
 	$("#search_button").button().click(function(event) {
+	
 	if (menu_open == 0)
 	{
         $("#post_menu").hide();
@@ -35,6 +38,7 @@ $(function()
     $("#post_menu").hide();
     var post_menu_open = 0;
     $("#post_button").button().click(function(event) {
+	
         if (post_menu_open == 0)
         {
             $("#search_menu").hide();
@@ -95,6 +99,7 @@ $(function()
 	
 	$("#search_submit").button().click(function()
 	{
+		
 		var rolepost ="passenger";
 		var from_string = $("#geocomplete3").val();
 		var to_string = $("#geocomplete4").val();
@@ -127,6 +132,8 @@ $(function()
 	$("#profile_button").button().click(function(event){
         window.location = '/edit_profile'
     })
+	
+
     $("#pending_button").button();
 	$("#search_date").datepicker();
     $("#post_date").datepicker();

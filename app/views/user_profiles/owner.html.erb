@@ -1,3 +1,19 @@
+<script>
+$(function()
+{
+$("#rating1result0_<%= @user_profile.id %>").ready(function() {
+	var star = <%=@user_profile.ratings %>
+	var trp = <%=@user_profile.id %>
+	for(i=1;i<=5;i++){
+			if(i<=star ){
+			$('#' + trp + '_' +i).addClass('on');
+		} else {
+			$('#' + trp + '_' +i).removeClass('on');
+		}
+	}
+	});
+})
+</script>
 <p id="notice"><%= notice %></p>
 <h1> Person offering to share this ride</h1>
 <div id="profile_menu" class = " ui-corner-all">
@@ -34,6 +50,15 @@
 <p>
   <b>Description:</b>
   <%= @user_profile.description %>
+</p>
+<p>
+<div style="float:left"> <b> Rating: </b></div>
+<div class="rating" style="float:left" id="rating1result0_<%= @user_profile.id %>">
+<% (1..5) .each do |i| %>
+<li class= "rating_star" data-stars= "<%= i %>" data-@user_profile-id= "<%= @user_profile.id %>" id="<%= "#{@user_profile.id}_#{i}" %>"</li>
+<% end %>
+</div>
+<br>
 </p>
 </div>
 

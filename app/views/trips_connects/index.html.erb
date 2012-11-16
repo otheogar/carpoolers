@@ -1,0 +1,25 @@
+<h1>Listing trips_connects</h1>
+
+<table>
+  <tr>
+    <th>Trip</th>
+    <th>Other</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trips_connects.each do |trips_connect| %>
+  <tr>
+    <td><%= trips_connect.trip_id %></td>
+    <td><%= trips_connect.other_id %></td>
+    <td><%= link_to 'Show', trips_connect %></td>
+    <td><%= link_to 'Edit', edit_trips_connect_path(trips_connect) %></td>
+    <td><%= link_to 'Destroy', trips_connect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trips connect', new_trips_connect_path %>

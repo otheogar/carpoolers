@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20121113231420_add_no_ratings_to_user_profiles.rb

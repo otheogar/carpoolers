@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20121115045929_add_other_id_to_trips_connects.rb

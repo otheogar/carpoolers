@@ -1,3 +1,20 @@
 // Place all the styles related to the Trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.rating {
+	margin: auto 0;
+}
+
+.rating_star {
+	background: url('ratings.png') 0 0;
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: left;
+}
+
+.on {
+	background-position: 0 16px;
+	
+}
