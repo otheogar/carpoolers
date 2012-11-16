@@ -1,0 +1,13 @@
+<tr>
+	<% if message.read == 0 %>
+	<td><b><%= message.sub %></b></td>
+	<td><b><%= message.created_at %></b></td>
+    <td><%= link_to 'Show', message %></td>
+    <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% else %>
+    <td><%= message.sub %></td>
+	<td><%= message.created_at %></td>
+    <td><%= link_to 'Show', message %></td>
+    <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
+  </tr>

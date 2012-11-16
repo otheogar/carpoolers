@@ -1,4 +1,6 @@
 Carpool::Application.routes.draw do
+  resources :messages
+
   resources :trip_requests
   resources :users
 
@@ -14,8 +16,10 @@ Carpool::Application.routes.draw do
   match '/search' => 'userhome#search', :as => 'search'
   match '/trippost' => 'trips#create', :as => 'trippost'
   match '/connect' => 'userhome#connect', :as => 'connect'
-   match '/trip_owner' => 'user_profiles#owner', :as => 'trip_owner'
-
+  match '/trip_owner' => 'user_profiles#owner', :as => 'trip_owner'
+  match '/send_message' => 'messages#create', :as => 'sendmessage'
+  match '/updateread' => 'messages#update_read', :as => 'updateread'
+  
   resources :user_profiles
   get "welcome/index"
 

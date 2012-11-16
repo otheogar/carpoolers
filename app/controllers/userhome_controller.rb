@@ -25,7 +25,8 @@ class UserhomeController < ApplicationController
    if !lat.nil? && !lng.nil?
      cond="from_latitude < (#{lat}+0.1) and from_latitude>(#{lat}-0.1) and from_longitude < (#{lng}+0.5) and from_longitude>(#{lng}-0.5) and "
    end
-
+	@messages = Message.where("owner_id = ?", user_id).order("created_at desc")
+	@count = @messages.where("read =?",0).count
   @trips_passengers = Trip.where(cond+"flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc")
   @trips_drivers = Trip.where(cond+"flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc")
 

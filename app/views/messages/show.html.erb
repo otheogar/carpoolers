@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Received at:</b>
+  <%= @message.created_at %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @message.sub %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @message.body %>
+</p>
+
+
+
+<%= link_to 'Back', messages_path %>
+
+<script>
+$(window).load(function()
+{
+	var messageid = "message_id="+'<%= @message.id %>';
+	
+	$.ajax(
+	{
+	url:'/updateread',
+	data: messageid
+	}
+	)
+	
+})
+</script>

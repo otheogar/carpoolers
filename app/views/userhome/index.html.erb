@@ -176,6 +176,9 @@ $(function()
         $("#profile_button").button().click(function(event){
             window.location = '/edit_profile'
         })
+		$("#message_button").button().click(function(event){
+            window.location = '/messages'
+        })
         $("#pending_button").button();
         $("#search_date").datepicker();
         $("#post_date").datepicker();
@@ -299,6 +302,7 @@ $(function()
     <input type="checkbox" id="search_button"/><label for="search_button">Search for Rides</label>
     <input type="checkbox" id="post_button"/><label for="post_button">Post Ride</label>
     <button id="profile_button">Edit Profile</button>
+	<button id="message_button">Inbox(<%= @count %>)</button>
     <button id="pending_button">Pending connect Requests</button>
   </div>
 

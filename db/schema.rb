@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121104015108) do
+ActiveRecord::Schema.define(:version => 20121116063755) do
+
+  create_table "messages", :force => true do |t|
+    t.string   "sub"
+    t.text     "body"
+    t.integer  "read"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "owner_id"
+  end
+
+  add_index "messages", ["owner_id"], :name => "index_messages_on_owner_id"
 
   create_table "trips", :force => true do |t|
     t.string   "from_string"
@@ -29,12 +40,11 @@ ActiveRecord::Schema.define(:version => 20121104015108) do
     t.string   "owner_id"
   end
 
-  add_index "trips", ["owner_id"], :name => "index_trips_on_owner_id"
   add_index "trips", ["from_latitude"], :name => "index_trips_on_from_latitude"
   add_index "trips", ["from_longitude"], :name => "index_trips_on_from_longitude"
+  add_index "trips", ["owner_id"], :name => "index_trips_on_owner_id"
   add_index "trips", ["to_latitude"], :name => "index_trips_on_to_latitude"
   add_index "trips", ["to_longitude"], :name => "index_trips_on_to_longitude"
-
 
   create_table "user_logins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -67,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20121104015108) do
     t.float    "home_latitude"
     t.string   "picture_url"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   add_index "user_profiles", ["user_uid"], :name => "index_user_profiles_on_user_uid", :unique => true

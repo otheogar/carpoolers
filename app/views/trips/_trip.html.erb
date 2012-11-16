@@ -13,14 +13,26 @@ $(function()
 
 	$("#connect_button_<%= trip.id %>:submit").button().click(function(){
 	var send_data = "trip_id="+'<%= trip.id %>';
+	var subj =  "Connect Request for Trip " + '<%= trip.id %>';
+	var bodytext = "Hi User, " + '<%= user_email %>' + " has connected to the trip " + '<%= trip.id %>' + " posted by you.  Thanks Team Carpool.";
+	var useruid = '<%= trip.owner_id %>';
+	var read = 0;
+	var data_url = "subject="+ subj + "&body_text=" + bodytext + "&flag=" +read + "&userid="+ useruid ;
 	$.ajax
 	({
 		url:'/connect',
 		data: send_data
 		}).done(function(event)
 		{
-            if (event == 1)
+		    if (event == 1)
             {
+				$.ajax
+			({
+				url: '/send_message',
+				method: 'POST',
+				data : data_url
+			})
+        
                 alert('You have been successfully added to the trip')
                 $("#connect_button_<%= trip.id %>:submit").attr("disabled","disabled")
                 $("#connect_button_<%= trip.id %>:submit").css("background","grey")
