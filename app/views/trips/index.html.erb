@@ -1,0 +1,39 @@
+<h1>Listing trips</h1>
+
+<table>
+  <tr>
+    <th>From string</th>
+    <th>To string</th>
+    <th>From longitude</th>
+    <th>From latitude</th>
+    <th>To longitude</th>
+    <th>To latitude</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Flag</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trips.each do |trip| %>
+  <tr>
+    <td><%= trip.from_string %></td>
+    <td><%= trip.to_string %></td>
+    <td><%= trip.from_longitude %></td>
+    <td><%= trip.from_latitude %></td>
+    <td><%= trip.to_longitude %></td>
+    <td><%= trip.to_latitude %></td>
+    <td><%= trip.date %></td>
+    <td><%= trip.time %></td>
+    <td><%= trip.flag %></td>
+    <td><%= link_to 'Show', trip %></td>
+    <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+    <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trip', new_trip_path %>

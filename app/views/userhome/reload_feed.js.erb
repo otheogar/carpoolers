@@ -1,0 +1,14 @@
+$("#passengers_feed").html("");
+<% for item in trip_passengers_list %>
+$("#passengers_feed").append('<%=j render(item) %>');
+$("#<%=item.id%>").hide();
+$("#<%=item.id%>").fadeIn(500);
+<% end %>
+$("#passengers_feed").scrollTop(0);
+$("#drivers_feed").html("");
+<% for item in trip_drivers_list %>
+$("#drivers_feed").append('<%=j render(item) %>');
+$("#<%=item.id%>").hide();
+$("#<%=item.id%>").fadeIn(500);
+<% end %>
+$("#drivers_feed").scrollTop(0);

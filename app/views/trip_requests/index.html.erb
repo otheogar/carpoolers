@@ -1,0 +1,27 @@
+<h1>Listing trip_requests</h1>
+
+<table>
+  <tr>
+    <th>Req</th>
+    <th>Trip</th>
+    <th>Accepted flag</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trip_requests.each do |trip_request| %>
+  <tr>
+    <td><%= trip_request.req_id %></td>
+    <td><%= trip_request.trip_id %></td>
+    <td><%= trip_request.accepted_flag %></td>
+    <td><%= link_to 'Show', trip_request %></td>
+    <td><%= link_to 'Edit', edit_trip_request_path(trip_request) %></td>
+    <td><%= link_to 'Destroy', trip_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trip request', new_trip_request_path %>

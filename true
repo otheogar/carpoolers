@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20121103061404_add_uid_to_user_login.rb

@@ -1,0 +1,360 @@
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script>
+$(function()
+{
+    $("#search_wrapper").hide();
+	$("#delete_feed_wrapper").hide();
+    $("#disconnect_feed_wrapper").hide();
+    $("#search_button").removeAttr('checked');
+    $("#search_button").button("refresh");
+    $("#post_button").removeAttr('checked');
+    $("#post_button").button("refresh");
+    $('#rolepost_driver').removeAttr("checked");
+    $('#rolepost_driver').button("refresh");
+    $('#rolepost_passenger').removeAttr("checked");
+    $('#rolepost_passenger').button("refresh");
+    $('#role_driver').removeAttr("checked");
+    $('#role_driver').button("refresh");
+    $('#role_passenger').removeAttr("checked");
+    $('#role_passenger').button("refresh");
+	$("#search_menu").hide();
+	var menu_open = 0;
+	$("#search_button").button().click(function(event) {
+	if (menu_open == 0)
+	{
+        $("#post_menu").hide();
+		$("#delete_feed").hide();
+        $("#disconnect_feed").hide();
+		$("#delete_feed_wrapper").hide();
+        $("#disconnect_feed_wrapper").hide();
+        $("#post_button").removeAttr('checked');
+        $("#post_button").button("refresh");
+        post_menu_open = 0;
+	 $("#search_menu").fadeIn();
+	 menu_open = 1;
+	}else
+	{
+     $("#search_menu").fadeOut();
+	 menu_open = 0;
+	}
+	});
+    $("#post_menu").hide();
+    var post_menu_open = 0;
+    $("#post_button").button().click(function(event) {
+        if (post_menu_open == 0)
+        {
+            $("#search_menu").hide();
+			$("#delete_feed_wrapper").hide();
+            $("#disconnect_feed_wrapper").hide();
+            $("#search_button").removeAttr('checked');
+            $("#search_button").button("refresh");
+            menu_open = 0;
+            $("#post_menu").fadeIn();
+            post_menu_open = 1;
+
+        }else
+        {
+            $("#post_menu").fadeOut();
+            post_menu_open = 0;
+        }
+		});
+		
+    $("#mytrips_button").button().click(function(event) {
+        
+            $("#search_menu").hide();
+			$("#post_menu").hide();
+			post_menu_open = 0;
+			search_menu_open = 0;
+			$("#passengers_feed").hide();
+			$("#drivers_feed").hide();
+			$("#passengers_feed_wrapper" ).hide();
+			$("#drivers_feed_wrapper" ).hide();
+		    $("#delete_feed_wrapper").scrollTop(0);
+            $("#disconnect_feed_wrapper").scrollTop(0);
+			$("#delete_feed").scrollTop(0);
+            $("#disconnect_feed").scrollTop(0);
+			$("#delete_feed_wrapper").show();
+			$("#disconnect_feed_wrapper").show(); 
+        
+    });
+    setInterval(function()
+    {
+        var data_url = "passenger_update=" +  $("#passenger_last_update").html() + "&driver_update=" +   $("#driver_last_update").html();
+        $.ajax(  {
+                url: "/fetch_new",
+                data: data_url
+        } );
+
+    },10000);
+	
+	
+     
+	$("#post_submit").button().click(function()
+	{
+		var from_string = $("#geocomplete1").val();
+		var to_string = $("#geocomplete2").val();
+		var from_lat = $("#from_lat").val();
+		var from_long = $("#from_long").val();
+		var to_lat = $("#to_lat").val();
+		var to_long = $("#to_long").val();
+		var date = $("#post_date").val();
+		var time = $("#post_time").val();
+		if($('#rolepost_driver').is(':checked')) { var rolepost ="driver"; }
+		
+		var data_url = "post_from="+ from_string + "&post_to=" + to_string + "&post_date=" +date + "&post_time="+ time  + "&rolepost=" + rolepost + "&from_long=" + from_long + "&from_lat=" + from_lat + "&to_long=" + to_long + "&to_lat=" + to_lat;
+        $.ajax(
+                {
+                    url: "/trippost",
+                    method: "POST",
+                    data : data_url
+                }
+        );
+        post_menu_open=0;
+        /*$.ajax(
+         {
+         url:"/reload_feed"
+         }).done(function() {
+         });          */
+        $("#post_menu").fadeOut();
+        $("#post_button").removeAttr('checked');
+        $("#post_button").button("refresh");
+        $("#passengers_feed").scrollTop(0);
+        $("#drivers_feed").scrollTop(0);
+	});
+	
+	$("#search_submit").button().click(function()
+	{
+		var rolepost ="passenger";
+		var from_string = $("#geocomplete3").val();
+		var to_string = $("#geocomplete4").val();
+		var from_lat = $("#sfrom_lat").val();
+		var from_long = $("#sfrom_long").val();
+		var to_lat = $("#sto_lat").val();
+		var to_long = $("#sto_long").val();
+		var date = $("#search_date").val();
+		var time = $("#search_time").val();
+		if($('#role_driver').is(':checked')) { rolepost ="driver"; }
+		
+		var data_url = "search_from="+ from_string + "&search_to=" + to_string + "&search_date=" +date + "&role="+ rolepost +"&from_lat="+ from_lat + "&from_long=" + from_long + "&to_lat="+ to_lat + "&to_long=" + to_long;
+		$.ajax(
+		{
+		  url: "/search",
+		  method: "GET",
+		  data : data_url
+		}
+		);
+        menu_open=0;
+        $("#search_menu").fadeOut();
+        $("#search_button").removeAttr('checked');
+        $("#search_button").button("refresh");
+        $("#passengers_feed").scrollTop(0);
+        $("#drivers_feed").scrollTop(0);
+	});
+	
+	$("#profile_button").button().click(function(event){
+        window.location = '/edit_profile'
+    });
+	
+	
+    $("#mytrips_button").button();
+	$("#search_date").datepicker();
+    $("#post_date").datepicker();
+	$("#role_div").buttonset();
+    $("#role_div_post").buttonset();
+	$("#search_menu :submit").button();
+    $("#post_menu :submit").button();
+
+    $("#passengers_feed").scrollTop(0);
+    $("#drivers_feed").scrollTop(0);
+	$("#delete_feed").scrollTop(0);
+    $("#disconnect_feed").scrollTop(0);
+
+})
+
+
+</script>
+
+<script src="/assets/jquery.geocomplete.js"></script>
+
+<script>
+    $(function(){
+        $("#geocomplete1").geocomplete({
+            map: ".map_canvas1",
+            details: "#post_from",
+            types: ["geocode", "establishment"]
+        });
+        $("#find1").click(function(){
+            $("#geocomplete1").trigger("geocode");
+        });
+        $("#geocomplete2").geocomplete({
+            map: ".map_canvas2",
+            details: "#post_to",
+            types: ["geocode", "establishment"]
+        });
+
+        $("#find2").click(function(){
+            $("#geocomplete2").trigger("geocode");
+        });
+
+
+
+        $("#geocomplete3").geocomplete({
+            map: ".map_canvas3",
+            details: "#search_from",
+            types: ["geocode", "establishment"]
+        });
+        $("#find3").click(function(){
+            $("#geocomplete3").trigger("geocode");
+        });
+        $("#geocomplete4").geocomplete({
+            map: ".map_canvas4",
+            details: "#search_to",
+            types: ["geocode", "establishment"]
+        });
+        $("#find4").click(function(){
+            $("#geocomplete4").trigger("geocode");
+        });
+
+
+
+    });
+</script>
+
+<div id="wrapper">
+<div hidden="true" id="passenger_last_update"><%= @passenger_last_update %></div>
+<div hidden="true" id="driver_last_update"><%= @driver_last_update %></div>
+ <h1>Welcome to Your Homepage</h1>
+<p>Live Feeds for Carpooling!</p>
+<div id = "menu">
+<input type="checkbox" id="search_button"/><label for="search_button">Search for Rides</label>
+<input type="checkbox" id="post_button"/><label for="post_button">Post Ride</label>
+<button id="profile_button">Edit Profile</button>
+<button id="mytrips_button">My Trips</button>
+</div>
+
+
+
+
+
+<div id="search_menu" class = " ui-corner-all">
+  <div id = "role_div">
+        Searching for a
+        <%= radio_button_tag(:role, "passenger") %>
+        <%= label_tag(:role_passenger, "Passenger") %>
+        <%= radio_button_tag(:role, "driver") %>
+        <%= label_tag(:role_driver, "Driver") %>
+  </div>
+  <div class="map_canvas3"></div>
+  <form id="search_from">
+      <input id="geocomplete3" type="text" placeholder="Type in an address" />
+      <input id="find3" type="button" value="find" />
+      <fieldset>  
+        <input id = "sfrom_lat" name="lat" type="text" value="" hidden="true">
+        <input id = "sfrom_long" name="lng" type="text" value="" hidden="true">
+		</fieldset>
+    </form>
+  
+  <div class="map_canvas4"></div>
+  <form id="search_to">
+      <input id="geocomplete4" type="text" placeholder="Type in an address"/>
+      <input id="find4" type="button" value="find" />
+      <fieldset>
+        <input id = "sto_lat" name="lat" type="text" value="" hidden="true">
+        <input id = "sto_long" name="lng" type="text" value="" hidden="true">
+		</fieldset>
+    </form>
+  <%= label_tag(:search_date, "On:") %>
+  <%= text_field_tag(:search_date) %>
+  <%= label_tag(:search_time, "At:") %>
+  <%= text_field_tag(:search_time) %>
+  <button id="search_submit">Search</button>
+    </div>
+
+
+
+<div id="post_menu" class = " ui-corner-all">
+  <div class="map_canvas1"></div>
+  <form id="post_from">
+      <input id="geocomplete1" type="text" placeholder="Type in an address" value="Empire State Bldg" />
+      <input id="find1" type="button" value="find" />
+      <fieldset>  
+        <input id = "from_lat" name="lat" type="text" value="" hidden="true">
+        <input id = "from_long" name="lng" type="text" value="" hidden="true">
+		</fieldset>
+    </form>
+  
+  <div class="map_canvas2"></div>
+  <form id="post_to">
+      <input id="geocomplete2" type="text" placeholder="Type in an address" value="Empire State Bldg" />
+      <input id="find2" type="button" value="find" />
+      <fieldset>
+        <input id = "to_lat" name="lat" type="text" value="" hidden="true">
+        <input id = "to_long" name="lng" type="text" value="" hidden="true">
+		</fieldset>
+    </form>
+  
+		<%= label_tag(:post_date, "Date:") %>
+        <%= text_field_tag(:post_date) %>
+        <%= label_tag(:post_time, "Time:") %>
+        <%= text_field_tag(:post_time) %>
+        <div id = "role_div_post">
+          <%= radio_button_tag(:rolepost, "passenger") %>
+          <%= label_tag(:rolepost_passenger, "Passenger") %>
+          <%= radio_button_tag(:rolepost, "driver") %>
+          <%= label_tag(:rolepost_driver, "Driver") %>
+          <%= hidden_field_tag(:owner_id, user_id) %>
+        </div>
+		<button id="post_submit">Post</button>
+    </div>
+
+  <div id="feeds_wrapper">
+    <div id = "drivers_feed_wrapper" class= "feed ui-corner-all">
+      <h3 style = "text-align:center">Drivers</h3>
+      <div id = "drivers_feed" style ="overflow:scroll;" class = "feed-inside">
+        <% for item in @trips_drivers %>
+            <div><%= render(item) %></div>
+        <% end %>
+      </div>
+    </div>
+    <div id = "passengers_feed_wrapper" class= "feed ui-corner-all">
+      <h3 style = "text-align:center">Passengers</h3>
+      <div id = "passengers_feed" style ="overflow:scroll;"  class = "feed-inside">
+        <% for item in @trips_passengers %>
+            <div><%= render(item) %></div>
+        <% end %>
+      </div>
+    </div>
+
+	<div id = "disconnect_feed_wrapper" class= "feed ui-corner-all">
+	     <h3 style = "text-align:center">Trips Connected by me</h3>
+		 <div id = "disconnect_feed" style ="overflow:scroll;" class = "feed-inside">
+		 <% for item in @my_trips_as_driver_disconnect %>
+				<div><%= render :partial=> 'userhome/mytrip_dis' , :locals => {:my_trips_as_driver_disconnect => @my_trips_as_driver_disconnect,:trip =>item ,:delete =>0 }%></div>
+		<% end %>
+		<% for item in @my_trips_as_passenger_disconnect %>
+				<div><%= render :partial=> 'userhome/mytrip_dis' , :locals => {:my_trips_as_passenger_disconnect => @my_trips_as_passenger_disconnect,:trip =>item ,:delete =>0 }%></div>
+		<% end %>
+         </div>
+    </div>
+	<div id = "delete_feed_wrapper" class= "feed ui-corner-all">
+      <h3 style = "text-align:center">Trips Posted by me</h3>
+      <div id = "delete_feed" style ="overflow:scroll;" class = "feed-inside">
+	  <% for item in @my_trips_as_driver_delete %>
+            <div><%= render :partial=> 'userhome/mytrip', :locals =>  {:my_trips_as_driver_delete => @my_trips_as_driver_delete ,:trip =>item ,:delete_flag =>'1' } %></div>
+	  <% end %>
+	  <% for item in @my_trips_as_passenger_delete %>
+            <div><%= render :partial=> 'userhome/mytrip', :locals =>  {:my_trips_as_passenger_delete => @my_trips_as_passenger_delete ,:trip =>item ,:delete_flag =>1 } %></div>
+	  <% end %>
+      </div>
+    </div>
+</div>  
+
+    <div id="search_wrapper">
+    <div id = "search_feed_wrapper" class= "feed ui-corner-all">
+      <h3 style = "text-align:center">Search results:</h3>
+      <div id = "search_feed" style ="overflow:scroll;" class = "feed-inside">
+        <%= render text: "trial #{@str}" %>
+      </div>
+    </div>
+  </div>
+ 

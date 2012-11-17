@@ -1,0 +1,49 @@
+
+<script>
+$(function()
+{
+	$("#<%= trip.id %>").accordion(
+	{
+		
+		collapsible: true
+				
+	});
+	
+	$("#connect_button_<%= trip.id %>:submit").button().click(function(){
+	var send_data = "trip_id="+'<%= trip.id %>';
+	$.ajax
+	({
+		url:'/connect',
+		data: send_data
+		}).done(function(event)
+		{
+		 alert('You have been successfully added to the trip')
+		 $("#connect_button_<%= trip.id %>:submit").attr("disabled","disabled")
+		 $("#connect_button_<%= trip.id %>:submit").css("background","grey")
+		})
+	});
+		
+		
+	 
+	$("#<%= trip.id %>").accordion("activate", -1)
+    $("#passengers_feed").scrollTop(0);
+    $("#drivers_feed").scrollTop(0);
+	
+	
+	
+	
+})
+</script>
+<div id = "<%= trip.id %>" class = "text trip">
+<div>From: <%= trip.from_string %> to: <%= trip.to_string %></div>
+<div>
+<div>Depart on <%= trip.date.strftime("%m/%d/%y") %> at <%= trip.time.strftime("%I:%M %p") %> <br\>
+  <div id = "trip_link">  <%= link_to "Poster", trip_owner_url(:user_uid => trip.owner_id) %></div>
+<button id="connect_button_<%= trip.id %>" class = "ui-button-text ui-widget ui-state-default ui-corner-all ui-button-text-only" > Connect </button>
+</div>
+</div>
+
+</div>
+
+
+

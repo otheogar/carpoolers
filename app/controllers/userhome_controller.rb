@@ -1,0 +1,139 @@
+class UserhomeController < ApplicationController
+  before_filter :authorize
+
+
+  def index
+  @homebase=UserProfile.find_by_email(user_email)
+  @str=@homebase.home_string
+  cond=""
+   if !@homebase.home_latitude.nil?
+     cond="from_latitude < (#{@homebase.home_latitude}+0.1) and from_latitude>(#{@homebase.home_latitude}-0.1) and from_longitude < (#{@homebase.home_longitude}+0.5) and from_longitude>(#{@homebase.home_longitude}-0.5) and "
+   end
+    @my_trips_as_driver_disconnect = Array.new;
+	@my_trips_as_passenger_disconnect = Array.new;
+	@my_trips_as_driver_delete = Array.new;
+	@my_trips_as_passenger_delete = Array.new;
+	@trips_connect = Array.new;
+	@trips_connect.each do |trips_connect1|
+	    #@trips_connect = TripsConnect.find_by_other_id(user_id)
+        trips_connect1 = TripsConnect.find_by_other_id(user_id);
+		#from_trip_table = Trip.find(trips_connect1.trip_id);
+		@my_trips_as_driver_disconnect = Trip.where("flag =? and id = ?",1,trips_connect1.trip_id)
+		@my_trips_as_passenger_disconnect = Trip.where("flag =? and id = ?",0,trips_connect1.trip_id)
+			
+	end
+	@my_trips_as_driver_delete = Trip.where("flag =? and owner_id = ? ",0,user_id)
+	@my_trips_as_passenger_delete = Trip.where("flag =? and owner_id = ? ",1,user_id)
+	@trips_passengers = Trip.where(cond+"flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc")
+	@trips_drivers = Trip.where(cond+"flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc")
+	@passenger_last_update = @trips_passengers.at(0).updated_at;
+	@driver_last_update = @trips_drivers.at(0).updated_at;
+  end
+
+  def search
+    #change this to allo user selection of radius - use default 15 miles
+    r_from=15
+    r_to=15
+    trips_passengers_result = Array.new;
+    trips_drivers_result = Array.new;
+    search_date_formatted = Date.strptime(params[:search_date], '%m/%d/%Y')
+    radius_cond_from = radius_from(params[:from_lat],params[:from_long])
+    radius_cond_to = radius_to(params[:to_lat],params[:to_long])
+    flag=0
+    if (params[:role] == "passenger")
+      flag=1
+    end
+    condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
+
+    #hack to work in SQLITE
+    condition="SELECT * FROM trips HAVING date='#{search_date_formatted}' AND from_string='Chicago, IL' AND flag=#{flag} ORDER BY time LIMIT 20"
+    if (params[:role] == "passenger")
+      trips_passengers_result = Trip.find_by_sql([condition])
+    else
+      trips_drivers_result =  Trip.find_by_sql([condition])
+    end
+    feed = ((params[:role] == "driver") ? 0:1)
+    respond_to do |format|
+      format.js do
+        render "search_d", :locals => {:trip_passengers_list => trips_passengers_result, :trip_drivers_list => trips_drivers_result, :updated_feed => feed}
+      end
+    end
+  end
+
+  def reload_feed
+    @trips_passengers = Trip.where("flag = ?", 1).limit(20).order("updated_at desc")
+    @trips_drivers = Trip.where("flag = ?", 0).limit(20).order("updated_at desc")
+   respond_to do |format|
+      format.js do
+        render "reload_feed", :locals => {:trip_passengers_list => @trips_passengers, :trip_drivers_list => @trips_drivers}
+      end
+   end
+  end
+
+  def connect
+
+    @trips_connect = Trip.find(params[:trip_id])
+    availabilty = @trips_connect.availabilty
+    if(availabilty > 0)
+      availabilty=availabilty - 1;
+      @trips_connect.update_attribute(:availabilty, availabilty )
+	  @trips_connects = TripsConnect.new(trip_id: params[:trip_id], other_id: user_id)
+	  @trips_connects.save
+      respond_to do |format|
+        format.html { redirect_to(userhome_url) }
+        format.json { head :no_content }
+      end
+    end
+  end
+
+
+
+
+  def fetch_new
+     passenger_new_updates = Trip.where("updated_at > ? AND flag = ? and availabilty > 0",Time.parse(params[:passenger_update])+2 ,1).limit(20).order("updated_at desc")
+     drivers_new_updates = Trip.where("updated_at > ? AND flag = ? and availabilty > 0",Time.parse(params[:driver_update])+2,0).limit(20).order("updated_at desc")
+
+     #render :text => passenger_new_updates.at(0).updated_at
+     respond_to do |format|
+       format.js do
+         render "fetch_new", :locals => {:new_passengers => passenger_new_updates, :new_drivers => drivers_new_updates}
+       end
+       end
+  end
+
+  #from is the center of the circle of radius r
+  #to is the db column (either to or form depending what we are calculating radius for)
+  def dist(center_lat, center_long,radius_lat,radius_long)
+    %| 3959 * 2 * ASIN(SQRT(POWER(SIN((#{center_lat}- #{radius_lat}) * pi()/180 / 2), 2) +COS(#{center_lat} * pi()/180) *COS(#{radius_lat}* pi()/180) *POWER(SIN((#{center_long} -#{radius_long}) * pi()/180 / 2), 2) ))|
+  end
+
+  def radius_from(center_lat, center_long)
+    dist(center_lat,center_long,'from_latitude','from_longitude') +" AS distancefrom"
+  end
+
+  def radius_to(center_lat, center_long)
+    dist(center_lat,center_long,'to_latitude','to_longitude')+ " AS distanceto"
+  end
+  
+  def delete_trip
+		@trip_to_delete = Trip.find(params[:trip_id])
+		if(@trip_to_delete.availabilty ==1)
+		    @trip_to_delete.destroy
+		end
+		respond_to do |format|
+	       format.html { redirect_to(userhome_url) }
+	       format.json { head :no_content }
+	    end
+  end
+  
+  def disconnect_trip
+		@trip_to_disconnect = TripsConnect.find(params[:trip_id])
+		@trip_to_disconnect.destroy
+		@trip_to_del= Trip.find(params[:trip_id])
+		@trip_to_del.availabilty = @trip_to_del.availabilty + 1
+	    respond_to do |format|
+	       format.html { redirect_to(userhome_url) }
+	       format.json { head :no_content }
+	    end
+  end
+end

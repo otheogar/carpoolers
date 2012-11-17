@@ -1,0 +1,19 @@
+
+
+
+<% if (new_passengers.length != 0) %>
+<% for item in new_passengers %>
+$("#passengers_feed").prepend('<%=j render(item) %>');
+$("#<%=item.id%>").hide();
+$("#<%=item.id%>").fadeIn(500);
+<% end %>
+$("#passenger_last_update").html("<%=new_passengers.at(0).updated_at%>");
+<%end %>
+<% if (new_drivers.length != 0) %>
+<% for item in new_drivers %>
+$("#drivers_feed").prepend('<%=j render(item) %>');
+$("#<%=item.id%>").hide();
+$("#<%=item.id%>").fadeIn(500);
+<% end %>
+$("#driver_last_update").html("<%=new_drivers.at(0).updated_at%>");
+<%end %>
