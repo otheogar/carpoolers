@@ -61,11 +61,15 @@ $(function()
 <div id = "<%= trip.id %>" class = "text trip">
 <div>From: <%= trip.from_string %> to: <%= trip.to_string %></div>
 <div>
-<div>Depart on <%= trip.date.strftime("%m/%d/%y") %> at <%= trip.time.strftime("%I:%M %p") %> <br\>
-  <div id='<%= trip.id %>update"' hidden="true"><%= trip.updated_at %> </div>
-  <div>  <%= link_to "Poster", trip_owner_url(:user_uid => trip.owner_id) %></div>
-<button id="connect_button_<%= trip.id %>" class = "ui-button-text ui-widget ui-state-default ui-corner-all ui-button-text-only" > Connect </button>
-</div>
+  <div>Depart on <%= trip.date.strftime("%m/%d/%y") %> at <%= trip.time.strftime("%I:%M %p") %> <br\>
+    <div id='<%= trip.id %>update"' hidden="true"><%= trip.updated_at %> </div>
+    <% poster="Passenger" %>
+    <% if trip.flag == 0 %>
+        <% poster="Driver" %>
+    <% end %>
+    <div> Posted by  <%= link_to poster, trip_owner_url(:user_uid => trip.owner_id) %></div>
+    <button id="connect_button_<%= trip.id %>" class = "ui-button-text ui-widget ui-state-default ui-corner-all ui-button-text-only" > Connect </button>
+  </div>
 </div>
 
 </div>

@@ -9,7 +9,6 @@ Carpool::Application.routes.draw do
   get "feed/index"
 
 
-  resources :trips
 
   get "userhome/index", :as => 'userhome'
   
@@ -24,6 +23,9 @@ Carpool::Application.routes.draw do
   get "welcome/index"
 
   match '/fetch_new' => 'userhome#fetch_new', :as => 'fetch_new'
+  match '/reload_feed' => 'userhome#reload_feed', :as => 'reload_feed'
+  match '/get_passengers' => 'userhome#get_passengers', :as => 'get_passengers'
+  match '/get_drivers' => 'userhome#get_drivers', :as => 'get_drivers'
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'

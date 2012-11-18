@@ -7,12 +7,12 @@ $("#search_feed").html("");
 $("#search_feed").html("No results found");
 <%end%>
 <% for item in trip_passengers_list %>
-$("#search_feed").append('<%=j render :partial =>'trips/strip', :locals =>{:trip => item} %>');
-$("#a<%=item.id%>").hide();
-$("#a<%=item.id%>").fadeIn(2000);
-$("#a<%=item.id%>").bind( "accordionchange", function(event, ui)
+$("#search_feed").append('<%=j render :partial =>'trips/trip', :locals =>{:trip => item} %>');
+$("#<%=item.id%>").hide();
+$("#<%=item.id%>").fadeIn(200);
+$("#<%=item.id%>").bind( "accordionchange", function(event, ui)
 {
-    var index = $("#a<%=item.id%>").accordion( "option", "active");
+    var index = $("#<%=item.id%>").accordion( "option", "active");
 
     if( index  === 0){
     function initialize(){
@@ -53,12 +53,12 @@ $("#search_feed").html("");
 $("#search_feed").html("No results found");
 <%end%>
 <% for item in trip_drivers_list %>
-$("#search_feed").append('<%=j render :partial =>'trips/strip', :locals =>{:trip => item} %>');
-$("#a<%=item.id%>").hide();
-$("#a<%=item.id%>").fadeIn(2000);
-$("#a<%=item.id%>").bind( "accordionchange", function(event, ui)
+$("#search_feed").append('<%=j render :partial =>'trips/trip', :locals =>{:trip => item} %>');
+$("#<%=item.id%>").hide();
+$("#<%=item.id%>").fadeIn(200);
+$("#<%=item.id%>").bind( "accordionchange", function(event, ui)
 {
-    var index = $("#a<%=item.id%>").accordion( "option", "active");
+    var index = $("#<%=item.id%>").accordion( "option", "active");
 
     if( index  === 0){
         function initialize(){

@@ -423,10 +423,16 @@
       return this.each(function() {
         // Prevent against multiple instantiations.
         var instance = $.data(this, attribute);
+
         if (!instance) {
           instance = new GeoComplete( this, options )
           $.data(this, attribute, instance);
         }
+        else {
+              instance.options = $.extend(true, {}, defaults, options);
+              instance.init();
+        }
+
       });
     }
   };

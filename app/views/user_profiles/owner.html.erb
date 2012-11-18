@@ -1,10 +1,18 @@
+
+
 <p id="notice"><%= notice %></p>
-<h1> Person offering to share this ride</h1>
+<div id="top_wrapper">
+
+  <div id="back" style="float: right;">   <%= link_to "Back to search results", userhome_url, :id => "back_link" %></div>
+  <div>
+    <h1> Person offering to share this ride</h1>
+  </div>
+
+
+</div>
+
 <div id="profile_menu" class = " ui-corner-all">
-<p>
-  <b>User_uid:</b>
-  <%= @user_profile.user_uid %>
-</p>
+
 
 <p>
   <b>Name:</b>
@@ -36,4 +44,6 @@
   <%= @user_profile.description %>
 </p>
 </div>
+
+
 

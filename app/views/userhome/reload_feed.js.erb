@@ -1,3 +1,4 @@
+
 $("#passengers_feed").html("");
 <% for item in trip_passengers_list %>
 $("#passengers_feed").append('<%=j render(item) %>');
@@ -12,3 +13,4 @@ $("#<%=item.id%>").hide();
 $("#<%=item.id%>").fadeIn(500);
 <% end %>
 $("#drivers_feed").scrollTop(0);
+$(window).scrollTop(0);

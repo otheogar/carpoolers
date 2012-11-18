@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if resource.is_a?(UserLogin)
       UserLogin.at_signup(user_email)
-	session[:homestr]=nil
+	    session[:homestr]=nil
       session[:homelat]=nil
       session[:homelong]=nil
       userhome_path

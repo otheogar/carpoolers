@@ -1,12 +1,13 @@
-$(window).scrollTop(0);
+
 <%if (new_trip.flag == 1) %>
 $("#passengers_feed").prepend('<%=j render(new_trip) %>');
+
 $("#<%=new_trip.id%>").hide();
-$("#<%=new_trip.id%>").fadeIn(2000);
+$("#<%=new_trip.id%>").fadeIn(200);
 $("#passenger_last_update").html("<%=new_trip.updated_at%>");
 <%else%>
 $("#drivers_feed").prepend('<%=j render(new_trip) %>');
 $("#<%=new_trip.id%>").hide();
-$("#<%=new_trip.id%>").fadeIn(2000);
+$("#<%=new_trip.id%>").fadeIn(200);
 $("#driver_last_update").html("<%=new_trip.updated_at%>");
 <%end%>
