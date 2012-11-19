@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
 	@messages = Message.where("owner_id = ?", user_id).order("created_at desc")
-	@count = @messages.where("read =?",0).count
+	@count = @messages.where("read_msg =?",0).count
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @messages }
@@ -40,7 +40,7 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-   @message = Message.new(body: params[:body_text], read: params[:flag], sub: params[:subject],  owner_id: params[:userid])
+   @message = Message.new(body: params[:body_text], read_msg: params[:flag], sub: params[:subject],  owner_id: params[:userid])
 	@user = @message.owner_id
     respond_to do |format|
       if @message.save
@@ -57,7 +57,7 @@ class MessagesController < ApplicationController
   def update_read
 	 @message = Message.find(params[:message_id])
 	flag = 1
-	@message.update_attributes(:read => flag)
+	@message.update_attributes(:read_msg => flag)
 	respond_to do |format|
       #  format.html { redirect_to(userhome_url) }
         format.json { render :json => "1" }
