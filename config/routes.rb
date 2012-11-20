@@ -18,10 +18,16 @@ Carpool::Application.routes.draw do
   match '/trip_owner' => 'user_profiles#owner', :as => 'trip_owner'
   match '/send_message' => 'messages#create', :as => 'sendmessage'
   match '/updateread' => 'messages#update_read', :as => 'updateread'
-  
+  match '/delete_trip' => 'userhome#delete_trip', :as => 'delete_trip'
+  match '/disconnect_trip' => 'userhome#disconnect_trip', :as => 'disconnect_trip'
+
+
+
   resources :user_profiles
   get "welcome/index"
 
+
+  match '/fetch_mytrips' => 'userhome#fetch_mytrips', :as => 'fetch_mytrips'
   match '/fetch_new' => 'userhome#fetch_new', :as => 'fetch_new'
   match '/reload_feed' => 'userhome#reload_feed', :as => 'reload_feed'
   match '/get_passengers' => 'userhome#get_passengers', :as => 'get_passengers'

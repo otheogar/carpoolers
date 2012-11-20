@@ -92,268 +92,303 @@
 
 
 
-$(function()
-{
-    setup_maps();
-    var fetching = true;
-    $("#search_wrapper").hide();
-    $("#search_results_menu").hide();
-    $("#search_button").removeAttr('checked');
-    $("#search_button").button("refresh");
-    $("#post_button").removeAttr('checked');
-    $("#post_button").button("refresh");
-    $('#rolepost_driver').removeAttr("checked");
-    $('#rolepost_driver').button("refresh");
-    $('#rolepost_passenger').removeAttr("checked");
-    $('#rolepost_passenger').button("refresh");
-    $('#role_driver').removeAttr("checked");
-    $('#role_driver').button("refresh");
-    $('#role_passenger').removeAttr("checked");
-    $('#role_passenger').button("refresh");
-    $("#search_menu").hide();
-    var menu_open = 0;
-    $("#search_button").button().click(function(event) {
-        if (menu_open == 0)
-        {
-            $("#geocomplete3").val("");
-            $("#geocomplete4").val("");
-            $("#search_date").val("");
-            $("#search_time").val("");
-            $('#role_driver').removeAttr("checked");
-            $('#role_driver').button("refresh");
-            $('#role_passenger').removeAttr("checked");
-            $('#role_passenger').button("refresh");
-            setup_maps();
-            //2 cases: we already displayed a search result or not (no search/post yet or we have clicked post)
-            if(fetching){
-                //fetching is true - so no search results displayed
-                $("#post_menu").hide();
-                $("#post_button").removeAttr('checked');
-                $("#post_button").button("refresh");
-                post_menu_open = 0;
-                $("#search_menu").fadeIn('fast');
-                menu_open = 1;
-            }
-            else{
-                $.ajax(
-                        {
-                            url: "/reload_feed"
-                        }
-                );
-                $("#search_wrapper").hide();
-                $("#search_results_menu").hide();
-                $("#search_menu").fadeIn('fast');
-                menu_open = 1;
-                $("#passengers_feed_wrapper").fadeIn('fast');
-                $("#passengers_feed").fadeIn('fast');
-                $("#drivers_feed_wrapper").fadeIn('fast');
-                $("#drivers_feed").fadeIn('fast');
-                fetching=true;
-            }
-        }else
-        {
-            $("#search_menu").hide();
-            menu_open = 0;
-        }
-    });
-    $("#post_menu").hide();
-    var post_menu_open = 0;
-    $("#post_button").button().click(function(event) {
-        $("#geocomplete1").val("");
-        $("#geocomplete2").val("");
-        $("#post_date").val("");
-        $("#post_time").val("");
+    $(function()
+    {
+        setup_maps();
+        var fetching = true;
+        $("#delete_feed_wrapper").hide();
+        $("#disconnect_feed_wrapper").hide();
+        $("#delete_feed").hide();
+        $("#disconnect_feed").hide();
+        $("#search_wrapper").hide();
+        $("#search_results_menu").hide();
+        $("#search_button").removeAttr('checked');
+        $("#search_button").button("refresh");
+        $("#post_button").removeAttr('checked');
+        $("#post_button").button("refresh");
         $('#rolepost_driver').removeAttr("checked");
         $('#rolepost_driver').button("refresh");
         $('#rolepost_passenger').removeAttr("checked");
         $('#rolepost_passenger').button("refresh");
-        setup_maps();
-        if (post_menu_open == 0)
-        {
-           if(fetching){
-               $("#search_menu").hide();
-               $("#search_button").removeAttr('checked');
-               $("#search_button").button("refresh");
-               menu_open = 0;
-               $("#post_menu").fadeIn('fast');
-               post_menu_open = 1;
-           }
-           else{
-               $.ajax(
-                       {
-                           url: "/reload_feed"
-                       }
-               );
-               $("#search_wrapper").hide();
-               $("#search_results_menu").hide();
-               $("#post_menu").fadeIn('fast');
-               post_menu_open = 1;
-               $("#passengers_feed_wrapper").fadeIn('fast');
-               $("#passengers_feed").fadeIn('fast');
-               $("#drivers_feed_wrapper").fadeIn('fast');
-               $("#drivers_feed").fadeIn('fast');
-               fetching=true;
-           }
-        }
-        else
-        {
+        $('#role_driver').removeAttr("checked");
+        $('#role_driver').button("refresh");
+        $('#role_passenger').removeAttr("checked");
+        $('#role_passenger').button("refresh");
+        $("#search_menu").hide();
+        var menu_open = 0;
+        var post_menu_open = 0;
+
+        $("#mytrips_button").button().click(function(event) {
+
+            $("#search_menu").hide();
             $("#post_menu").hide();
             post_menu_open = 0;
-        }
-    });
-    setInterval(function()
-    {
-        if (fetching)
-        {
-            var data_url = "passenger_update=" +  $("#passenger_last_update").html() + "&driver_update=" +   $("#driver_last_update").html();
-            $.ajax(  {
-                url: "/fetch_new",
-                data: data_url
-            } );
-        }
-    },10000);
+            menu_open = 0;
+            $.ajax(
+                    {
+                        url: "/fetch_mytrips"
+                    }
+            );
 
-    $("#post_submit").button().click(function()
-    {
-        var rolepost="";
-        var from_string = $("#geocomplete1").val();
-        var to_string = $("#geocomplete2").val();
-        var from_lat = $("#from_lat").val();
-        var from_long = $("#from_long").val();
-        var to_lat = $("#to_lat").val();
-        var to_long = $("#to_long").val();
-        var date = $("#post_date").val();
-        var time = $("#post_time").val();
-        if($('#rolepost_driver').is(':checked')) { var rolepost ="driver"; }
-        if($('#rolepost_passenger').is(':checked')) { var rolepost ="passenger"; }
+            $("#passengers_feed_wrapper" ).hide();
+            $("#drivers_feed_wrapper" ).hide();
+            $("#passengers_feed").hide();
+            $("#drivers_feed").hide();
+            $("#delete_feed_wrapper").fadeIn('fast');
+            $("#disconnect_feed_wrapper").fadeIn('fast');
+            $("#delete_feed").fadeIn('fast');
+            $("#disconnect_feed").fadeIn('fast');
+            $("#delete_feed").scrollTop(0);
+            $("#disconnect_feed").scrollTop(0);
 
-        if((from_string =="") || (to_string=="") || (date=="") || (time=="") || (rolepost==""))
-        {
-            alert("fill in all the data");
-            return;
-        }
+        });
 
-        var data_url = "post_from="+ from_string + "&post_to=" + to_string + "&post_date=" +date + "&post_time="+ time  + "&rolepost=" + rolepost + "&from_long=" + from_long + "&from_lat=" + from_lat + "&to_long=" + to_long + "&to_lat=" + to_lat;
-        $.ajax(
-                {
-                    url: "/trippost",
-                    method: "POST",
-                    data : data_url
-                });
-        post_menu_open=0;
-        $("#post_menu").hide();
-        $("#post_button").removeAttr('checked');
-        $("#post_button").button("refresh");
-        $("#passengers_feed").scrollTop(0);
-        $("#drivers_feed").scrollTop(0);
-    });
 
-    $("#search_submit").button().click(function()
-    {
-        fetching = false;
-        var rolepost ="";
-        var from_string = $("#geocomplete3").val();
-        var to_string = $("#geocomplete4").val();
-        var from_lat = $("#sfrom_lat").val();
-        var from_long = $("#sfrom_long").val();
-        var to_lat = $("#sto_lat").val();
-        var to_long = $("#sto_long").val();
-        var date = $("#search_date").val();
-        var time = $("#search_time").val();
-        if($('#role_driver').is(':checked')) { rolepost ="driver"; }
-        if($('#role_passenger').is(':checked')) { rolepost ="passenger"; }
-        if((from_string =="") || (to_string=="") || (date=="") || (time=="") || (rolepost==""))
-        {
-            alert("fill in all the data");
-            return;
-        }
 
-        var data_url = "search_from="+ from_string + "&search_to=" + to_string + "&search_date=" +date + "&role="+ rolepost +"&from_lat="+ from_lat + "&from_long=" + from_long + "&to_lat="+ to_lat + "&to_long=" + to_long;
-        $.ajax(
-                {
-                    url: "/search",
-                    method: "GET",
-                    data : data_url
+        $("#search_button").button().click(function(event) {
+            if (menu_open == 0)
+            {
+                $("#geocomplete3").val("");
+                $("#geocomplete4").val("");
+                $("#search_date").val("");
+                $("#search_time").val("");
+                $('#role_driver').removeAttr("checked");
+                $('#role_driver').button("refresh");
+                $('#role_passenger').removeAttr("checked");
+                $('#role_passenger').button("refresh");
+                setup_maps();
+                //2 cases: we already displayed a search result or not (no search/post yet or we have clicked post)
+                if(fetching){
+                    //fetching is true - so no search results displayed
+                    $("#post_menu").hide();
+                    $("#post_button").removeAttr('checked');
+                    $("#post_button").button("refresh");
+                    post_menu_open = 0;
+                    $("#search_menu").fadeIn('fast');
+                    menu_open = 1;
                 }
-        );
-        menu_open=0;
-        $("#sfrom_result").val(from_string);
-        $("#sto_result").val(to_string);
-        $("#sdate_result").val(date);
-        $("#stime_result").val(time);
-        $("#search_menu").hide();
-        $("#search_results_menu").fadeIn('fast');
+                else{
+                    $.ajax(
+                            {
+                                url: "/reload_feed"
+                            }
+                    );
+                    $("#search_wrapper").hide();
+                    $("#search_results_menu").hide();
+                    $("#search_menu").fadeIn('fast');
+                    menu_open = 1;
+                    $("#passengers_feed_wrapper").fadeIn('fast');
+                    $("#passengers_feed").fadeIn('fast');
+                    $("#drivers_feed_wrapper").fadeIn('fast');
+                    $("#drivers_feed").fadeIn('fast');
+                    fetching=true;
+                }
+            }else
+            {
+                $("#search_menu").hide();
+                menu_open = 0;
+            }
+        });
 
-        $("#search_button").removeAttr('checked');
-        $("#search_button").button("refresh");
+        $("#post_menu").hide();
+
+        $("#post_button").button().click(function(event) {
+            $("#geocomplete1").val("");
+            $("#geocomplete2").val("");
+            $("#post_date").val("");
+            $("#post_time").val("");
+            $('#rolepost_driver').removeAttr("checked");
+            $('#rolepost_driver').button("refresh");
+            $('#rolepost_passenger').removeAttr("checked");
+            $('#rolepost_passenger').button("refresh");
+            setup_maps();
+            if (post_menu_open == 0)
+            {
+                if(fetching){
+                    $("#search_menu").hide();
+                    $("#search_button").removeAttr('checked');
+                    $("#search_button").button("refresh");
+                    menu_open = 0;
+                    $("#post_menu").fadeIn('fast');
+                    post_menu_open = 1;
+                }
+                else{
+                    $.ajax(
+                            {
+                                url: "/reload_feed"
+                            }
+                    );
+                    $("#search_wrapper").hide();
+                    $("#search_results_menu").hide();
+                    $("#post_menu").fadeIn('fast');
+                    post_menu_open = 1;
+                    $("#passengers_feed_wrapper").fadeIn('fast');
+                    $("#passengers_feed").fadeIn('fast');
+                    $("#drivers_feed_wrapper").fadeIn('fast');
+                    $("#drivers_feed").fadeIn('fast');
+                    fetching=true;
+                }
+            }
+            else
+            {
+                $("#post_menu").hide();
+                post_menu_open = 0;
+            }
+        });
+        setInterval(function()
+        {
+            if (fetching)
+            {
+                var data_url = "passenger_update=" +  $("#passenger_last_update").html() + "&driver_update=" +   $("#driver_last_update").html();
+                $.ajax(  {
+                    url: "/fetch_new",
+                    data: data_url
+                } );
+            }
+        },10000);
+
+        $("#post_submit").button().click(function()
+        {
+            var rolepost="";
+            var from_string = $("#geocomplete1").val();
+            var to_string = $("#geocomplete2").val();
+            var from_lat = $("#from_lat").val();
+            var from_long = $("#from_long").val();
+            var to_lat = $("#to_lat").val();
+            var to_long = $("#to_long").val();
+            var date = $("#post_date").val();
+            var time = $("#post_time").val();
+            if($('#rolepost_driver').is(':checked')) { var rolepost ="driver"; }
+            if($('#rolepost_passenger').is(':checked')) { var rolepost ="passenger"; }
+
+            if((from_string =="") || (to_string=="") || (date=="") || (time=="") || (rolepost==""))
+            {
+                alert("fill in all the data");
+                return;
+            }
+
+            var data_url = "post_from="+ from_string + "&post_to=" + to_string + "&post_date=" +date + "&post_time="+ time  + "&rolepost=" + rolepost + "&from_long=" + from_long + "&from_lat=" + from_lat + "&to_long=" + to_long + "&to_lat=" + to_lat;
+            $.ajax(
+                    {
+                        url: "/trippost",
+                        method: "POST",
+                        data : data_url
+                    });
+            post_menu_open=0;
+            $("#post_menu").hide();
+            $("#post_button").removeAttr('checked');
+            $("#post_button").button("refresh");
+            $("#passengers_feed").scrollTop(0);
+            $("#drivers_feed").scrollTop(0);
+        });
+
+        $("#search_submit").button().click(function()
+        {
+            fetching = false;
+            var rolepost ="";
+            var from_string = $("#geocomplete3").val();
+            var to_string = $("#geocomplete4").val();
+            var from_lat = $("#sfrom_lat").val();
+            var from_long = $("#sfrom_long").val();
+            var to_lat = $("#sto_lat").val();
+            var to_long = $("#sto_long").val();
+            var date = $("#search_date").val();
+            var time = $("#search_time").val();
+            if($('#role_driver').is(':checked')) { rolepost ="driver"; }
+            if($('#role_passenger').is(':checked')) { rolepost ="passenger"; }
+            if((from_string =="") || (to_string=="") || (date=="") || (time=="") || (rolepost==""))
+            {
+                alert("fill in all the data");
+                return;
+            }
+
+            var data_url = "search_from="+ from_string + "&search_to=" + to_string + "&search_date=" +date + "&role="+ rolepost +"&from_lat="+ from_lat + "&from_long=" + from_long + "&to_lat="+ to_lat + "&to_long=" + to_long;
+            $.ajax(
+                    {
+                        url: "/search",
+                        method: "GET",
+                        data : data_url
+                    }
+            );
+            menu_open=0;
+            $("#sfrom_result").val(from_string);
+            $("#sto_result").val(to_string);
+            $("#sdate_result").val(date);
+            $("#stime_result").val(time);
+            $("#search_menu").hide();
+            $("#search_results_menu").fadeIn('fast');
+
+            $("#search_button").removeAttr('checked');
+            $("#search_button").button("refresh");
+            $("#passengers_feed").scrollTop(0);
+            $("#drivers_feed").scrollTop(0);
+            $("#passengers_feed_wrapper").hide();
+            $("#drivers_feed_wrapper").hide();
+            $("#search_wrapper").fadeIn('fast');
+        });
+
+
+        $("#drivers_feed").scroll(function(){
+            var elem = $(this);
+            if (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()+1)
+            {
+                var elem2 ="#" + $("#drivers_feed :last-child").attr("id")+"update";
+                var data = $(elem2).attr("id");
+                alert(data)
+                $.ajax(
+                        {
+                            url: "/get_drivers",
+                            method: "GET",
+                            data : "date="+data
+                        }
+                );
+            }
+        });
+        $("#passengers_feed").scroll(function(){
+            var elem = $(this);
+            if (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()+1)
+            {
+                var data = $("#" + $("#passengers_feed :last-child").attr("id")+"update").text();
+                $.ajax(
+                        {
+                            url: "/get_passengers",
+                            method: "GET",
+                            data : "date="+data
+                        }
+                );
+            }
+        });
+
+
+
+        $("#profile_button").button().click(function(event){
+            window.location = '/edit_profile'
+        })
+        $("#message_button").button().click(function(event){
+            window.location = '/messages'
+        })
+
+        $("#search_date").datepicker();
+        $("#post_date").datepicker();
+        $("#role_div").buttonset();
+        $("#role_div_post").buttonset();
+        $("#search_menu :submit").button();
+        $("#post_menu :submit").button();
+        $("#dashboard").button().click(function()
+        {
+            window.location = 'index'
+        });
+        $("#find1").button();
+        $("#find2").button();
+        $("#find3").button();
+        $("#find4").button();
         $("#passengers_feed").scrollTop(0);
         $("#drivers_feed").scrollTop(0);
-        $("#passengers_feed_wrapper").hide();
-        $("#drivers_feed_wrapper").hide();
-        $("#search_wrapper").fadeIn('fast');
-    });
+        $("#delete_feed").scrollTop(0);
+        $("#disconnect_feed").scrollTop(0);
 
-
-    $("#drivers_feed").scroll(function(){
-        var elem = $(this);
-        if (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()+1)
-        {
-            var elem2 ="#" + $("#drivers_feed :last-child").attr("id")+"update";
-            var data = $(elem2).attr("id");
-            alert(data)
-            $.ajax(
-                    {
-                        url: "/get_drivers",
-                        method: "GET",
-                        data : "date="+data
-                    }
-            );
-        }
-    });
-    $("#passengers_feed").scroll(function(){
-        var elem = $(this);
-        if (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()+1)
-        {
-            var data = $("#" + $("#passengers_feed :last-child").attr("id")+"update").text();
-            $.ajax(
-                    {
-                        url: "/get_passengers",
-                        method: "GET",
-                        data : "date="+data
-                    }
-            );
-        }
-    });
-
-
-
-    $("#profile_button").button().click(function(event){
-        window.location = '/edit_profile'
-    })
-    $("#message_button").button().click(function(event){
-        window.location = '/messages'
-    })
-    $("#pending_button").button();
-    $("#search_date").datepicker();
-    $("#post_date").datepicker();
-    $("#role_div").buttonset();
-    $("#role_div_post").buttonset();
-    $("#search_menu :submit").button();
-    $("#post_menu :submit").button();
-    $("#dashboard").button().click(function()
-    {
-        window.location = 'index'
-    });
-    $("#find1").button();
-    $("#find2").button();
-    $("#find3").button();
-    $("#find4").button();
-    $("#passengers_feed").scrollTop(0);
-    $("#drivers_feed").scrollTop(0);
-
-
-    $(window).load(function(){
-        <% if  session[:back] == 1 %>
+        $(window).load(function(){
+            <% if  session[:back] == 1 && session[:search]==1 %>
 
             var data_url = "search_from=<%= session[:s_from] %>&search_to=<%= session[:s_to] %>&search_date=<%= session[:s_date] %> &role=<%= session[:s_role] %>&from_lat=<%= session[:s_from_lat] %>&from_long=<%= session[:s_from_long] %>&to_lat=<%= session[:s_to_lat] %>&to_long=<%= session[:s_to_long] %>";
             $.ajax(
@@ -364,15 +399,16 @@ $(function()
                     }
             );
             <% session[:back] = 0 %>
+            <% session[:search] = 0 %>
             fetching=false;
             $("#passengers_feed").scrollTop(0);
             $("#drivers_feed").scrollTop(0);
             $("#passengers_feed_wrapper").hide();
             $("#drivers_feed_wrapper").hide();
             $("#search_wrapper").fadeIn('fast');
-        <% end %>
+            <% end %>
+        })
     })
-})
 
 </script>
 
@@ -387,21 +423,20 @@ $(function()
     <input type="checkbox" id="search_button"/><label for="search_button">Search for Rides</label>
     <input type="checkbox" id="post_button"/><label for="post_button">Post Ride</label>
     <button id="profile_button">Edit Profile</button>
-	<button id="message_button">Inbox(<%= @count %>)</button>
-    <button id="pending_button">Pending connect Requests</button>
+    <button id="mytrips_button">My Trips</button>
   </div>
 
   <div id="search_results_menu" class = " ui-corner-all" style = "margin-bottom: 20px;">
     <div>
-    <h2>Showing Search Results For</h2>
+      <h2>Showing Search Results For</h2>
       <br></br>
-    From: <input id="sfrom_result"></input>
-    To: <input id="sto_result"></input>
-    Date: <input id="sdate_result"></input>
-    Time: <input id="stime_result"></input>
+      From: <input id="sfrom_result"></input>
+      To: <input id="sto_result"></input>
+      Date: <input id="sdate_result"></input>
+      Time: <input id="stime_result"></input>
       <br> </br>
-    <button id="dashboard">Reload Dashboard</button>
-      </div>
+      <button id="dashboard">Reload Dashboard</button>
+    </div>
   </div>
   <div id="search_menu" class = " ui-corner-all">
     <div id = "role_div">
@@ -523,10 +558,34 @@ $(function()
         <% end %>
       </div>
     </div>
+
+
+    <div id = "disconnect_feed_wrapper" class= "feed ui-corner-all">
+      <h3 style = "text-align:center">Trips Connected by me</h3>
+      <div id = "disconnect_feed" style ="overflow-y:scroll; overflow-x: hidden;" class = "feed-inside">
+        <% for item in @my_trips_as_driver_disconnect %>
+            <div><%= render :partial=> 'mytrip_dis' , :locals => {:my_trips_as_driver_disconnect => @my_trips_as_driver_disconnect,:trip =>item ,:delete =>0 }%></div>
+        <% end %>
+        <% for item in @my_trips_as_passenger_disconnect %>
+            <div><%= render :partial=> 'mytrip_dis' , :locals => {:my_trips_as_passenger_disconnect => @my_trips_as_passenger_disconnect,:trip =>item ,:delete =>0 }%></div>
+        <% end %>
+      </div>
+    </div>
+
+    <div id = "delete_feed_wrapper" class= "feed ui-corner-all">
+      <h3 style = "text-align:center">Trips Posted by me</h3>
+      <div id = "delete_feed" style ="overflow-y:scroll; overflow-x: hidden;" class = "feed-inside">
+        <% for item in @my_trips_as_driver_delete %>
+            <div><%= render :partial=> 'mytrip', :locals =>  {:my_trips_as_driver_delete => @my_trips_as_driver_delete ,:trip =>item ,:delete_flag =>'1' } %></div>
+        <% end %>
+        <% for item in @my_trips_as_passenger_delete %>
+            <div><%= render :partial=> 'mytrip', :locals =>  {:my_trips_as_passenger_delete => @my_trips_as_passenger_delete ,:trip =>item ,:delete_flag =>1 } %></div>
+        <% end %>
+      </div>
+    </div>
+
   </div>
-
 </div>
 
 
-</div>
 

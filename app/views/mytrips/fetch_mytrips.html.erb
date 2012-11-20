@@ -1,0 +1,32 @@
+
+<script>
+
+
+
+$("#mypassengers_feed").html("");
+  <% if (my_trips_as_passenger_list.length == 0) %>
+    $("#mypassengers_feed").html("No results found");
+    <%end%>
+  <% for item in my_trips_as_passenger_list %>
+     $("#mypassengers_feed").append('<%=j render(item) %>');
+     $("#<%=item.id%>").hide();
+     $("#<%=item.id%>").fadeIn(2000);
+     <% end %>
+$("#mypassengers_feed").scrollTop(0);
+
+$("#mydrivers_feed").html("");
+
+  <% if (my_trips_as_driver_list.length == 0) %>
+    $("#mydrivers_feed").html("No results found");
+    <%end%>
+  <% for item in my_trips_as_driver_list %>
+     $("#mydrivers_feed").append('<%=j render(item) %>');
+     $("#<%=item.id%>").hide();
+     $("#<%=item.id%>").fadeIn(2000);
+     <% end %>
+$("#mydrivers_feed").scrollTop(0);
+
+
+</script>
+
+

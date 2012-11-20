@@ -19,11 +19,6 @@ class UserLogin < ActiveRecord::Base
     this_user.uid = email;
     this_user.save!
 
-
-
-
-
-	logger.info "before create profile"
     UserProfile.where(:user_uid => email).first_or_create!(:user_uid => email,:email=>email)
 
 

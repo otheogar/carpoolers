@@ -1,0 +1,42 @@
+
+<script>
+    $(function()
+    {
+        $("#<%= trip.id %>").accordion(
+                {
+
+                    collapsible: true
+
+                });
+
+        $("#delete_button_<%= trip.id %>:submit").button().click(function(){
+            var send_data = "trip_id="+ '<%= trip.id %>' ;
+            $.ajax
+                    ({
+                        url:'/delete_trip',
+                        data: send_data
+                    }).done(function(event)
+                    {
+                        alert('You have successfully deleted the trip')
+                        $("#delete_button_<%= trip.id %>:submit").attr("disabled","disabled")
+                        $("#delete_button_<%= trip.id %>:submit").css("background","grey")
+                    })
+        });
+        $("#<%= trip.id %>").accordion("activate", -1)
+        $("#delete_feed").scrollTop(0);
+    })
+</script>
+
+<div id = "<%= trip.id %>" class = "text trip">
+  <div>From: <%= trip.from_string %> to: <%= trip.to_string %></div>
+  <div>
+    <div>Depart on <%= trip.date.strftime("%m/%d/%y") %> at <%= trip.time.strftime("%I:%M %p") %> <br\>
+      <button id="delete_button_<%= trip.id %>" class = "ui-button-text ui-widget ui-state-default ui-corner-all ui-button-text-only" > Delete </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
