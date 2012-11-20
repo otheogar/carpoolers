@@ -11,6 +11,14 @@ class UserhomeController < ApplicationController
     cond
   end
 
+  def get_lists
+    cond=get_homebase_cond();
+    @trips_passengers = Trip.where(cond+"flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc")
+    @trips_drivers = Trip.where(cond+"flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc")
+    @passenger_last_update = @trips_passengers.at(0).updated_at
+    @driver_last_update = @trips_drivers.at(0).updated_at
+  end
+
 
   def index
     if session[:homestr].nil?
@@ -22,6 +30,18 @@ class UserhomeController < ApplicationController
     end
 
     get_lists
+
+
+    @my_trips_as_driver_delete = Trip.where("flag =? and owner_id = ? ",0,user_id)
+    @my_trips_as_passenger_delete = Trip.where("flag =? and owner_id = ? ",1,user_id)
+
+
+    trips_connected=TripsConnect.where(:other_id => user_id).select("trip_id")
+    ids=trips_connected.collect {|t| t.trip_id}
+    @my_trips_as_driver_disconnect = Trip.where(:flag => 1,:id => ids)
+    @my_trips_as_passenger_disconnect = Trip.where(:flag => 0,:id => ids)
+
+
     @messages = Message.where("owner_id = ?", user_id).order("created_at desc")
     @count = @messages.where("read_msg =?",0).count
 
@@ -29,6 +49,7 @@ class UserhomeController < ApplicationController
 
   def search
 
+    session[:search]=1
     session[:s_from]=params[:search_from]
     session[:s_to]=params[:search_to]
     session[:s_from_lat]=params[:from_lat]
@@ -70,14 +91,6 @@ class UserhomeController < ApplicationController
   end
 
 
-  def get_lists
-    cond=get_homebase_cond();
-    @trips_passengers = Trip.where(cond+"flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc")
-    @trips_drivers = Trip.where(cond+"flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc")
-    @passenger_last_update = @trips_passengers.at(0).updated_at
-    @driver_last_update = @trips_drivers.at(0).updated_at
-  end
-
   def reload_feed
 
    get_lists
@@ -87,27 +100,6 @@ class UserhomeController < ApplicationController
       end
    end
   end
-
-  def connect
-
-    @trips_connect = Trip.find(params[:trip_id])
-    availabilty = @trips_connect.availabilty
-    if(availabilty > 0)
-      availabilty=availabilty - 1;
-      @trips_connect.update_attribute(:availabilty, availabilty )
-      respond_to do |format|
-      #  format.html { redirect_to(userhome_url) }
-        format.json { render :json => "1" }
-      end
-    else
-      respond_to do |format|
-        format.json { render :json => "0" }
-      end
-    end
-  end
-
-
-
 
   def fetch_new
     cond=get_homebase_cond();
@@ -164,4 +156,62 @@ class UserhomeController < ApplicationController
     end
   end
 
+
+  def connect
+    @trip = Trip.find(params[:trip_id])
+    availabilty = @trip.availabilty
+    if(availabilty > 0)
+      availabilty=availabilty - 1;
+      @trip.update_attribute(:availabilty, availabilty )
+      TripsConnect.create(trip_id: params[:trip_id], other_id: user_id)
+
+      respond_to do |format|
+        #  format.html { redirect_to(userhome_url) }
+        format.json { render :json => "1" }
+      end
+    else
+      respond_to do |format|
+        format.json { render :json => "0" }
+      end
+    end
+  end
+
+def delete_trip
+		@trip_to_delete = Trip.find(params[:trip_id])
+		if(@trip_to_delete.availabilty ==1)
+		    @trip_to_delete.destroy
+		end
+		respond_to do |format|
+	       format.html { redirect_to(userhome_url) }
+	       format.json { head :no_content }
+	    end
+  end
+  
+  def disconnect_trip
+		@trip_to_disconnect = TripsConnect.find(params[:trip_id])
+		@trip_to_disconnect.destroy
+		@trip_to_del= Trip.find(params[:trip_id])
+		@trip_to_del.availabilty = @trip_to_del.availabilty + 1
+	    respond_to do |format|
+	       format.html { redirect_to(userhome_url) }
+	       format.json { head :no_content }
+	    end
+  end
+
+
+  def fetch_mytrips
+    @my_trips_as_driver_delete = Trip.where("flag =? and owner_id = ? ",0,user_id)
+    @my_trips_as_passenger_delete = Trip.where("flag =? and owner_id = ? ",1,user_id)
+    trips_connected=TripsConnect.where(:other_id => user_id).select("trip_id")
+    ids=trips_connected.collect {|t| t.trip_id}
+    @my_trips_as_driver_disconnect = Trip.where(:flag => 1,:id => ids)
+    @my_trips_as_passenger_disconnect = Trip.where(:flag => 0,:id => ids)
+    respond_to do |format|
+      format.js do
+        render "fetch_mytrips", :locals => {:trip_passengers_delete => @my_trips_as_passenger_delete, :trip_drivers_delete => @my_trips_as_driver_delete, :trip_passengers_disconnect => @my_trips_as_passenger_disconnect,:trip_drivers_disconnect => @my_trips_as_driver_disconnect}
+      end
+    end
+
+  end
 end
+

@@ -1,76 +1,72 @@
 
 <script>
-$(function()
-{
-	$("#<%= trip.id %>").accordion(
-	{
+    $(function()
+    {
+        $("#<%= trip.id %>").accordion(
+                {
+                    collapsible: true
+                });
 
-		collapsible: true
+        $("#connect_button_<%= trip.id %>:submit").button().click(function(){
+            var send_data = "trip_id="+'<%= trip.id %>';
+            var subj =  "Connect Request for Trip " + '<%= trip.id %>';
+            var bodytext = "Hi User, " + '<%= user_email %>' + " has connected to the trip " + '<%= trip.id %>' + " posted by you.  Thanks Team Carpool.";
+            var useruid = '<%= trip.owner_id %>';
+            var read = 0;
+            var data_url = "subject="+ subj + "&body_text=" + bodytext + "&flag=" +read + "&userid="+ useruid ;
+            $.ajax
+                    ({
+                        url:'/connect',
+                        data: send_data
+                    }).done(function(event)
+                    {
+                        if (event == 1)
+                        {
+                            $.ajax
+                                    ({
+                                        url: '/send_message',
+                                        method: 'POST',
+                                        data : data_url
+                                    })
 
+                            alert('You have been successfully added to the trip')
+                            $("#connect_button_<%= trip.id %>:submit").attr("disabled","disabled")
+                            $("#connect_button_<%= trip.id %>:submit").css("background","grey")
+                        }
+                        else
+                        {
+                            alert('The trip is no longer available. Sorry.');
+                            $("#<%= trip.id %>").fadeOut();
+                        }
 
-
-	});
-
-	$("#connect_button_<%= trip.id %>:submit").button().click(function(){
-	var send_data = "trip_id="+'<%= trip.id %>';
-	var subj =  "Connect Request for Trip " + '<%= trip.id %>';
-	var bodytext = "Hi User, " + '<%= user_email %>' + " has connected to the trip " + '<%= trip.id %>' + " posted by you.  Thanks Team Carpool.";
-	var useruid = '<%= trip.owner_id %>';
-	var read = 0;
-	var data_url = "subject="+ subj + "&body_text=" + bodytext + "&flag=" +read + "&userid="+ useruid ;
-	$.ajax
-	({
-		url:'/connect',
-		data: send_data
-		}).done(function(event)
-		{
-		    if (event == 1)
-            {
-				$.ajax
-			({
-				url: '/send_message',
-				method: 'POST',
-				data : data_url
-			})
-        
-                alert('You have been successfully added to the trip')
-                $("#connect_button_<%= trip.id %>:submit").attr("disabled","disabled")
-                $("#connect_button_<%= trip.id %>:submit").css("background","grey")
-            }
-            else
-            {
-                alert('The trip is no longer available. Sorry.');
-                $("#<%= trip.id %>").fadeOut();
-            }
-
-		})
-	})
-	;
+                    })
+        })
+        ;
 
 
 
-	$("#<%= trip.id %>").accordion("activate", -1)
-    $("#passengers_feed").scrollTop(0);
-    $("#drivers_feed").scrollTop(0);
+        $("#<%= trip.id %>").accordion("activate", -1)
+        $("#passengers_feed").scrollTop(0);
+        $("#drivers_feed").scrollTop(0);
 
 
 
 
-})
+    })
 </script>
 <div id = "<%= trip.id %>" class = "text trip">
-<div>From: <%= trip.from_string %> to: <%= trip.to_string %></div>
-<div>
-  <div>Depart on <%= trip.date.strftime("%m/%d/%y") %> at <%= trip.time.strftime("%I:%M %p") %> <br\>
-    <div id='<%= trip.id %>update"' hidden="true"><%= trip.updated_at %> </div>
-    <% poster="Passenger" %>
-    <% if trip.flag == 0 %>
-        <% poster="Driver" %>
-    <% end %>
-    <div> Posted by  <%= link_to poster, trip_owner_url(:user_uid => trip.owner_id) %></div>
-    <button id="connect_button_<%= trip.id %>" class = "ui-button-text ui-widget ui-state-default ui-corner-all ui-button-text-only" > Connect </button>
+  <div>From: <%= trip.from_string %> to: <%= trip.to_string %></div>
+  <div>
+    <div>Depart on <%= trip.date.strftime("%m/%d/%y") %> at <%= trip.time.strftime("%I:%M %p") %> <br\>
+      <div id='<%= trip.id %>update"' hidden="true"><%= trip.updated_at %> </div>
+      <% poster="Passenger" %>
+      <% if trip.flag == 0 %>
+          <% poster="Driver" %>
+      <% end %>
+      <div> Posted by  <%= link_to poster, trip_owner_url(:user_uid => trip.owner_id) %></div>
+      <button id="connect_button_<%= trip.id %>" class = "ui-button-text ui-widget ui-state-default ui-corner-all ui-button-text-only" > Connect </button>
+    </div>
   </div>
-</div>
 
 </div>
 
