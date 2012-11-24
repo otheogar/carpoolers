@@ -8,6 +8,7 @@
                     collapsible: true
 
                 });
+				
 
         $("#delete_button_<%= trip.id %>:submit").button().click(function(){
             var send_data = "trip_id="+ '<%= trip.id %>' ;
@@ -33,6 +34,12 @@
     <div>Depart on <%= trip.date.strftime("%m/%d/%y") %> at <%= trip.time.strftime("%I:%M %p") %> <br\>
       <button id="delete_button_<%= trip.id %>" class = "ui-button-text ui-widget ui-state-default ui-corner-all ui-button-text-only" > Delete </button>
     </div>
+	<div style="float:left"> <b> Rating: </b></div>
+<div class="rating" style="float:left" id="rating1result0_<%= @user_profile.id %>">
+<% (1..5) .each do |i| %>
+<li class= "rating_star" data-stars= "<%= i %>" data-@user_profile-id= "<%= @user_profile.id %>" id="<%= "#{@user_profile.id}_#{i}" %>"</li>
+<% end %>
+</div>
   </div>
 </div>
 

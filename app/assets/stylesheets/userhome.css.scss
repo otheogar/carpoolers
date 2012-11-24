@@ -98,3 +98,21 @@ height:430px;
   margin: 10px 20px 10px 0;
 
 }
+
+.rating {
+	margin: auto 0;
+}
+
+.rating_star {
+	background: url('ratings.png') 0 0;
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: left;
+}
+
+.on {
+	background-position: 0 16px;
+	
+}
+	

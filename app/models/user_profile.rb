@@ -1,6 +1,6 @@
 class UserProfile < ActiveRecord::Base
 
-  attr_accessible :age, :description, :email, :gender, :name, :picture_url, :user_uid, :home_string, :home_latitude,:home_longitude
+  attr_accessible :age, :description, :email, :gender, :name, :picture_url, :user_uid, :home_string, :home_latitude,:home_longitude,:rating,:no_rating
   validates :user_uid, :email, :uniqueness => true
  validates :age, allow_blank: true, format: {with: %r{\A[0-9]+\z}i, message: 'has to be expressed as a number'}
   validates :picture_url, allow_blank: true, format: {

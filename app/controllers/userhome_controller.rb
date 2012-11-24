@@ -187,6 +187,32 @@ def delete_trip
 	    end
   end
   
+  def rating
+	 
+	 @trip = Trip.find(params[:trip_id])
+	 owner_ids = @trip.owner_id
+	 @trip.update_attribute(:rating, params[:ratings])
+	 @owner_trip = UserProfile.find_by_user_uid(owner_ids)
+	 #current_rating = params[:ratings]
+	 prev_rating= @owner_trip.rating
+	 prev_no_rating = @owner_trip.no_rating
+	 if prev_rating == 0
+		new_rating =  params[:ratings]
+	 else
+		new_rating = ((prev_rating * prev_no_rating) + params[:ratings].to_f)/(prev_no_rating + 1)
+	 end
+	 new_no_rating = 1
+	#@trip=Trip.new(rating: params[:rating])
+     respond_to do |format|
+     if @owner_trip.update_attributes(:rating => new_rating, :no_rating => new_no_rating)
+        format.html { redirect_to @owner_trip, notice: 'Trip was successfully updated.' }
+        format.json { head :no_content }
+     else
+        format.html { render action: "edit" }
+        format.json { render json: @owner_trip.errors, status: :unprocessable_entity }
+     end
+    end
+end
   def disconnect_trip
 		@trip_to_disconnect = TripsConnect.find(params[:trip_id])
 		@trip_to_disconnect.destroy
