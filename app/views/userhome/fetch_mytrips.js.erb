@@ -1,27 +1,36 @@
+$(window).scrollTop(0);
 
+
+$("#delete_feed").empty();
+$("#disconnect_feed").empty();
 $("#delete_feed").html("");
 <% for item in trip_passengers_delete %>
-$("#delete_feed").append('<%=j render :partial=> "mytrip", :locals =>  {:my_trips_as_passenger_delete => @my_trips_as_passenger_delete ,:trip =>item ,:delete_flag =>"1" } %>')
+<%= logger.info item.id %>
+$("#delete_feed").append('<%=j render :partial=> "mytrip", :locals => {:trip =>item}  %>')
 $("#<%=item.id%>").hide();
 $("#<%=item.id%>").fadeIn(200);
 <% end %>
 <% for item in trip_drivers_delete %>
-$("#delete_feed").append('<%=j render :partial=> "mytrip", :locals =>  {:my_trips_as_driver_delete => @my_trips_as_driver_delete ,:trip =>item ,:delete_flag =>"1" } %>')
+<%= logger.info item.id %>
+$("#delete_feed").append('<%=j render :partial=> "mytrip", :locals => {:trip =>item} %>')
 $("#<%=item.id%>").hide();
 $("#<%=item.id%>").fadeIn(200);
 <% end %>
+$("#delete_feed").scrollTop(0);
 
 $("#disconnect_feed").html("");
 <% for item in trip_passengers_disconnect %>
-$("#disconnect_feed").append('<%=j render :partial=> "mytrip_dis", :locals =>  {:my_trips_as_passenger_disconnect => @my_trips_as_passenger_disconnect ,:trip =>item ,:delete =>"0" } %>')
+<%= logger.info "p_dis #{item.id}" %>
+$("#disconnect_feed").append('<%=j render :partial=> "mytrip_dis", :locals => {:trip =>item} %>')
 $("#<%=item.id%>").hide();
 $("#<%=item.id%>").fadeIn(200);
 <% end %>
-<% for item in trip_drivers_delete %>
-$("#disconnect_feed").append('<%=j render :partial=> "mytrip_dis", :locals =>  {:my_trips_as_driver_disconnect => @my_trips_as_driver_disconnect ,:trip =>item ,:delete =>"0" } %>')
+<% for item in trip_drivers_disconnect %>
+<%= logger.info "dr_dis #{item.id}" %>
+$("#disconnect_feed").append('<%=j render :partial=> "mytrip_dis", :locals => {:trip =>item} %>')
 $("#<%=item.id%>").hide();
 $("#<%=item.id%>").fadeIn(200);
 <% end %>
+$("#disconnect_feed").scrollTop(0);
 
-$("#delete_feed").scrollTop(0);
-$(window).scrollTop(0);
+

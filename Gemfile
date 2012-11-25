@@ -9,7 +9,11 @@ gem 'sqlite3'
 gem 'chronic', '~> 0.8.0'
 
 group :production do
-gem 'mysql'
+  gem 'mysql','~> 2.8.1'
+end
+
+group :development do
+  gem 'mysql','~> 2.8.1'
 end
 
 # Gems used only for assets and not required

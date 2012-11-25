@@ -32,14 +32,6 @@ class UserhomeController < ApplicationController
     get_lists
 
 
-    @my_trips_as_driver_delete = Trip.where("flag =? and owner_id = ? ",0,user_id)
-    @my_trips_as_passenger_delete = Trip.where("flag =? and owner_id = ? ",1,user_id)
-
-
-    trips_connected=TripsConnect.where(:other_id => user_id).select("trip_id")
-    ids=trips_connected.collect {|t| t.trip_id}
-    @my_trips_as_driver_disconnect = Trip.where(:flag => 1,:id => ids)
-    @my_trips_as_passenger_disconnect = Trip.where(:flag => 0,:id => ids)
 
 
     @messages = Message.where("owner_id = ?", user_id).order("created_at desc")
@@ -182,13 +174,12 @@ def delete_trip
 		    @trip_to_delete.destroy
 		end
 		respond_to do |format|
-	       format.html { redirect_to(userhome_url) }
+	       #format.html { redirect_to(userhome_url) }
 	       format.json { head :no_content }
 	    end
   end
   
   def rating
-	 
 	 @trip = Trip.find(params[:trip_id])
 	 owner_ids = @trip.owner_id
 	 @trip.update_attribute(:rating, params[:ratings])
@@ -205,33 +196,43 @@ def delete_trip
 	#@trip=Trip.new(rating: params[:rating])
      respond_to do |format|
      if @owner_trip.update_attributes(:rating => new_rating, :no_rating => new_no_rating)
-        format.html { redirect_to @owner_trip, notice: 'Trip was successfully updated.' }
+        #format.html { redirect_to @owner_trip, notice: 'Trip was successfully updated.' }
         format.json { head :no_content }
      else
         format.html { render action: "edit" }
         format.json { render json: @owner_trip.errors, status: :unprocessable_entity }
      end
     end
-end
+  end
+
   def disconnect_trip
-		@trip_to_disconnect = TripsConnect.find(params[:trip_id])
+		@trip_to_disconnect = TripsConnect.find_by_trip_id(params[:trip_id])
 		@trip_to_disconnect.destroy
 		@trip_to_del= Trip.find(params[:trip_id])
 		@trip_to_del.availabilty = @trip_to_del.availabilty + 1
 	    respond_to do |format|
-	       format.html { redirect_to(userhome_url) }
+	       #format.html { redirect_to(userhome_url) }
 	       format.json { head :no_content }
 	    end
   end
 
 
   def fetch_mytrips
-    @my_trips_as_driver_delete = Trip.where("flag =? and owner_id = ? ",0,user_id)
-    @my_trips_as_passenger_delete = Trip.where("flag =? and owner_id = ? ",1,user_id)
-    trips_connected=TripsConnect.where(:other_id => user_id).select("trip_id")
-    ids=trips_connected.collect {|t| t.trip_id}
-    @my_trips_as_driver_disconnect = Trip.where(:flag => 1,:id => ids)
-    @my_trips_as_passenger_disconnect = Trip.where(:flag => 0,:id => ids)
+    logger.info "FETCHING TRIPS"
+    @my_trips_as_driver_delete = Trip.where("flag =? and owner_id = ? ",0,user_id).limit(20)
+    @my_trips_as_passenger_delete = Trip.where("flag =? and owner_id = ? ",1,user_id).limit(20)
+    trips_connected=TripsConnect.where(:other_id => user_id)
+
+
+    if !trips_connected.empty?
+      logger.info "NOT Empty"
+      ids=trips_connected.collect {|t| t.trip_id}
+      @my_trips_as_driver_disconnect = Trip.where(:flag => 1,:id => ids).limit(20)
+      @my_trips_as_passenger_disconnect = Trip.where(:flag => 0,:id => ids).limit(20)
+    else
+      logger.info "Empty"
+    end
+
     respond_to do |format|
       format.js do
         render "fetch_mytrips", :locals => {:trip_passengers_delete => @my_trips_as_passenger_delete, :trip_drivers_delete => @my_trips_as_driver_delete, :trip_passengers_disconnect => @my_trips_as_passenger_disconnect,:trip_drivers_disconnect => @my_trips_as_driver_disconnect}

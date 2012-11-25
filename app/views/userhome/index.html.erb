@@ -235,6 +235,7 @@
                 post_menu_open = 0;
             }
         });
+        /*
         setInterval(function()
         {
             if (fetching)
@@ -246,6 +247,7 @@
                 } );
             }
         },10000);
+        */
 
         $("#post_submit").button().click(function()
         {
@@ -423,6 +425,7 @@
     <input type="checkbox" id="search_button"/><label for="search_button">Search for Rides</label>
     <input type="checkbox" id="post_button"/><label for="post_button">Post Ride</label>
     <button id="profile_button">Edit Profile</button>
+    <button id="message_button">Inbox(<%= @count %>)</button>
     <button id="mytrips_button">My Trips</button>
   </div>
 
@@ -541,21 +544,25 @@
 
     <div id = "drivers_feed_wrapper" class= "feed ui-corner-all">
       <h3 style = "text-align:center">Drivers</h3>
-
       <div id = "drivers_feed" style ="overflow-y: scroll;
               overflow-x: hidden;" class = "feed-inside">
-        <% for item in @trips_drivers %>
-            <div><%= render(item) %></div>
+        <% if !@trips_drivers.nil? %>
+            <% for item in @trips_drivers %>
+                <div><%= render(item) %></div>
+            <% end %>
         <% end %>
       </div>
     </div>
+
     <div id = "passengers_feed_wrapper" class= "feed ui-corner-all">
       <h3 style = "text-align:center">Passengers</h3>
       <div id = "passengers_feed" style ="overflow-y: scroll;
               overflow-x: hidden;"  class = "feed-inside">
-        <% for item in @trips_passengers %>
-            <div><%= render(item) %></div>
-        <% end %>
+        <% if !@trips_passengers.nil? %>
+            <% for item in @trips_passengers %>
+                <div><%= render(item) %></div>
+            <% end %>
+        <% end%>
       </div>
     </div>
 
@@ -563,24 +570,14 @@
     <div id = "disconnect_feed_wrapper" class= "feed ui-corner-all">
       <h3 style = "text-align:center">Trips Connected by me</h3>
       <div id = "disconnect_feed" style ="overflow-y:scroll; overflow-x: hidden;" class = "feed-inside">
-        <% for item in @my_trips_as_driver_disconnect %>
-            <div><%= render :partial=> 'mytrip_dis' , :locals => {:my_trips_as_driver_disconnect => @my_trips_as_driver_disconnect,:trip =>item ,:delete =>0 }%></div>
-        <% end %>
-        <% for item in @my_trips_as_passenger_disconnect %>
-            <div><%= render :partial=> 'mytrip_dis' , :locals => {:my_trips_as_passenger_disconnect => @my_trips_as_passenger_disconnect,:trip =>item ,:delete =>0 }%></div>
-        <% end %>
+
       </div>
     </div>
 
     <div id = "delete_feed_wrapper" class= "feed ui-corner-all">
       <h3 style = "text-align:center">Trips Posted by me</h3>
       <div id = "delete_feed" style ="overflow-y:scroll; overflow-x: hidden;" class = "feed-inside">
-        <% for item in @my_trips_as_driver_delete %>
-            <div><%= render :partial=> 'mytrip', :locals =>  {:my_trips_as_driver_delete => @my_trips_as_driver_delete ,:trip =>item ,:delete_flag =>'1' } %></div>
-        <% end %>
-        <% for item in @my_trips_as_passenger_delete %>
-            <div><%= render :partial=> 'mytrip', :locals =>  {:my_trips_as_passenger_delete => @my_trips_as_passenger_delete ,:trip =>item ,:delete_flag =>1 } %></div>
-        <% end %>
+
       </div>
     </div>
 

@@ -41,11 +41,11 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
    @message = Message.new(body: params[:body_text], read_msg: params[:flag], sub: params[:subject],  owner_id: params[:userid])
-	@user = @message.owner_id
+	 @user = @message.owner_id
     respond_to do |format|
       if @message.save
 		#UserMailer.welcome_email(@user).deliver
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        #format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render json: @message, status: :created, location: @message }
       else
         format.html { render action: "new" }
