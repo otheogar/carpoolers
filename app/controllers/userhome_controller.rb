@@ -222,7 +222,8 @@ def delete_trip
     @my_trips_as_driver_delete = Trip.where("flag =? and owner_id = ? ",0,user_id).limit(20)
     @my_trips_as_passenger_delete = Trip.where("flag =? and owner_id = ? ",1,user_id).limit(20)
     trips_connected=TripsConnect.where(:other_id => user_id)
-
+    @my_trips_as_driver_disconnect = [];
+    @my_trips_as_passenger_disconnect =[];
 
     if !trips_connected.empty?
       logger.info "NOT Empty"
