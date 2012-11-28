@@ -20,4 +20,5 @@ class UserProfile < ActiveRecord::Base
   belongs_to :user_login, :foreign_key => :user_uid,  :primary_key => :uid, :inverse_of => :user_profile
   has_many :trip, :foreign_key => :owner_id,  :primary_key => :user_uid, :inverse_of => :user_profile
   has_many :message, :foreign_key => :owner_id,  :primary_key => :user_uid, :inverse_of => :user_profile
+  has_many :trip_connect, :foreign_key => :other_id,  :primary_key => :user_uid, :inverse_of => :user_profile
 end

@@ -12,12 +12,35 @@
 
         $("#delete_button_<%= trip.id %>:submit").button().click(function(){
             var send_data = "trip_id="+ '<%= trip.id %>' ;
-            $.ajax
+			<% trip1 = Trip.find(trip.id) %>
+			var flag = <%= trip1.availabilty %> ;
+			if(flag == 0)
+			{
+				<% if(trip1.availabilty == 0)%>
+				<% trip2 = TripsConnect.where("trip_id = ?", trip.id) %>
+				
+				var subj =  "Trip Cancellation Notificaton " + '<%= trip.id %>';
+				var bodytext = "Hi User, " + "We regret to inform you that the trip " + '<%= trip.id %>' + " has been cancelled by the owner.   Thanks Team Carpool.";
+				var useruid = '<%= trip2.first.other_id %>';
+				var read = 0;
+				var data_url = "subject="+ subj + "&body_text=" + bodytext + "&flag=" +read + "&userid="+ useruid ;
+				<% end %>
+			}
+			$.ajax
                     ({
                         url:'/delete_trip',
                         data: send_data
                     }).done(function(event)
                     {
+						if(flag == 0)
+						{
+						$.ajax
+                                    ({
+                                        url: '/send_message',
+                                        method: 'POST',
+                                        data : data_url
+                                    })
+						}
                         alert('You have successfully deleted the trip')
                         $("#delete_button_<%= trip.id %>:submit").attr("disabled","disabled")
                         $("#delete_button_<%= trip.id %>:submit").css("background","grey")
