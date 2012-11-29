@@ -45,12 +45,26 @@ $(function()
 
 	$("#disconnect_button_<%= trip.id %>:submit").button().click(function(){
 	var send_data = "trip_id="+ '<%= trip.id %>' ;
+	<% trip1 = Trip.find(trip.id) %>	
+				var subj =  "Trip Disconnect Notificaton " + '<%= trip.id %>';
+				var bodytext = "Hi User, " + "We regret to inform you that user " + '<%= user_email %>' + " has disconncted from your trip " + '<%= trip.id %>' + " . Thanks Team Carpool.";
+				var useruid = '<%= trip1.owner_id %>' ;
+				var read = 0;
+				var data_url = "subject="+ subj + "&body_text=" + bodytext + "&flag=" +read + "&userid="+ useruid ;
+			
 	$.ajax
 	({
 		url:'/disconnect_trip',
 		data: send_data
 		}).done(function(event)
 		{
+		$.ajax
+                                    ({
+                                        url: '/send_message',
+                                        method: 'POST',
+                                        data : data_url
+                                    })
+		
 		 alert('You are successfully disconnected from the trip')
          $("#<%= trip.id %>").fadeOut();
 
