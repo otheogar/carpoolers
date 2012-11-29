@@ -1,17 +1,7 @@
 Carpool::Application.routes.draw do
-  resources :trips_connects
-
-  resources :messages
-
-  resources :trip_requests
-  resources :users
-
-  devise_for :user_logins
-
-  get "feed/index"
 
 
-
+  get "welcome/index"
   get "userhome/index", :as => 'userhome'
   
   match '/search' => 'userhome#search', :as => 'search'
@@ -26,8 +16,6 @@ Carpool::Application.routes.draw do
 
 
 
-  resources :user_profiles
-  get "welcome/index"
 
 
   match '/fetch_mytrips' => 'userhome#fetch_mytrips', :as => 'fetch_mytrips'
@@ -35,12 +23,22 @@ Carpool::Application.routes.draw do
   match '/reload_feed' => 'userhome#reload_feed', :as => 'reload_feed'
   match '/get_passengers' => 'userhome#get_passengers', :as => 'get_passengers'
   match '/get_drivers' => 'userhome#get_drivers', :as => 'get_drivers'
-  match 'auth/:provider/callback', to: 'sessions#create'
-  match 'auth/failure', to: redirect('/')
-  match 'signout', to: 'sessions#destroy', as: 'signout'
-   match 'edit_profile', to: 'user_profiles#get_by_email', as: 'edit_profile'
-  
+  match 'auth/:provider/callback' => 'sessions#create'
+  match 'auth/failure'=> redirect('/')
+  match 'signout' => 'sessions#destroy', :as => 'signout'
+   match 'edit_profile'=>'user_profiles#get_by_email', :as => 'edit_profile'
+
+
+  resources :trips_connects
+
+  resources :messages
+
+  resources :trip_requests
   resources :users
+
+  devise_for :user_logins
+  resources :user_profiles
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

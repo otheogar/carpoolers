@@ -1,16 +1,17 @@
-
+$(window).scrollTop(0);
+$("#search_feed").empty()
 $("#passengers_feed").html("");
 <% for item in trip_passengers_list %>
 $("#passengers_feed").append('<%=j render(item) %>');
 $("#<%=item.id%>").hide();
-$("#<%=item.id%>").fadeIn(500);
+$("#<%=item.id%>").fadeIn(200);
 <% end %>
 $("#passengers_feed").scrollTop(0);
 $("#drivers_feed").html("");
 <% for item in trip_drivers_list %>
 $("#drivers_feed").append('<%=j render(item) %>');
 $("#<%=item.id%>").hide();
-$("#<%=item.id%>").fadeIn(500);
+$("#<%=item.id%>").fadeIn(200);
 <% end %>
 $("#drivers_feed").scrollTop(0);
-$(window).scrollTop(0);
+

@@ -52,8 +52,8 @@ $(function()
 		}).done(function(event)
 		{
 		 alert('You are successfully disconnected from the trip')
-		 $("#disconnect_button_<%= trip.id %>:submit").attr("disabled","disabled")
-		 $("#disconnect_button_<%= trip.id %>:submit").css("background","grey")
+         $("#<%= trip.id %>").fadeOut();
+
 		})
 	}); 
 	$("#<%= trip.id %>").accordion("activate", -1)

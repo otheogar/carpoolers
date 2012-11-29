@@ -18,9 +18,18 @@
                         data: send_data
                     }).done(function(event)
                     {
-                        alert('You have successfully deleted the trip')
-                        $("#delete_button_<%= trip.id %>:submit").attr("disabled","disabled")
-                        $("#delete_button_<%= trip.id %>:submit").css("background","grey")
+                        if (event == 1)
+                        {
+                            alert('You have successfully deleted the trip')
+                            $("#<%= trip.id %>").fadeOut();
+
+                        }
+                        else
+                        {
+                            alert('Somebody already connected to this trip. You cannot delete it - contact the other carpooler')
+                            $("#delete_button_<%= trip.id %>:submit").attr("disabled","disabled")
+                            $("#delete_button_<%= trip.id %>:submit").css("background","grey")
+                        }
                     })
         });
         $("#<%= trip.id %>").accordion("activate", -1)

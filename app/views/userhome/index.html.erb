@@ -94,36 +94,65 @@
 
     $(function()
     {
-        setup_maps();
-        var fetching = true;
+
+        $("#search_date").datepicker();
+        $("#post_date").datepicker();
+        $("#role_div").buttonset();
+        $("#role_div_post").buttonset();
+        $("#search_menu :submit").button();
+        $("#post_menu :submit").button();
+        $("#find1").button();
+        $("#find2").button();
+        $("#find3").button();
+        $("#find4").button();
+
+
         $("#delete_feed_wrapper").hide();
         $("#disconnect_feed_wrapper").hide();
         $("#delete_feed").hide();
         $("#disconnect_feed").hide();
         $("#search_wrapper").hide();
         $("#search_results_menu").hide();
+        $("#search_button").button();
         $("#search_button").removeAttr('checked');
         $("#search_button").button("refresh");
+        $("#post_button").button();
         $("#post_button").removeAttr('checked');
         $("#post_button").button("refresh");
+        $("#rolepost_driver").button();
         $('#rolepost_driver').removeAttr("checked");
         $('#rolepost_driver').button("refresh");
+        $("#rolepost_passenger").button();
         $('#rolepost_passenger').removeAttr("checked");
         $('#rolepost_passenger').button("refresh");
+        $("#role_driver").button();
         $('#role_driver').removeAttr("checked");
         $('#role_driver').button("refresh");
+        $("#role_passenger").button();
         $('#role_passenger').removeAttr("checked");
         $('#role_passenger').button("refresh");
         $("#search_menu").hide();
+        $("#post_menu").hide();
+
+        var fetching = true;
         var menu_open = 0;
         var post_menu_open = 0;
+        var mytrips_open=0;
+
+        setup_maps();
 
         $("#mytrips_button").button().click(function(event) {
 
             $("#search_menu").hide();
             $("#post_menu").hide();
+            $("#search_button").removeAttr('checked');
+            $("#search_button").button("refresh");
+            $("#post_button").removeAttr('checked');
+            $("#post_button").button("refresh");
             post_menu_open = 0;
             menu_open = 0;
+            mytrips_open =1;
+            fetching =false;
             $.ajax(
                     {
                         url: "/fetch_mytrips"
@@ -146,6 +175,14 @@
 
 
         $("#search_button").button().click(function(event) {
+            if(mytrips_open ==1)
+            {
+                $("#delete_feed_wrapper").hide();
+                $("#disconnect_feed_wrapper").hide();
+                $("#delete_feed").hide();
+                $("#disconnect_feed").hide();
+                mytrips_open =0;
+            }
             if (menu_open == 0)
             {
                 $("#geocomplete3").val("");
@@ -172,7 +209,7 @@
                             {
                                 url: "/reload_feed"
                             }
-                    );
+                    )
                     $("#search_wrapper").hide();
                     $("#search_results_menu").hide();
                     $("#search_menu").fadeIn('fast');
@@ -190,7 +227,7 @@
             }
         });
 
-        $("#post_menu").hide();
+
 
         $("#post_button").button().click(function(event) {
             $("#geocomplete1").val("");
@@ -202,6 +239,15 @@
             $('#rolepost_passenger').removeAttr("checked");
             $('#rolepost_passenger').button("refresh");
             setup_maps();
+
+            if(mytrips_open ==1)
+            {
+                $("#delete_feed_wrapper").hide();
+                $("#disconnect_feed_wrapper").hide();
+                $("#delete_feed").hide();
+                $("#disconnect_feed").hide();
+                mytrips_open =0;
+            }
             if (post_menu_open == 0)
             {
                 if(fetching){
@@ -370,44 +416,36 @@
             window.location = '/messages'
         })
 
-        $("#search_date").datepicker();
-        $("#post_date").datepicker();
-        $("#role_div").buttonset();
-        $("#role_div_post").buttonset();
-        $("#search_menu :submit").button();
-        $("#post_menu :submit").button();
+
         $("#dashboard").button().click(function()
         {
             window.location = 'index'
         });
-        $("#find1").button();
-        $("#find2").button();
-        $("#find3").button();
-        $("#find4").button();
+
         $("#passengers_feed").scrollTop(0);
         $("#drivers_feed").scrollTop(0);
         $("#delete_feed").scrollTop(0);
         $("#disconnect_feed").scrollTop(0);
 
         $(window).load(function(){
-            <% if  session[:back] == 1 && session[:search]==1 %>
+            <% if !params[:isback].nil? %>
 
-            var data_url = "search_from=<%= session[:s_from] %>&search_to=<%= session[:s_to] %>&search_date=<%= session[:s_date] %> &role=<%= session[:s_role] %>&from_lat=<%= session[:s_from_lat] %>&from_long=<%= session[:s_from_long] %>&to_lat=<%= session[:s_to_lat] %>&to_long=<%= session[:s_to_long] %>";
-            $.ajax(
+                var data_url = "search_from=<%= session[:s_from] %>&search_to=<%= session[:s_to] %>&search_date=<%= session[:s_date] %> &role=<%= session[:s_role] %>&from_lat=<%= session[:s_from_lat] %>&from_long=<%= session[:s_from_long] %>&to_lat=<%= session[:s_to_lat] %>&to_long=<%= session[:s_to_long] %>";
+                $.ajax(
                     {
                         url: "/search",
                         method: "GET",
                         data : data_url
                     }
-            );
-            <% session[:back] = 0 %>
-            <% session[:search] = 0 %>
-            fetching=false;
-            $("#passengers_feed").scrollTop(0);
-            $("#drivers_feed").scrollTop(0);
-            $("#passengers_feed_wrapper").hide();
-            $("#drivers_feed_wrapper").hide();
-            $("#search_wrapper").fadeIn('fast');
+                );
+
+                fetching=false;
+                $("#passengers_feed").scrollTop(0);
+                $("#drivers_feed").scrollTop(0);
+                $("#passengers_feed_wrapper").hide();
+                $("#drivers_feed_wrapper").hide();
+                $("#search_wrapper").fadeIn('fast');
+
             <% end %>
         })
     })

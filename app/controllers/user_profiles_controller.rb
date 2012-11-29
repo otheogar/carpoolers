@@ -95,7 +95,7 @@ class UserProfilesController < ApplicationController
 
 
   def owner
-    session[:back]=1
+
     @user_profile = UserProfile.find_by_user_uid(params[:user_uid])
     respond_to do |format|
       format.html { render "owner"  }

@@ -31,9 +31,6 @@ class UserhomeController < ApplicationController
 
     get_lists
 
-
-
-
     @messages = Message.where("owner_id = ?", user_id).order("created_at desc")
     @count = @messages.where("read_msg =?",0).count
 
@@ -41,7 +38,6 @@ class UserhomeController < ApplicationController
 
   def search
 
-    session[:search]=1
     session[:s_from]=params[:search_from]
     session[:s_to]=params[:search_to]
     session[:s_from_lat]=params[:from_lat]
@@ -84,6 +80,7 @@ class UserhomeController < ApplicationController
 
 
   def reload_feed
+
 
    get_lists
    respond_to do |format|
@@ -168,52 +165,56 @@ class UserhomeController < ApplicationController
     end
   end
 
-def delete_trip
-		@trip_to_delete = Trip.find(params[:trip_id])
-		if(@trip_to_delete.availabilty ==1)
-		    @trip_to_delete.destroy
-		end
-		respond_to do |format|
-	       #format.html { redirect_to(userhome_url) }
-	       format.json { head :no_content }
-	    end
+  def delete_trip
+    @trip_to_delete = Trip.find(params[:trip_id])
+    if(@trip_to_delete.availabilty == 1)
+      @trip_to_delete.destroy
+      respond_to do |format|
+        format.json { render :json => "1" }
+      end
+    else
+      respond_to do |format|
+        format.json { render :json => "0" }
+      end
+    end
+
   end
-  
+
   def rating
-	 @trip = Trip.find(params[:trip_id])
-	 owner_ids = @trip.owner_id
-	 @trip.update_attribute(:rating, params[:ratings])
-	 @owner_trip = UserProfile.find_by_user_uid(owner_ids)
-	 #current_rating = params[:ratings]
-	 prev_rating= @owner_trip.rating
-	 prev_no_rating = @owner_trip.no_rating
-	 if prev_rating == 0
-		new_rating =  params[:ratings]
-	 else
-		new_rating = ((prev_rating * prev_no_rating) + params[:ratings].to_f)/(prev_no_rating + 1)
-	 end
-	 new_no_rating = 1
-	#@trip=Trip.new(rating: params[:rating])
-     respond_to do |format|
-     if @owner_trip.update_attributes(:rating => new_rating, :no_rating => new_no_rating)
+    @trip = Trip.find(params[:trip_id])
+    owner_ids = @trip.owner_id
+    @trip.update_attribute(:rating, params[:ratings])
+    @owner_trip = UserProfile.find_by_user_uid(owner_ids)
+    #current_rating = params[:ratings]
+    prev_rating= @owner_trip.rating
+    prev_no_rating = @owner_trip.no_rating
+    if prev_rating == 0
+      new_rating =  params[:ratings]
+    else
+      new_rating = ((prev_rating * prev_no_rating) + params[:ratings].to_f)/(prev_no_rating + 1)
+    end
+    new_no_rating = 1
+    #@trip=Trip.new(rating: params[:rating])
+    respond_to do |format|
+      if @owner_trip.update_attributes(:rating => new_rating, :no_rating => new_no_rating)
         #format.html { redirect_to @owner_trip, notice: 'Trip was successfully updated.' }
         format.json { head :no_content }
-     else
+      else
         format.html { render action: "edit" }
         format.json { render json: @owner_trip.errors, status: :unprocessable_entity }
-     end
+      end
     end
   end
 
   def disconnect_trip
-		@trip_to_disconnect = TripsConnect.find_by_trip_id(params[:trip_id])
-		@trip_to_disconnect.destroy
-		@trip_to_del= Trip.find(params[:trip_id])
-		@trip_to_del.availabilty = @trip_to_del.availabilty + 1
-	    respond_to do |format|
-	       #format.html { redirect_to(userhome_url) }
-	       format.json { head :no_content }
-	    end
+    @trip_to_disconnect = TripsConnect.find_by_trip_id(params[:trip_id])
+    @trip_to_disconnect.destroy
+    @trip_to_del= Trip.find(params[:trip_id])
+    @trip_to_del.availabilty = @trip_to_del.availabilty + 1
+    respond_to do |format|
+      #format.html { redirect_to(userhome_url) }
+      format.json { head :no_content }
+    end
   end
 
 

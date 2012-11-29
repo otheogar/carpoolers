@@ -20,3 +20,6 @@
 
 #ignore seed data
 /db/seeds.rb
+
+#ignore cache
+.sass-cache
