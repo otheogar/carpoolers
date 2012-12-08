@@ -1,4 +1,6 @@
 class UserhomeController < ApplicationController
+
+  #GETS TRIPS FROM THE MEMCACHE AND PUTS IT IN THE MEMORY ON PAGE LOAD
   before_filter :authorize   do
     @all_trips = Rails.cache.fetch("trips",expires_in: 2.days)    do
          Trip.all
@@ -21,7 +23,7 @@ class UserhomeController < ApplicationController
     @trips_drivers = Trip.where(cond+"flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc")
 
     @driver_last_update = @trips_drivers.at(0).updated_at
-    #cache = MemCache.new
+    #GETS TRIPS FROM THE MEMORY, IF THERE IS A PROBLEM WITH ALL_TRIPS, THEN YOU HAVE A PROBLEM IN MEMCACHED
     @trips_passengers = @all_trips.select{|item| item.availabilty >0}.first(20)
     @passenger_last_update = @trips_passengers.at(0).updated_at
   end
