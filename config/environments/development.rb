@@ -47,6 +47,6 @@ Carpool::Application.configure do
 
   config.perform_caching = true
   config.action_controller.perform_caching = true
-  config.cache_store = :dalli_store, 'localhost:11211'
+  config.cache_store = :dalli_store
   
 end

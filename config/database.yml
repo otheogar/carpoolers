@@ -29,7 +29,7 @@ production:
   pool: 5
   username: sample_user
   password: sample_password
-  host: localhost
+  host: 10.85.98.253
 
 
 

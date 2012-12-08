@@ -55,8 +55,6 @@ class UserhomeController < ApplicationController
     session[:s_to_long]=params[:to_long]
     session[:s_date]=params[:search_date]
     session[:s_role]=params[:role]
-
-    Rails.cache.fetch 'first_try', new
     #change this to allo user selection of radius - use default 15 miles
     r_from=15
     r_to=15
@@ -66,11 +64,27 @@ class UserhomeController < ApplicationController
     radius_cond_from = radius_from(params[:from_lat],params[:from_long])
     radius_cond_to = radius_to(params[:to_lat],params[:to_long])
     flag=0
+    dist = 15
+    from_lat =  (params[:from_lat]).to_f
+    from_long =  (params[:from_long]).to_f
+    to_lat =  (params[:to_lat]).to_f
+    to_long =  (params[:to_long]).to_f
+    long1 = from_long-dist / (Math.cos(degrees(from_lat)).abs * 111.04)
+    long2 = from_long+dist / (Math.cos(degrees(from_lat)).abs * 111.04)
+
+    lat1 = from_lat-dist / (111.04)
+    lat2 = from_lat+dist / (111.04)
+    long3 = to_long-dist / (Math.cos(degrees(to_lat)).abs * 111.04)
+    long4 = to_long+dist / (Math.cos(degrees(to_lat)).abs * 111.04)
+
+    lat3 = to_lat-dist / (111.04)
+    lat4 = to_lat+dist / (111.04)
+
     if (params[:role] == "passenger")
       flag=1
     end
-    condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
-
+    #condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
+    condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips WHERE from_latitude BETWEEN #{lat1} AND #{lat2} AND from_longitude BETWEEN #{long1} AND #{long2}  AND to_latitude BETWEEN #{lat3} AND #{lat4} AND to_longitude BETWEEN #{long3} AND #{long4}  HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
     #hack to work in SQLITE
    # condition="SELECT * FROM trips WHERE date='#{search_date_formatted}' AND from_string='Chicago,IL' AND flag=#{flag} ORDER BY time LIMIT 20"
     #condition="SELECT * FROM trips WHERE from_string='Waltham, MA' AND flag=#{flag} ORDER BY time LIMIT 20"
@@ -250,5 +264,10 @@ class UserhomeController < ApplicationController
     end
 
   end
+
+    def degrees(angle)
+      angle * Math::PI / 180
+    end
+
 end
 
