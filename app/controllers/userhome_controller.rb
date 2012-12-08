@@ -1,5 +1,9 @@
 class UserhomeController < ApplicationController
-  before_filter :authorize
+  before_filter :authorize   do
+    @all_trips = Rails.cache.fetch("trips",expires_in: 2.days)    do
+         Trip.all
+  end
+  end
 
   def get_homebase_cond
     lat=session[:homelat]
@@ -13,10 +17,13 @@ class UserhomeController < ApplicationController
 
   def get_lists
     cond=get_homebase_cond();
-    @trips_passengers = Trip.where(cond+"flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc")
+    #@trips_passengers = Trip.where(cond+"flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc")
     @trips_drivers = Trip.where(cond+"flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc")
-    @passenger_last_update = @trips_passengers.at(0).updated_at
+
     @driver_last_update = @trips_drivers.at(0).updated_at
+    #cache = MemCache.new
+    @trips_passengers = @all_trips.select{|item| item.availabilty >0}.first(20)
+    @passenger_last_update = @trips_passengers.at(0).updated_at
   end
 
 
@@ -47,7 +54,7 @@ class UserhomeController < ApplicationController
     session[:s_date]=params[:search_date]
     session[:s_role]=params[:role]
 
-
+    Rails.cache.fetch 'first_try', new
     #change this to allo user selection of radius - use default 15 miles
     r_from=15
     r_to=15
@@ -102,7 +109,6 @@ class UserhomeController < ApplicationController
        end
        end
   end
-
 
 
   #from is the center of the circle of radius r

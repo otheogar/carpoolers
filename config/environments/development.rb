@@ -43,6 +43,10 @@ Carpool::Application.configure do
 
 
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
-  
+
+
+  config.perform_caching = true
+  config.action_controller.perform_caching = true
+  config.cache_store = :dalli_store, 'localhost:11211'
   
 end
