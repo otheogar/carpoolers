@@ -1,11 +1,6 @@
 class UserhomeController < ApplicationController
-
-  #GETS TRIPS FROM THE MEMCACHE AND PUTS IT IN THE MEMORY ON PAGE LOAD
-  before_filter :authorize   do
-    @all_trips = Rails.cache.fetch("trips",expires_in: 2.days)    do
-         Trip.all
-  end
-  end
+  before_filter :authorize
+skip_before_filter :verify_authenticity_token
 
   def get_homebase_cond
     lat=session[:homelat]
@@ -19,28 +14,26 @@ class UserhomeController < ApplicationController
 
   def get_lists
     cond=get_homebase_cond();
-
-    cond_key = ""
-    if !(cond=="")
-      split_list = cond.split(" < (")
-      lat = split_list[1].split("+0.1")[0]
-      long = split_list[2].split("+0.1")[0]
-      logger.info "lat = " + lat + " long = " + long
-      cond_key="trips_forHome_#{lat}_#{long}"
-    end
-
-    @trips_passengers = Rails.cache.fetch(cond_key+"passengers",:expires_in => 30.minutes) do
-      Trip.where(cond+"flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc")
-    end
-
-    @trips_drivers = Rails.cache.fetch(cond_key+"drivers",:expires_in => 30.minutes) do
-       Trip.where(cond+"flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc")
-    end
+      cond_key = ""
+      if !(cond=="")
+          split_list = cond.split(" < (")
+          lat = split_list[1].split("+0.1")[0]
+          long = split_list[2].split("+0.5")[0]
+          logger.info "lat = " + lat + " long = " + long
+          cond_key="trips_forHome_#{lat}_#{long}"
+      end
+      
+      @trips_passengers=Rails.cache.fetch(cond_key+"passengers",:expires_in => 30.minutes) do
+          logger.info "in pass block"
+          Trip.where(cond+"flag = ? and availabilty > 0", 1).limit(20).order("updated_at desc").all
+      end
+      
+      @trips_drivers =Rails.cache.fetch(cond_key+"drivers",:expires_in => 30.minutes) do
+          Trip.where(cond+"flag = ? and availabilty > 0", 0).limit(20).order("updated_at desc").all
+      end
 
     @passenger_last_update = @trips_passengers.at(0).updated_at
     @driver_last_update = @trips_drivers.at(0).updated_at
-
-
   end
 
 
@@ -60,7 +53,7 @@ class UserhomeController < ApplicationController
 
   end
 
-  def search
+ def search
 
     session[:s_from]=params[:search_from]
     session[:s_to]=params[:search_to]
@@ -70,6 +63,8 @@ class UserhomeController < ApplicationController
     session[:s_to_long]=params[:to_long]
     session[:s_date]=params[:search_date]
     session[:s_role]=params[:role]
+
+
     #change this to allo user selection of radius - use default 15 miles
     r_from=15
     r_to=15
@@ -79,32 +74,16 @@ class UserhomeController < ApplicationController
     radius_cond_from = radius_from(params[:from_lat],params[:from_long])
     radius_cond_to = radius_to(params[:to_lat],params[:to_long])
     flag=0
-    dist = 15
-    from_lat =  (params[:from_lat]).to_f
-    from_long =  (params[:from_long]).to_f
-    to_lat =  (params[:to_lat]).to_f
-    to_long =  (params[:to_long]).to_f
-    long1 = from_long-dist / (Math.cos(degrees(from_lat)).abs * 111.04)
-    long2 = from_long+dist / (Math.cos(degrees(from_lat)).abs * 111.04)
-
-    lat1 = from_lat-dist / (111.04)
-    lat2 = from_lat+dist / (111.04)
-    long3 = to_long-dist / (Math.cos(degrees(to_lat)).abs * 111.04)
-    long4 = to_long+dist / (Math.cos(degrees(to_lat)).abs * 111.04)
-
-    lat3 = to_lat-dist / (111.04)
-    lat4 = to_lat+dist / (111.04)
-
     if (params[:role] == "passenger")
       flag=1
     end
-<<<<<<< HEAD
-
     condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
-    #turn optimization on -use opt= true/ vs opt = false
+
+
+ #turn optimization on -use opt= true/ vs opt = false
     opt = true
     if opt
-      dist_1lat=69.1;
+      dist_1lat=69.2;
       from_lat = (params[:from_lat]).to_f
       from_long = (params[:from_long]).to_f
       to_lat = (params[:to_lat]).to_f
@@ -118,17 +97,12 @@ class UserhomeController < ApplicationController
       long2 = from_long+r_from / (Math.cos(deg2rad(from_lat)).abs * dist_1lat)
       long3 = to_long-r_to/ (Math.cos(deg2rad(from_lat)).abs * dist_1lat)
       long4 = to_long+r_to / (Math.cos(deg2rad(from_lat)).abs * dist_1lat)
-      condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips WHERE from_latitude BETWEEN #{lat1} AND #{lat2} AND from_longitude BETWEEN #{long1} AND #{long2}  AND to_latitude BETWEEN #{lat3} AND #{lat4} AND to_longitude BETWEEN #{long3} AND #{long4}  HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
+      condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips WHERE from_latitude BETWEEN #{lat1} AND #{lat2} AND from_longitude BETWEEN #{long1} AND #{long2}  AND to_latitude BETWEEN #{lat3} AND #{lat4} AND to_longitude BETWEEN #{long3} AND #{long4} HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
     end
+   
+  
 
 
-=======
-    #condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
-    condition="SELECT *,"+radius_cond_from+","+radius_cond_to+ " FROM trips WHERE from_latitude BETWEEN #{lat1} AND #{lat2} AND from_longitude BETWEEN #{long1} AND #{long2}  AND to_latitude BETWEEN #{lat3} AND #{lat4} AND to_longitude BETWEEN #{long3} AND #{long4}  HAVING distancefrom < #{r_from} AND distanceto < #{r_to} AND date='#{search_date_formatted}' AND flag=#{flag} ORDER BY time LIMIT 20"
->>>>>>> cd17e629d854b457e14025cf7101b7fbaea900a7
-    #hack to work in SQLITE
-   # condition="SELECT * FROM trips WHERE date='#{search_date_formatted}' AND from_string='Chicago,IL' AND flag=#{flag} ORDER BY time LIMIT 20"
-    #condition="SELECT * FROM trips WHERE from_string='Waltham, MA' AND flag=#{flag} ORDER BY time LIMIT 20"
     if (params[:role] == "passenger")
       trips_passengers_result = Trip.find_by_sql([condition])
     else
@@ -142,12 +116,13 @@ class UserhomeController < ApplicationController
     end
   end
 
-  def deg2rad(angle)
+def deg2rad(angle)
     angle * Math::PI / 180
   end
 
-
   def reload_feed
+
+
    get_lists
    respond_to do |format|
       format.js do
@@ -168,6 +143,7 @@ class UserhomeController < ApplicationController
        end
        end
   end
+
 
 
   #from is the center of the circle of radius r
@@ -307,10 +283,5 @@ class UserhomeController < ApplicationController
     end
 
   end
-
-    def degrees(angle)
-      angle * Math::PI / 180
-    end
-
 end
 

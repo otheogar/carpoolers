@@ -580,6 +580,7 @@
       </div>
     </div>
 
+    <% cache("homepageTrips_#{@str}",:expires_in => 30.minutes) do %>
     <div id = "drivers_feed_wrapper" class= "feed ui-corner-all">
       <h3 style = "text-align:center">Drivers</h3>
       <div id = "drivers_feed" style ="overflow-y: scroll;
@@ -603,7 +604,7 @@
         <% end%>
       </div>
     </div>
-
+   <% end %>
 
     <div id = "disconnect_feed_wrapper" class= "feed ui-corner-all">
       <h3 style = "text-align:center">Trips Connected by me</h3>
