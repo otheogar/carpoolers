@@ -40,6 +40,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    dalli (2.5.0)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -147,6 +148,7 @@ PLATFORMS
 DEPENDENCIES
   chronic (~> 0.8.0)
   coffee-rails (~> 3.2.1)
+  dalli
   devise (= 2.1.2)
   jquery-rails
   jquery-ui-rails
